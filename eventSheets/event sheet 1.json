@@ -1,0 +1,504 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "score_team_0",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 174100485704931
+		},
+		{
+			"eventType": "variable",
+			"name": "score_team_1",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 838336454094952
+		},
+		{
+			"eventType": "variable",
+			"name": "BALL_ANGLE_MODIFIER",
+			"type": "number",
+			"initialValue": "30",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 816086857656353
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 718442640690014
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 617367548676038,
+					"parameters": {
+						"variable": "score_team_0",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 973509446719324,
+					"parameters": {
+						"variable": "score_team_1",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 118343111229312
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-outside-layout",
+					"objectClass": "ball",
+					"sid": 204761840947937
+				}
+			],
+			"actions": [],
+			"sid": 833386183600185,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 189852107641789,
+							"parameters": {
+								"first-value": "ball.Y",
+								"comparison": 4,
+								"second-value": "LayoutHeight / 2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 836450717319672,
+							"parameters": {
+								"variable": "score_team_0",
+								"value": "1"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "ball",
+							"sid": 242774241967144
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 524965328973902,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						},
+						{
+							"callFunction": "matchRespawnBall",
+							"sid": 725595260754460,
+							"parameters": [
+								"0"
+							]
+						}
+					],
+					"sid": 130122759365814
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 315550097418818,
+							"parameters": {
+								"first-value": "ball.Y",
+								"comparison": 2,
+								"second-value": "LayoutHeight / 2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 877399351870693,
+							"parameters": {
+								"variable": "score_team_1",
+								"value": "1"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "ball",
+							"sid": 168727534909686
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 675308281104378,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						},
+						{
+							"callFunction": "matchRespawnBall",
+							"sid": 491598231566983,
+							"parameters": [
+								"1"
+							]
+						}
+					],
+					"sid": 328345710889960
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [],
+					"sid": 341403140068907
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 658141016788623,
+					"parameters": {
+						"key": 65
+					}
+				},
+				{
+					"id": "pick-by-evaluate",
+					"objectClass": "System",
+					"sid": 379536336617226,
+					"parameters": {
+						"object": "pad",
+						"expression": "pad.player = 0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "pad",
+					"sid": 807797245752090,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"control": "left"
+					}
+				}
+			],
+			"sid": 653384448362452
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 231436976530883,
+					"parameters": {
+						"key": 68
+					}
+				},
+				{
+					"id": "pick-by-evaluate",
+					"objectClass": "System",
+					"sid": 156340986940442,
+					"parameters": {
+						"object": "pad",
+						"expression": "pad.player = 0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "pad",
+					"sid": 904606019092769,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"control": "right"
+					}
+				}
+			],
+			"sid": 509101368190507
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 479383264199598,
+					"parameters": {
+						"key": 37
+					}
+				},
+				{
+					"id": "pick-by-evaluate",
+					"objectClass": "System",
+					"sid": 654661209416907,
+					"parameters": {
+						"object": "pad",
+						"expression": "pad.player = 1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "pad",
+					"sid": 669253643413106,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"control": "left"
+					}
+				}
+			],
+			"sid": 718507840487922
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 723832105338365,
+					"parameters": {
+						"key": 39
+					}
+				},
+				{
+					"id": "pick-by-evaluate",
+					"objectClass": "System",
+					"sid": 416131025980379,
+					"parameters": {
+						"object": "pad",
+						"expression": "pad.player = 1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "pad",
+					"sid": 169150758526765,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"control": "right"
+					}
+				}
+			],
+			"sid": 413562566047639
+		},
+		{
+			"functionName": "matchRespawnBall",
+			"functionDescription": "",
+			"functionCategory": "match",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "team",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 290140892187384
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 998481011865410,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 886681290308958,
+							"parameters": {
+								"object-to-create": "ball",
+								"layer": "\"main\"",
+								"x": "LayoutWidth / 2",
+								"y": "LayoutHeight / 2"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "ball",
+							"sid": 749115113243523,
+							"parameters": {
+								"angle": "team = 0 ? 270 : 90"
+							}
+						}
+					],
+					"sid": 294046610920701
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 905603500274028
+				}
+			],
+			"actions": [],
+			"sid": 768209729815737,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 552173673035483,
+							"parameters": {
+								"object": "text",
+								"expression": "text.type = \"scoreboard\" & text.index = 0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "text",
+							"sid": 170298511724780,
+							"parameters": {
+								"text": "score_team_0"
+							}
+						}
+					],
+					"sid": 663620724045760
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 695579641631651,
+							"parameters": {
+								"object": "text",
+								"expression": "text.type = \"scoreboard\" & text.index = 1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "text",
+							"sid": 835466950493983,
+							"parameters": {
+								"text": "score_team_1"
+							}
+						}
+					],
+					"sid": 999631181675162
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "ball",
+					"sid": 923842719596646,
+					"parameters": {
+						"object": "pad"
+					}
+				},
+				{
+					"id": "is-moving",
+					"objectClass": "pad",
+					"sid": 818604906356608,
+					"behaviorType": "8Direction"
+				}
+			],
+			"actions": [],
+			"sid": 414972094871895,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 316031218827740,
+							"parameters": {
+								"first-value": "pad.8Direction.VectorX",
+								"comparison": 4,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "rotate-clockwise",
+							"objectClass": "ball",
+							"sid": 835204879284087,
+							"parameters": {
+								"degrees": "BALL_ANGLE_MODIFIER"
+							}
+						}
+					],
+					"sid": 737285614205035
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 784723245998573,
+							"parameters": {
+								"first-value": "pad.8Direction.VectorX",
+								"comparison": 2,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "rotate-counter-clockwise",
+							"objectClass": "ball",
+							"sid": 402864364549031,
+							"parameters": {
+								"degrees": "BALL_ANGLE_MODIFIER"
+							}
+						}
+					],
+					"sid": 247471147727535
+				}
+			]
+		}
+	],
+	"sid": 762210017106457
+}

@@ -1,0 +1,33 @@
+{
+	"name": "text",
+	"plugin-id": "Spritefont2",
+	"sid": 734816182857067,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "type",
+			"type": "string",
+			"desc": "",
+			"sid": 186789292627090
+		},
+		{
+			"name": "index",
+			"type": "number",
+			"desc": "",
+			"sid": 522788160808009
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 128,
+		"height": 256,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 8818205,
+		"useCollisionPoly": true
+	}
+}
