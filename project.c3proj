@@ -81,7 +81,9 @@
 	],
 	"uniqueId": "9uvgtnm11rg",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"Sprite"
+		],
 		"subfolders": [
 			{
 				"items": [
@@ -119,13 +121,17 @@
 	},
 	"layouts": {
 		"items": [
-			"Layout 1"
+			"main",
+			"menu",
+			"input"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1"
+			"main",
+			"menu",
+			"input"
 		],
 		"subfolders": []
 	},

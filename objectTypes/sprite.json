@@ -1,28 +1,10 @@
 {
-	"name": "pad",
+	"name": "Sprite",
 	"plugin-id": "Sprite",
-	"sid": 346014468828848,
+	"sid": 515768825073635,
 	"isGlobal": false,
-	"instanceVariables": [
-		{
-			"name": "player",
-			"type": "number",
-			"desc": "",
-			"sid": 778525378229232
-		}
-	],
-	"behaviorTypes": [
-		{
-			"behaviorId": "solid",
-			"name": "Solid",
-			"sid": 319161511780046
-		},
-		{
-			"behaviorId": "EightDir",
-			"name": "8Direction",
-			"sid": 501480207838769
-		}
-	],
+	"instanceVariables": [],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
@@ -30,18 +12,18 @@
 				"frames": [
 					{
 						"width": 100,
-						"height": 30,
+						"height": 100,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1300421,
+						"imageSpriteId": 3890154,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 904960119092744,
+				"sid": 357242056489399,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
