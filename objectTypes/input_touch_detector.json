@@ -1,9 +1,16 @@
 {
-	"name": "Sprite",
+	"name": "input_touch_detector",
 	"plugin-id": "Sprite",
 	"sid": 515768825073635,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "player",
+			"type": "number",
+			"desc": "",
+			"sid": 494261179874524
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {

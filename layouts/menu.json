@@ -6,7 +6,7 @@
 			"overriden": 0,
 			"instances": [
 				{
-					"type": "text",
+					"type": "menu_text",
 					"properties": {
 						"text": "Simple",
 						"enable-bbcode": false,
@@ -47,7 +47,7 @@
 					}
 				},
 				{
-					"type": "text",
+					"type": "menu_text",
 					"properties": {
 						"text": "Pong",
 						"enable-bbcode": false,
@@ -88,7 +88,7 @@
 					}
 				},
 				{
-					"type": "text",
+					"type": "menu_text",
 					"properties": {
 						"text": "Vs Human",
 						"enable-bbcode": false,
@@ -129,7 +129,7 @@
 					}
 				},
 				{
-					"type": "text",
+					"type": "menu_text",
 					"properties": {
 						"text": "Vs Bot",
 						"enable-bbcode": false,
@@ -170,7 +170,7 @@
 					}
 				},
 				{
-					"type": "text",
+					"type": "menu_text",
 					"properties": {
 						"text": "Quit",
 						"enable-bbcode": false,

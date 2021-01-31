@@ -34,7 +34,7 @@
 			"overriden": 0,
 			"instances": [
 				{
-					"type": "text",
+					"type": "menu_text",
 					"properties": {
 						"text": "0",
 						"enable-bbcode": false,
@@ -75,7 +75,7 @@
 					}
 				},
 				{
-					"type": "text",
+					"type": "menu_text",
 					"properties": {
 						"text": "0",
 						"enable-bbcode": false,
@@ -155,7 +155,7 @@
 					},
 					"uid": 2,
 					"instanceVariables": {
-						"player": 1
+						"player": 0
 					},
 					"behaviors": {
 						"Solid": {
@@ -204,7 +204,7 @@
 					},
 					"uid": 3,
 					"instanceVariables": {
-						"player": 0
+						"player": 1
 					},
 					"behaviors": {
 						"Solid": {

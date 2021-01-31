@@ -2,6 +2,10 @@
 	"name": "main",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "input"
+		},
+		{
 			"eventType": "variable",
 			"name": "score_team_0",
 			"type": "number",
@@ -177,142 +181,6 @@
 			]
 		},
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "key-is-down",
-					"objectClass": "Keyboard",
-					"sid": 658141016788623,
-					"parameters": {
-						"key": 65
-					}
-				},
-				{
-					"id": "pick-by-evaluate",
-					"objectClass": "System",
-					"sid": 379536336617226,
-					"parameters": {
-						"object": "pad",
-						"expression": "pad.player = 0"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "simulate-control",
-					"objectClass": "pad",
-					"sid": 807797245752090,
-					"behaviorType": "8Direction",
-					"parameters": {
-						"control": "left"
-					}
-				}
-			],
-			"sid": 653384448362452
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "key-is-down",
-					"objectClass": "Keyboard",
-					"sid": 231436976530883,
-					"parameters": {
-						"key": 68
-					}
-				},
-				{
-					"id": "pick-by-evaluate",
-					"objectClass": "System",
-					"sid": 156340986940442,
-					"parameters": {
-						"object": "pad",
-						"expression": "pad.player = 0"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "simulate-control",
-					"objectClass": "pad",
-					"sid": 904606019092769,
-					"behaviorType": "8Direction",
-					"parameters": {
-						"control": "right"
-					}
-				}
-			],
-			"sid": 509101368190507
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "key-is-down",
-					"objectClass": "Keyboard",
-					"sid": 479383264199598,
-					"parameters": {
-						"key": 37
-					}
-				},
-				{
-					"id": "pick-by-evaluate",
-					"objectClass": "System",
-					"sid": 654661209416907,
-					"parameters": {
-						"object": "pad",
-						"expression": "pad.player = 1"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "simulate-control",
-					"objectClass": "pad",
-					"sid": 669253643413106,
-					"behaviorType": "8Direction",
-					"parameters": {
-						"control": "left"
-					}
-				}
-			],
-			"sid": 718507840487922
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "key-is-down",
-					"objectClass": "Keyboard",
-					"sid": 723832105338365,
-					"parameters": {
-						"key": 39
-					}
-				},
-				{
-					"id": "pick-by-evaluate",
-					"objectClass": "System",
-					"sid": 416131025980379,
-					"parameters": {
-						"object": "pad",
-						"expression": "pad.player = 1"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "simulate-control",
-					"objectClass": "pad",
-					"sid": 169150758526765,
-					"behaviorType": "8Direction",
-					"parameters": {
-						"control": "right"
-					}
-				}
-			],
-			"sid": 413562566047639
-		},
-		{
 			"functionName": "matchRespawnBall",
 			"functionDescription": "",
 			"functionCategory": "match",
@@ -344,7 +212,8 @@
 								"object-to-create": "ball",
 								"layer": "\"main\"",
 								"x": "LayoutWidth / 2",
-								"y": "LayoutHeight / 2"
+								"y": "LayoutHeight / 2",
+								"create-hierarchy": false
 							}
 						},
 						{
@@ -380,15 +249,15 @@
 							"objectClass": "System",
 							"sid": 552173673035483,
 							"parameters": {
-								"object": "text",
-								"expression": "text.type = \"scoreboard\" & text.index = 0"
+								"object": "menu_text",
+								"expression": "menu_text.type = \"scoreboard\" & menu_text.index = 0"
 							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-text",
-							"objectClass": "text",
+							"objectClass": "menu_text",
 							"sid": 170298511724780,
 							"parameters": {
 								"text": "score_team_0"
@@ -405,15 +274,15 @@
 							"objectClass": "System",
 							"sid": 695579641631651,
 							"parameters": {
-								"object": "text",
-								"expression": "text.type = \"scoreboard\" & text.index = 1"
+								"object": "menu_text",
+								"expression": "menu_text.type = \"scoreboard\" & menu_text.index = 1"
 							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-text",
-							"objectClass": "text",
+							"objectClass": "menu_text",
 							"sid": 835466950493983,
 							"parameters": {
 								"text": "score_team_1"

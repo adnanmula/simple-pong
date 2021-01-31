@@ -19,12 +19,12 @@
 					"objectClass": "Touch",
 					"sid": 422880765429773,
 					"parameters": {
-						"object": "text"
+						"object": "menu_text"
 					}
 				},
 				{
 					"id": "compare-instance-variable",
-					"objectClass": "text",
+					"objectClass": "menu_text",
 					"sid": 190641780889671,
 					"parameters": {
 						"instance-variable": "type",
@@ -41,7 +41,7 @@
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "text",
+							"objectClass": "menu_text",
 							"sid": 932540377663851,
 							"parameters": {
 								"instance-variable": "index",
@@ -76,7 +76,7 @@
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "text",
+							"objectClass": "menu_text",
 							"sid": 731927870565999,
 							"parameters": {
 								"instance-variable": "index",
@@ -111,7 +111,7 @@
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "text",
+							"objectClass": "menu_text",
 							"sid": 728376508787201,
 							"parameters": {
 								"instance-variable": "index",

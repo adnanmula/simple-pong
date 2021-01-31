@@ -1,0 +1,650 @@
+{
+	"name": "set_input",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "input_0_type",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 824315697467877
+		},
+		{
+			"eventType": "variable",
+			"name": "input_1_type",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 208629060312738
+		},
+		{
+			"eventType": "variable",
+			"name": "MAX_GAMEPAD",
+			"type": "number",
+			"initialValue": "3",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 403365916631134
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 805371386386066
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 279645369983173,
+					"parameters": {
+						"first-value": "gamemode",
+						"comparison": 0,
+						"second-value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 771863409015407,
+					"parameters": {
+						"variable": "input_0_type",
+						"value": "\"bot\""
+					}
+				}
+			],
+			"sid": 993771718125053,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 853457480035147,
+							"parameters": {
+								"object": "menu_text",
+								"expression": "menu_text.type = \"input_label\" & menu_text.index = 1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "menu_text",
+							"sid": 915916750818520,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 552977009718270
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 721554123189257,
+							"parameters": {
+								"object": "input_touch_detector",
+								"expression": "input_touch_detector.player = 1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "input_touch_detector",
+							"sid": 257760257507126,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 736400618038535
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 758997420247390,
+					"parameters": {
+						"key": 87
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 344388552190318,
+					"parameters": {
+						"key": 65
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 917595838239289,
+					"parameters": {
+						"key": 83
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 109515880258400,
+					"parameters": {
+						"key": 68
+					}
+				}
+			],
+			"actions": [],
+			"sid": 691686566183295,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 383772041646506,
+							"parameters": {
+								"first-value": "input_0_type",
+								"comparison": 1,
+								"second-value": "\"KEYBOARD_AD\""
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 865552981554123,
+							"parameters": {
+								"first-value": "input_1_type",
+								"comparison": 1,
+								"second-value": "\"KEYBOARD_AD\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 958736354156554,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 450597717738747,
+									"parameters": {
+										"first-value": "input_0_type",
+										"comparison": 0,
+										"second-value": "\"\""
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 162678043755101,
+									"parameters": {
+										"first-value": "input_1_type",
+										"comparison": 0,
+										"second-value": "\"\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "inputSet",
+									"sid": 951876214289793,
+									"parameters": [
+										"\"KEYBOARD_AD\""
+									]
+								}
+							],
+							"sid": 335903121529028,
+							"isOrBlock": true
+						}
+					]
+				}
+			],
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 117583803395489,
+					"parameters": {
+						"key": 37
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 542496470606440,
+					"parameters": {
+						"key": 39
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 703437159644477,
+					"parameters": {
+						"key": 38
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 795097953813364,
+					"parameters": {
+						"key": 40
+					}
+				}
+			],
+			"actions": [],
+			"sid": 748734706165672,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 891767607082406,
+							"parameters": {
+								"first-value": "input_0_type",
+								"comparison": 1,
+								"second-value": "\"KEYBOARD_ARROWS\""
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 687399965530137,
+							"parameters": {
+								"first-value": "input_1_type",
+								"comparison": 1,
+								"second-value": "\"KEYBOARD_ARROWS\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 972286646594456,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 350216120991605,
+									"parameters": {
+										"first-value": "input_0_type",
+										"comparison": 0,
+										"second-value": "\"\""
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 902692130359339,
+									"parameters": {
+										"first-value": "input_1_type",
+										"comparison": 0,
+										"second-value": "\"\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "inputSet",
+									"sid": 143200389208899,
+									"parameters": [
+										"\"KEYBOARD_ARROWS\""
+									]
+								}
+							],
+							"sid": 635443326074887,
+							"isOrBlock": true
+						}
+					]
+				}
+			],
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 784920914156638
+				}
+			],
+			"actions": [],
+			"sid": 599727121040622,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 827396601219383,
+							"parameters": {
+								"first-value": "input_0_type",
+								"comparison": 0,
+								"second-value": "\"\""
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 812741085027608,
+							"parameters": {
+								"first-value": "input_1_type",
+								"comparison": 0,
+								"second-value": "\"\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 239806988401512,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 490253642244461,
+									"parameters": {
+										"name": "\"input_detector\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 481162236492109,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 401479416817770,
+											"parameters": {
+												"first-value": "input_0_type",
+												"comparison": 1,
+												"second-value": "\"GAMEPAD_\" & loopindex"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 566364883501251,
+											"parameters": {
+												"first-value": "input_1_type",
+												"comparison": 1,
+												"second-value": "\"GAMEPAD_\" & loopindex"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 634571778976101,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-any-button-pressed",
+													"objectClass": "Gamepad",
+													"sid": 376636282577755,
+													"parameters": {
+														"gamepad": "loopindex"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "inputSet",
+													"sid": 943735129654739,
+													"parameters": [
+														"\"GAMEPAD_\" & loopindex"
+													]
+												}
+											],
+											"sid": 987025739463626
+										}
+									]
+								}
+							]
+						}
+					],
+					"isOrBlock": true
+				}
+			]
+		},
+		{
+			"functionName": "inputSet",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "type",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 922694542356305
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 422227694985573,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "continue",
+					"type": "boolean",
+					"initialValue": "true",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 192397775419540
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 937079035934620,
+							"parameters": {
+								"first-value": "input_0_type",
+								"comparison": 0,
+								"second-value": "\"\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 825758401566122,
+							"parameters": {
+								"variable": "input_0_type",
+								"value": "type"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 581252804870166,
+							"parameters": {
+								"variable": "continue",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 848231896487927,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 675471095355040,
+									"parameters": {
+										"object": "menu_text",
+										"expression": "menu_text.type = \"input_label\" & menu_text.index = 0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "menu_text",
+									"sid": 812428015160486,
+									"parameters": {
+										"text": "type & \" selected!\""
+									}
+								}
+							],
+							"sid": 404763666404592
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 659277716370113,
+							"parameters": {
+								"variable": "continue"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 664059511020561,
+							"parameters": {
+								"first-value": "input_1_type",
+								"comparison": 0,
+								"second-value": "\"\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 733932774805405,
+							"parameters": {
+								"variable": "input_1_type",
+								"value": "type"
+							}
+						}
+					],
+					"sid": 145228050435193,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 214101711526444,
+									"parameters": {
+										"object": "menu_text",
+										"expression": "menu_text.type = \"input_label\" & menu_text.index = 1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "menu_text",
+									"sid": 751942016256183,
+									"parameters": {
+										"text": "type & \" selected!\""
+									}
+								}
+							],
+							"sid": 391284043179153
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 356096501267658,
+					"parameters": {
+						"first-value": "input_0_type",
+						"comparison": 1,
+						"second-value": "\"\""
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 525565528761706,
+					"parameters": {
+						"first-value": "input_1_type",
+						"comparison": 1,
+						"second-value": "\"\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 908884675172821,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 189459073298068,
+					"parameters": {
+						"layout": "main"
+					}
+				}
+			],
+			"sid": 890536840755934
+		}
+	],
+	"sid": 662523354043252
+}

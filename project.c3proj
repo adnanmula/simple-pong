@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 21800,
+	"savedWithRelease": 23300,
 	"name": "Simple Pong",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -11,7 +11,7 @@
 			"id": "gamepad",
 			"name": "Gamepad",
 			"author": "Scirra",
-			"version": "r218",
+			"version": "r233",
 			"bundled": false
 		},
 		{
@@ -19,7 +19,7 @@
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
-			"version": "r218",
+			"version": "r233",
 			"bundled": false
 		},
 		{
@@ -27,7 +27,7 @@
 			"id": "Touch",
 			"name": "Touch",
 			"author": "Scirra",
-			"version": "r218",
+			"version": "r233",
 			"bundled": false
 		},
 		{
@@ -35,7 +35,7 @@
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
-			"version": "r218",
+			"version": "r233",
 			"bundled": false
 		},
 		{
@@ -43,7 +43,7 @@
 			"id": "Spritefont2",
 			"name": "Sprite font",
 			"author": "Scirra",
-			"version": "r218",
+			"version": "r233",
 			"bundled": false
 		},
 		{
@@ -51,7 +51,7 @@
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
-			"version": "r218",
+			"version": "r233",
 			"bundled": false
 		},
 		{
@@ -59,7 +59,7 @@
 			"id": "solid",
 			"name": "Solid",
 			"author": "Scirra",
-			"version": "r218",
+			"version": "r233",
 			"bundled": false
 		},
 		{
@@ -67,7 +67,7 @@
 			"id": "EightDir",
 			"name": "8 Direction",
 			"author": "Scirra",
-			"version": "r218",
+			"version": "r233",
 			"bundled": false
 		},
 		{
@@ -75,15 +75,13 @@
 			"id": "Bullet",
 			"name": "Bullet",
 			"author": "Scirra",
-			"version": "r218",
+			"version": "r233",
 			"bundled": false
 		}
 	],
 	"uniqueId": "9uvgtnm11rg",
 	"objectTypes": {
-		"items": [
-			"Sprite"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
@@ -97,7 +95,8 @@
 			},
 			{
 				"items": [
-					"text"
+					"menu_text",
+					"input_touch_detector"
 				],
 				"subfolders": [],
 				"name": "ui"
@@ -131,6 +130,7 @@
 		"items": [
 			"main",
 			"menu",
+			"set_input",
 			"input"
 		],
 		"subfolders": []
@@ -237,7 +237,7 @@
 		"author": "Adnan Mula",
 		"authorEmail": "",
 		"authorWebsite": "",
-		"appId": "",
+		"appId": "com.adnanmula.pong",
 		"pixelRounding": true,
 		"useLoaderLayout": false,
 		"fullscreenMode": "letterbox-scale",
@@ -266,6 +266,7 @@
 		"orientations": "portrait",
 		"enableWebGL": true,
 		"gpuPreference": "high-performance",
+		"scriptsType": "module",
 		"framerateMode": "vsync",
 		"compositingMode": "standard",
 		"sampling": "nearest",

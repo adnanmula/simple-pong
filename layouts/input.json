@@ -34,7 +34,7 @@
 			"overriden": 0,
 			"instances": [
 				{
-					"type": "text",
+					"type": "menu_text",
 					"properties": {
 						"text": "Player 1, select input",
 						"enable-bbcode": false,
@@ -53,13 +53,13 @@
 					},
 					"uid": 18,
 					"instanceVariables": {
-						"type": "inpuit_label",
+						"type": "input_label",
 						"index": 0
 					},
 					"behaviors": {},
 					"world": {
-						"x": 179.8873251314709,
-						"y": 26.143062731722956,
+						"x": 180.00000000000006,
+						"y": 350.5744540301316,
 						"width": 321.213460795133,
 						"height": 26.929109145365814,
 						"originX": 0.5,
@@ -75,7 +75,7 @@
 					}
 				},
 				{
-					"type": "text",
+					"type": "menu_text",
 					"properties": {
 						"text": "Player 2, select input",
 						"enable-bbcode": false,
@@ -94,13 +94,13 @@
 					},
 					"uid": 19,
 					"instanceVariables": {
-						"type": "inpuit_label",
-						"index": 0
+						"type": "input_label",
+						"index": 1
 					},
 					"behaviors": {},
 					"world": {
-						"x": 178.75837727136326,
-						"y": 342.81293749189206,
+						"x": 180,
+						"y": 30.675788390054663,
 						"width": 321.213460795133,
 						"height": 25.800161285258213,
 						"originX": 0.5,
@@ -116,7 +116,7 @@
 					}
 				},
 				{
-					"type": "Sprite",
+					"type": "input_touch_detector",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -125,11 +125,13 @@
 						"live-preview": false
 					},
 					"uid": 20,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"player": 1
+					},
 					"behaviors": {},
 					"world": {
-						"x": 182.42745781671292,
-						"y": 504.53471845229916,
+						"x": 180,
+						"y": 158.92991003757334,
 						"width": 305.4685105395751,
 						"height": 236.60269107301417,
 						"originX": 0.5,
@@ -145,7 +147,7 @@
 					}
 				},
 				{
-					"type": "Sprite",
+					"type": "input_touch_detector",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -154,11 +156,13 @@
 						"live-preview": false
 					},
 					"uid": 21,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"player": 0
+					},
 					"behaviors": {},
 					"world": {
-						"x": 182.42745781671292,
-						"y": 177.70431295116217,
+						"x": 180.6830134553652,
+						"y": 490.5244755083646,
 						"width": 305.4685105395751,
 						"height": 236.60269107301417,
 						"originX": 0.5,
@@ -205,5 +209,5 @@
 	"width": 360,
 	"height": 640,
 	"unboundedScrolling": false,
-	"eventSheet": "input"
+	"eventSheet": "set_input"
 }
