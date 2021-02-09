@@ -2,6 +2,10 @@
 	"name": "input",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "ai"
+		},
+		{
 			"functionName": "evaluateInputWasd",
 			"functionDescription": "",
 			"functionCategory": "",

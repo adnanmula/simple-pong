@@ -54,10 +54,10 @@
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 771863409015407,
+					"sid": 770055308298484,
 					"parameters": {
-						"variable": "input_0_type",
-						"value": "\"bot\""
+						"variable": "input_1_type",
+						"value": "\"BOT\""
 					}
 				}
 			],

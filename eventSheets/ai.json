@@ -1,0 +1,213 @@
+{
+	"name": "ai",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 564780676241988
+				}
+			],
+			"actions": [],
+			"sid": 340240533574156,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 881843692756429,
+							"parameters": {
+								"first-value": "input_0_type",
+								"comparison": 0,
+								"second-value": "\"BOT\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "evaluateInputAi",
+							"sid": 681214966370214,
+							"parameters": [
+								"0"
+							]
+						}
+					],
+					"sid": 547624604423619
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 872741567957448,
+							"parameters": {
+								"first-value": "input_1_type",
+								"comparison": 0,
+								"second-value": "\"BOT\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "evaluateInputAi",
+							"sid": 798685644087390,
+							"parameters": [
+								"1"
+							]
+						}
+					],
+					"sid": 894208262420743
+				}
+			]
+		},
+		{
+			"functionName": "evaluateInputAi",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "player",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 607120315232752
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 350221551669785,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 174179262298221,
+							"parameters": {
+								"object": "pad",
+								"expression": "pad.player"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 541152527034075,
+							"parameters": {
+								"type": "log",
+								"message": "ball.X  & \"  \" & pad.X"
+							}
+						}
+					],
+					"sid": 993125224695993,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 875512597511239,
+									"parameters": {
+										"first-value": "ball.Count",
+										"comparison": 4,
+										"second-value": "0"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 635032705665482,
+									"parameters": {
+										"first-value": "ball.Y",
+										"comparison": 2,
+										"second-value": "LayoutHeight / 2"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 979108024105721,
+									"parameters": {
+										"first-value": " (ball.Bullet.Speed)*sin(ball.Bullet.AngleOfMotion)",
+										"comparison": 2,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 466003114354139,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 970973175340286,
+											"parameters": {
+												"first-value": "ball.X",
+												"comparison": 2,
+												"second-value": "pad.X"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "pad",
+											"sid": 520684113483799,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"control": "left"
+											}
+										}
+									],
+									"sid": 795970612407929
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 349422488374798,
+											"parameters": {
+												"first-value": "ball.X",
+												"comparison": 4,
+												"second-value": "pad.X"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "pad",
+											"sid": 791010454428460,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"control": "right"
+											}
+										}
+									],
+									"sid": 917376307102946
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"sid": 538112269311819
+}
