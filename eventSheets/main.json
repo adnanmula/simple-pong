@@ -537,9 +537,9 @@
 						{
 							"id": "set-text",
 							"objectClass": "menu_text",
-							"sid": 843792773297643,
+							"sid": 827979247780998,
 							"parameters": {
-								"text": "\"Player \" & winner + 1 & \" won!\""
+								"text": "\"Player \" & winner + 1 & \" wins!\""
 							}
 						},
 						{

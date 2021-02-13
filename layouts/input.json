@@ -38,11 +38,11 @@
 					"properties": {
 						"text": "Player 1, select input",
 						"enable-bbcode": false,
-						"character-width": 16,
-						"character-height": 16,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
-						"spacing-data": "",
-						"scale": 0.9,
+						"character-width": 38,
+						"character-height": 48,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
+						"spacing-data": "[[13,\" \"],[10,\"i.:!'|\"],[12,\"°\"],[13,\"l,;\"],[17,\"1-()[]`\"],[20,\"fjt_\\\"=<>\"],[23,\"ILkr~+\"],[26,\"ABCDEFGHJKMNOPQRSTUVXYZabcdeghmnopqsuvwxyz023456789?\\/@$£%\"],[30,\"W&*\"],[32,\"€\"],[36,\"#\"]]",
+						"scale": 0.5,
 						"character-spacing": 0,
 						"line-height": 0,
 						"horizontal-alignment": "left",
@@ -79,11 +79,11 @@
 					"properties": {
 						"text": "Player 2, select input",
 						"enable-bbcode": false,
-						"character-width": 16,
-						"character-height": 16,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
-						"spacing-data": "",
-						"scale": 0.9,
+						"character-width": 38,
+						"character-height": 48,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
+						"spacing-data": "[[13,\" \"],[10,\"i.:!'|\"],[12,\"°\"],[13,\"l,;\"],[17,\"1-()[]`\"],[20,\"fjt_\\\"=<>\"],[23,\"ILkr~+\"],[26,\"ABCDEFGHJKMNOPQRSTUVXYZabcdeghmnopqsuvwxyz023456789?\\/@$£%\"],[30,\"W&*\"],[32,\"€\"],[36,\"#\"]]",
+						"scale": 0.5,
 						"character-spacing": 0,
 						"line-height": 0,
 						"horizontal-alignment": "left",
@@ -103,6 +103,88 @@
 						"y": 30.675788390054663,
 						"width": 321.213460795133,
 						"height": 25.800161285258213,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menu_text",
+					"properties": {
+						"text": "Keyboard, gamepad and touchscreen available.",
+						"enable-bbcode": false,
+						"character-width": 38,
+						"character-height": 48,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
+						"spacing-data": "[[13,\" \"],[10,\"i.:!'|\"],[12,\"°\"],[13,\"l,;\"],[17,\"1-()[]`\"],[20,\"fjt_\\\"=<>\"],[23,\"ILkr~+\"],[26,\"ABCDEFGHJKMNOPQRSTUVXYZabcdeghmnopqsuvwxyz023456789?\\/@$£%\"],[30,\"W&*\"],[32,\"€\"],[36,\"#\"]]",
+						"scale": 0.31,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center"
+					},
+					"uid": 32,
+					"instanceVariables": {
+						"type": "label",
+						"index": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 181.00000000000006,
+						"y": 364.3076493438355,
+						"width": 321.213460795133,
+						"height": 11.067858218234946,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menu_text",
+					"properties": {
+						"text": "Keyboard, gamepad and touchscreen available.",
+						"enable-bbcode": false,
+						"character-width": 38,
+						"character-height": 48,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
+						"spacing-data": "[[13,\" \"],[10,\"i.:!'|\"],[12,\"°\"],[13,\"l,;\"],[17,\"1-()[]`\"],[20,\"fjt_\\\"=<>\"],[23,\"ILkr~+\"],[26,\"ABCDEFGHJKMNOPQRSTUVXYZabcdeghmnopqsuvwxyz023456789?\\/@$£%\"],[30,\"W&*\"],[32,\"€\"],[36,\"#\"]]",
+						"scale": 0.31,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center"
+					},
+					"uid": 33,
+					"instanceVariables": {
+						"type": "label",
+						"index": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 181.00000000000006,
+						"y": 44.104712260953434,
+						"width": 321.213460795133,
+						"height": 9.668336077605673,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

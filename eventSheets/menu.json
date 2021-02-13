@@ -15,6 +15,35 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 393687723152933
+				},
+				{
+					"id": "pick-random-instance",
+					"objectClass": "System",
+					"sid": 682121458246532,
+					"parameters": {
+						"object": "ball"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-default-color",
+					"objectClass": "ball",
+					"sid": 244967419923917,
+					"parameters": {
+						"color": "rgbEx255(int(random(255)),int(random(255)),int(random(255)))"
+					}
+				}
+			],
+			"sid": 751337939845106
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "on-touched-object",
 					"objectClass": "Touch",
 					"sid": 422880765429773,
