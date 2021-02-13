@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 23403,
+	"savedWithRelease": 23404,
 	"name": "Simple Pong",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -11,7 +11,7 @@
 			"id": "gamepad",
 			"name": "Gamepad",
 			"author": "Scirra",
-			"version": "r234.3",
+			"version": "r234.4",
 			"bundled": false
 		},
 		{
@@ -19,7 +19,7 @@
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
-			"version": "r234.3",
+			"version": "r234.4",
 			"bundled": false
 		},
 		{
@@ -27,7 +27,7 @@
 			"id": "Touch",
 			"name": "Touch",
 			"author": "Scirra",
-			"version": "r234.3",
+			"version": "r234.4",
 			"bundled": false
 		},
 		{
@@ -35,7 +35,7 @@
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
-			"version": "r234.3",
+			"version": "r234.4",
 			"bundled": false
 		},
 		{
@@ -43,7 +43,7 @@
 			"id": "Spritefont2",
 			"name": "Sprite font",
 			"author": "Scirra",
-			"version": "r234.3",
+			"version": "r234.4",
 			"bundled": false
 		},
 		{
@@ -51,7 +51,7 @@
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
-			"version": "r234.3",
+			"version": "r234.4",
 			"bundled": false
 		},
 		{
@@ -59,7 +59,7 @@
 			"id": "solid",
 			"name": "Solid",
 			"author": "Scirra",
-			"version": "r234.3",
+			"version": "r234.4",
 			"bundled": false
 		},
 		{
@@ -67,7 +67,7 @@
 			"id": "EightDir",
 			"name": "8 Direction",
 			"author": "Scirra",
-			"version": "r234.3",
+			"version": "r234.4",
 			"bundled": false
 		},
 		{
@@ -75,7 +75,7 @@
 			"id": "Bullet",
 			"name": "Bullet",
 			"author": "Scirra",
-			"version": "r234.3",
+			"version": "r234.4",
 			"bundled": false
 		}
 	],
@@ -138,7 +138,24 @@
 	},
 	"rootFileFolders": {
 		"script": {
-			"items": [],
+			"items": [
+				{
+					"name": "utils.js",
+					"type": "application/javascript",
+					"sid": 422295690426881,
+					"script-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "imports.js",
+					"type": "application/javascript",
+					"sid": 558632326137722,
+					"script-info": {
+						"purpose": "imports-for-events"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"sound": {

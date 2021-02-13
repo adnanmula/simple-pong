@@ -96,19 +96,17 @@
 								"object": "pad",
 								"expression": "pad.player"
 							}
-						}
-					],
-					"actions": [
+						},
 						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 541152527034075,
+							"id": "pick-random-instance",
+							"objectClass": "System",
+							"sid": 553957644376644,
 							"parameters": {
-								"type": "log",
-								"message": "ball.X  & \"  \" & pad.X"
+								"object": "ball"
 							}
 						}
 					],
+					"actions": [],
 					"sid": 993125224695993,
 					"children": [
 						{
@@ -137,76 +135,407 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 979108024105721,
+									"sid": 767459251944811,
 									"parameters": {
-										"first-value": " (ball.Bullet.Speed)*sin(ball.Bullet.AngleOfMotion)",
+										"first-value": "Functions.getVectorY(ball.Bullet.Speed, ball.Bullet.AngleOfMotion)",
 										"comparison": 2,
 										"second-value": "0"
 									}
 								}
 							],
-							"actions": [],
-							"sid": 466003114354139,
-							"children": [
+							"actions": [
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 970973175340286,
-											"parameters": {
-												"first-value": "ball.X",
-												"comparison": 2,
-												"second-value": "pad.X"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "pad",
-											"sid": 520684113483799,
-											"behaviorType": "8Direction",
-											"parameters": {
-												"control": "left"
-											}
-										}
-									],
-									"sid": 795970612407929
+									"callFunction": "aiFollowBall",
+									"sid": 106128101476692,
+									"parameters": [
+										"pad.UID",
+										"ball.UID"
+									]
+								}
+							],
+							"sid": 466003114354139
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 585316551369215,
+									"parameters": {
+										"first-value": "ball.Count",
+										"comparison": 4,
+										"second-value": "0"
+									}
 								},
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 349422488374798,
-											"parameters": {
-												"first-value": "ball.X",
-												"comparison": 4,
-												"second-value": "pad.X"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "pad",
-											"sid": 791010454428460,
-											"behaviorType": "8Direction",
-											"parameters": {
-												"control": "right"
-											}
-										}
-									],
-									"sid": 917376307102946
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 319812816081613,
+									"parameters": {
+										"first-value": "ball.Y",
+										"comparison": 4,
+										"second-value": "LayoutHeight / 2"
+									}
 								}
-							]
+							],
+							"actions": [
+								{
+									"callFunction": "aiCenterPosition",
+									"sid": 680855136606350,
+									"parameters": [
+										"pad.UID",
+										"ball.UID"
+									]
+								}
+							],
+							"sid": 101135332689398
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 145343406297121,
+									"parameters": {
+										"first-value": "ball.Count",
+										"comparison": 4,
+										"second-value": "0"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 712881975805378,
+									"parameters": {
+										"first-value": "Functions.getVectorY(ball.Bullet.Speed, ball.Bullet.AngleOfMotion)",
+										"comparison": 4,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "aiCenterPosition",
+									"sid": 168530972105519,
+									"parameters": [
+										"pad.UID",
+										"ball.UID"
+									]
+								}
+							],
+							"sid": 242445575815061
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 488763535663526,
+									"parameters": {
+										"first-value": "ball.Count",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "aiCenterPosition",
+									"sid": 556420315567127,
+									"parameters": [
+										"pad.UID",
+										"ball.UID"
+									]
+								}
+							],
+							"sid": 673248206154376
 						}
 					]
 				}
 			]
+		},
+		{
+			"functionName": "aiFollowBall",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "padUid",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 778928287780151
+				},
+				{
+					"name": "ballUid",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 157716554725864
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 724711701038804,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "pad",
+							"sid": 538559411163075,
+							"parameters": {
+								"unique-id": "padUid"
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "ball",
+							"sid": 755474347703753,
+							"parameters": {
+								"unique-id": "ballUid"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 936500919683310,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 779403649149607,
+									"parameters": {
+										"first-value": "ball.X",
+										"comparison": 2,
+										"second-value": "pad.X  - pad.Width / 2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "pad",
+									"sid": 852788860107002,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "left"
+									}
+								}
+							],
+							"sid": 382976047080082
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 572351926059272,
+									"parameters": {
+										"first-value": "ball.X",
+										"comparison": 4,
+										"second-value": "pad.X  + pad.Width / 2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "pad",
+									"sid": 813644900979999,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "right"
+									}
+								}
+							],
+							"sid": 600913421445000
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "aiCenterPosition",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "padUid",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 963647962007172
+				},
+				{
+					"name": "ballUid",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 317106915790908
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 836922949640537,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "pad",
+							"sid": 461521093191468,
+							"parameters": {
+								"unique-id": "padUid"
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "ball",
+							"sid": 279452238726742,
+							"parameters": {
+								"unique-id": "ballUid"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 284638872271832,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 747559458745973,
+									"parameters": {
+										"first-value": "LayoutWidth / 2 - pad.Width / 2",
+										"comparison": 3,
+										"second-value": "pad.X"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "pad",
+									"sid": 454527013461316,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "left"
+									}
+								}
+							],
+							"sid": 311453813830400
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 347634549244055,
+									"parameters": {
+										"first-value": "LayoutWidth / 2 + pad.Width / 2",
+										"comparison": 5,
+										"second-value": "pad.X"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "pad",
+									"sid": 106524725427387,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "right"
+									}
+								}
+							],
+							"sid": 671551227781009
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "getVectorX",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "speed",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 784186432766235
+				},
+				{
+					"name": "angleOfMotion",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 751781984000817
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "script",
+					"script": "runtime.setReturnValue(Utils.getVectorX(localVars.speed, localVars.angleOfMotion));"
+				}
+			],
+			"sid": 906461518128934
+		},
+		{
+			"functionName": "getVectorY",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "speed",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 439097355142872
+				},
+				{
+					"name": "angleOfMotion",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 535227167448309
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "script",
+					"script": "runtime.setReturnValue(Utils.getVectorY(localVars.speed, localVars.angleOfMotion));"
+				}
+			],
+			"sid": 834811704995742
 		}
 	],
 	"sid": 538112269311819
