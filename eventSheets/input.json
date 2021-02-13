@@ -7,8 +7,8 @@
 		},
 		{
 			"functionName": "evaluateInputWasd",
-			"functionDescription": "",
-			"functionCategory": "",
+			"functionDescription": "Evaluates WASD input.",
+			"functionCategory": "input",
 			"functionReturnType": "none",
 			"functionIsAsync": false,
 			"functionParameters": [
@@ -97,8 +97,8 @@
 		},
 		{
 			"functionName": "evaluateInputArrows",
-			"functionDescription": "",
-			"functionCategory": "",
+			"functionDescription": "Evaluates arrow input.",
+			"functionCategory": "input",
 			"functionReturnType": "none",
 			"functionIsAsync": false,
 			"functionParameters": [
@@ -187,8 +187,8 @@
 		},
 		{
 			"functionName": "evaluateInputGamepad",
-			"functionDescription": "",
-			"functionCategory": "",
+			"functionDescription": "Evaluates gamepad input.",
+			"functionCategory": "input",
 			"functionReturnType": "none",
 			"functionIsAsync": false,
 			"functionParameters": [
@@ -210,12 +210,84 @@
 			"eventType": "function-block",
 			"conditions": [],
 			"actions": [],
-			"sid": 925431798013971
+			"sid": 925431798013971,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 847930744037963,
+							"parameters": {
+								"gamepad": "gamepad_index",
+								"button": "d-pad-left"
+							}
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 665074387290303,
+							"parameters": {
+								"object": "pad",
+								"expression": "pad.player = player"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "pad",
+							"sid": 522370905537966,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 714585375117358
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 323856991337312,
+							"parameters": {
+								"gamepad": "gamepad_index",
+								"button": "d-pad-right"
+							}
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 316065388837806,
+							"parameters": {
+								"object": "pad",
+								"expression": "pad.player = player"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "pad",
+							"sid": 525572565817801,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 307280099871168
+				}
+			]
 		},
 		{
-			"functionName": "evaluateInputTouch0",
-			"functionDescription": "",
-			"functionCategory": "",
+			"functionName": "evaluateInputTouch",
+			"functionDescription": "Evaluates touch input.",
+			"functionCategory": "input",
 			"functionReturnType": "none",
 			"functionIsAsync": false,
 			"functionParameters": [
@@ -225,32 +297,93 @@
 					"initialValue": "0",
 					"comment": "",
 					"sid": 562878859716155
-				}
-			],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 108398176104505
-		},
-		{
-			"functionName": "evaluateInputTouch1",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionIsAsync": false,
-			"functionParameters": [
+				},
 				{
-					"name": "player",
+					"name": "action",
 					"type": "number",
 					"initialValue": "0",
 					"comment": "",
-					"sid": 964525817577976
+					"sid": 519081245379426
 				}
 			],
 			"eventType": "function-block",
 			"conditions": [],
 			"actions": [],
-			"sid": 813735132937512
+			"sid": 108398176104505,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 806244278649031,
+							"parameters": {
+								"first-value": "action",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 980429929845341,
+							"parameters": {
+								"object": "pad",
+								"expression": "pad.player = player"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "pad",
+							"sid": 964644235888269,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 472532358992998
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 929365750053816,
+							"parameters": {
+								"first-value": "action",
+								"comparison": 0,
+								"second-value": "1"
+							}
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 265926491645324,
+							"parameters": {
+								"object": "pad",
+								"expression": "pad.player = player"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "pad",
+							"sid": 457484484465129,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 256119518691623
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -370,110 +503,6 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 708231662460196,
-							"parameters": {
-								"first-value": "input_0_type",
-								"comparison": 0,
-								"second-value": "\"TOUCH_0\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "evaluateInputTouch0",
-							"sid": 822218611295690,
-							"parameters": [
-								"0"
-							]
-						}
-					],
-					"sid": 303347051917472,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 532421848144196,
-							"parameters": {
-								"first-value": "input_1_type",
-								"comparison": 0,
-								"second-value": "\"TOUCH_0\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "evaluateInputTouch0",
-							"sid": 149784035247831,
-							"parameters": [
-								"1"
-							]
-						}
-					],
-					"sid": 848744836375873,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 802621477722711,
-							"parameters": {
-								"first-value": "input_0_type",
-								"comparison": 0,
-								"second-value": "\"TOUCH_1\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "evaluateInputTouch1",
-							"sid": 277106852997559,
-							"parameters": [
-								"0"
-							]
-						}
-					],
-					"sid": 203023558782902,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 699138428734663,
-							"parameters": {
-								"first-value": "input_1_type",
-								"comparison": 0,
-								"second-value": "\"TOUCH_1\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "evaluateInputTouch1",
-							"sid": 712953830636870,
-							"parameters": [
-								"1"
-							]
-						}
-					],
-					"sid": 980301104558846,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
 							"sid": 920457947650988,
 							"parameters": {
 								"first-value": "RegexMatchCount(input_0_type, \"GAMEPAD\", \"i\")",
@@ -492,8 +521,7 @@
 							]
 						}
 					],
-					"sid": 714044030541057,
-					"disabled": true
+					"sid": 714044030541057
 				},
 				{
 					"eventType": "block",
@@ -512,15 +540,103 @@
 					"actions": [
 						{
 							"callFunction": "evaluateInputGamepad",
-							"sid": 913740207556991,
+							"sid": 751487689060998,
 							"parameters": [
-								"0",
+								"1",
 								"int(mid(input_1_type, 8, 1))"
 							]
 						}
 					],
-					"sid": 607702650932783,
-					"disabled": true
+					"sid": 607702650932783
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 657344547797570,
+					"parameters": {
+						"object": "input_touch_detector"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 748364191611437,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "input_touch_detector",
+							"sid": 897932989005469,
+							"parameters": {
+								"instance-variable": "index",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 358577393927369,
+							"parameters": {
+								"first-value": "RegexMatchCount(input_0_type, \"TOUCH\", \"i\")",
+								"comparison": 4,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "evaluateInputTouch",
+							"sid": 575328628595676,
+							"parameters": [
+								"input_touch_detector.index",
+								"input_touch_detector.action"
+							]
+						}
+					],
+					"sid": 924411534345539
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "input_touch_detector",
+							"sid": 119693988999334,
+							"parameters": {
+								"instance-variable": "index",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 357042667112800,
+							"parameters": {
+								"first-value": "RegexMatchCount(input_1_type, \"TOUCH\", \"i\")",
+								"comparison": 4,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "evaluateInputTouch",
+							"sid": 843001621837602,
+							"parameters": [
+								"input_touch_detector.index",
+								"input_touch_detector.action"
+							]
+						}
+					],
+					"sid": 507027319269061
 				}
 			]
 		}

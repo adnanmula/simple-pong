@@ -114,11 +114,40 @@
 						"angle": 0,
 						"zElevation": 0
 					}
-				},
+				}
+			],
+			"sid": 475084297220883,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		},
+		{
+			"name": "touch_input_detector",
+			"overriden": 0,
+			"instances": [
 				{
-					"type": "input_touch_detector",
+					"type": "input_touch_setter",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -131,9 +160,9 @@
 					"behaviors": {},
 					"world": {
 						"x": 180,
-						"y": 158.92991003757334,
-						"width": 305.4685105395751,
-						"height": 236.60269107301417,
+						"y": 160,
+						"width": 360,
+						"height": 320,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -147,9 +176,9 @@
 					}
 				},
 				{
-					"type": "input_touch_detector",
+					"type": "input_touch_setter",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -161,10 +190,10 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 180.6830134553652,
-						"y": 490.5244755083646,
-						"width": 305.4685105395751,
-						"height": 236.60269107301417,
+						"x": 180,
+						"y": 480,
+						"width": 360,
+						"height": 320,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -178,7 +207,7 @@
 					}
 				}
 			],
-			"sid": 475084297220883,
+			"sid": 518107645987051,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"color": [

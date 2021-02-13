@@ -96,6 +96,7 @@
 			{
 				"items": [
 					"menu_text",
+					"input_touch_setter",
 					"input_touch_detector"
 				],
 				"subfolders": [],

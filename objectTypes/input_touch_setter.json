@@ -1,20 +1,14 @@
 {
-	"name": "input_touch_detector",
+	"name": "input_touch_setter",
 	"plugin-id": "Sprite",
-	"sid": 546199366607550,
+	"sid": 515768825073635,
 	"isGlobal": false,
 	"instanceVariables": [
 		{
-			"name": "index",
+			"name": "player",
 			"type": "number",
 			"desc": "",
-			"sid": 299135597698121
-		},
-		{
-			"name": "action",
-			"type": "number",
-			"desc": "",
-			"sid": 531537794579920
+			"sid": 494261179874524
 		}
 	],
 	"behaviorTypes": [],
@@ -31,12 +25,12 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7859421,
+						"imageSpriteId": 1456593,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 146616298568407,
+				"sid": 357242056489399,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

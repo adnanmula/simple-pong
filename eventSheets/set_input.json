@@ -96,15 +96,15 @@
 							"objectClass": "System",
 							"sid": 721554123189257,
 							"parameters": {
-								"object": "input_touch_detector",
-								"expression": "input_touch_detector.player = 1"
+								"object": "input_touch_setter",
+								"expression": "input_touch_setter.player = 1"
 							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-visible",
-							"objectClass": "input_touch_detector",
+							"objectClass": "input_touch_setter",
 							"sid": 257760257507126,
 							"parameters": {
 								"visibility": "invisible"
@@ -445,9 +445,113 @@
 			]
 		},
 		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 417332130347429,
+					"parameters": {
+						"object": "input_touch_setter"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "input_touch_setter",
+					"sid": 244804444130717,
+					"parameters": {
+						"instance-variable": "player",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 521806458472453,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 354566890974679,
+							"parameters": {
+								"first-value": "input_0_type",
+								"comparison": 0,
+								"second-value": "\"\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "inputSet",
+							"sid": 370194469025911,
+							"parameters": [
+								"\"TOUCH_0\""
+							]
+						}
+					],
+					"sid": 541602560764440
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 283296987870375,
+					"parameters": {
+						"object": "input_touch_setter"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "input_touch_setter",
+					"sid": 512396711252453,
+					"parameters": {
+						"instance-variable": "player",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 654973451997057,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 931096125855684,
+							"parameters": {
+								"first-value": "input_1_type",
+								"comparison": 0,
+								"second-value": "\"\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "inputSet",
+							"sid": 656858095009418,
+							"parameters": [
+								"\"TOUCH_1\""
+							]
+						}
+					],
+					"sid": 787822233905814
+				}
+			]
+		},
+		{
 			"functionName": "inputSet",
-			"functionDescription": "",
-			"functionCategory": "",
+			"functionDescription": "Assings input type to non assigned players.",
+			"functionCategory": "input",
 			"functionReturnType": "none",
 			"functionIsAsync": false,
 			"functionParameters": [

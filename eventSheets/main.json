@@ -70,6 +70,120 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 884735347566049
+				}
+			],
+			"actions": [],
+			"sid": 862691622781717,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 786560672408658,
+							"parameters": {
+								"object": "menu_text",
+								"expression": "menu_text.type = \"scoreboard\" & menu_text.index = 0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "menu_text",
+							"sid": 454333002788158,
+							"parameters": {
+								"text": "score_team_0"
+							}
+						}
+					],
+					"sid": 512350829804735
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 898589960146679,
+							"parameters": {
+								"object": "menu_text",
+								"expression": "menu_text.type = \"scoreboard\" & menu_text.index = 1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "menu_text",
+							"sid": 123845193055017,
+							"parameters": {
+								"text": "score_team_1"
+							}
+						}
+					],
+					"sid": 857103122240702
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 298173880228579,
+					"parameters": {
+						"first-value": "score_team_0",
+						"comparison": 5,
+						"second-value": "10"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "matchEndTrigger",
+					"sid": 832605890908497,
+					"parameters": [
+						"0"
+					]
+				}
+			],
+			"sid": 872866147326455
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 762826025186918,
+					"parameters": {
+						"first-value": "score_team_1",
+						"comparison": 5,
+						"second-value": "10"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "matchEndTrigger",
+					"sid": 891724774917424,
+					"parameters": [
+						"1"
+					]
+				}
+			],
+			"sid": 273775774078854
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "is-outside-layout",
 					"objectClass": "ball",
 					"sid": 204761840947937
@@ -191,101 +305,29 @@
 			],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [],
-			"sid": 998481011865410,
-			"children": [
+			"actions": [
 				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 886681290308958,
-							"parameters": {
-								"object-to-create": "ball",
-								"layer": "\"main\"",
-								"x": "LayoutWidth / 2",
-								"y": "LayoutHeight / 2",
-								"create-hierarchy": false
-							}
-						},
-						{
-							"id": "set-angle",
-							"objectClass": "ball",
-							"sid": 749115113243523,
-							"parameters": {
-								"angle": "team = 0 ? 270 : 90"
-							}
-						}
-					],
-					"sid": 294046610920701
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
+					"id": "create-object",
 					"objectClass": "System",
-					"sid": 905603500274028
-				}
-			],
-			"actions": [],
-			"sid": 768209729815737,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-evaluate",
-							"objectClass": "System",
-							"sid": 552173673035483,
-							"parameters": {
-								"object": "menu_text",
-								"expression": "menu_text.type = \"scoreboard\" & menu_text.index = 0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "menu_text",
-							"sid": 170298511724780,
-							"parameters": {
-								"text": "score_team_0"
-							}
-						}
-					],
-					"sid": 663620724045760
+					"sid": 463392886497403,
+					"parameters": {
+						"object-to-create": "ball",
+						"layer": "\"main\"",
+						"x": "LayoutWidth / 2",
+						"y": "LayoutHeight / 2",
+						"create-hierarchy": false
+					}
 				},
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-evaluate",
-							"objectClass": "System",
-							"sid": 695579641631651,
-							"parameters": {
-								"object": "menu_text",
-								"expression": "menu_text.type = \"scoreboard\" & menu_text.index = 1"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "menu_text",
-							"sid": 835466950493983,
-							"parameters": {
-								"text": "score_team_1"
-							}
-						}
-					],
-					"sid": 999631181675162
+					"id": "set-angle",
+					"objectClass": "ball",
+					"sid": 464105439359836,
+					"parameters": {
+						"angle": "team = 0 ? 90 : 270"
+					}
 				}
-			]
+			],
+			"sid": 998481011865410
 		},
 		{
 			"eventType": "block",
@@ -297,12 +339,6 @@
 					"parameters": {
 						"object": "pad"
 					}
-				},
-				{
-					"id": "is-moving",
-					"objectClass": "pad",
-					"sid": 818604906356608,
-					"behaviorType": "8Direction"
 				}
 			],
 			"actions": [],
@@ -359,6 +395,103 @@
 						}
 					],
 					"sid": 247471147727535
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 661569446897206,
+							"parameters": {
+								"first-value": "pad.8Direction.VectorX",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "rotate-counter-clockwise",
+							"objectClass": "ball",
+							"sid": 362600149375741,
+							"parameters": {
+								"degrees": "choose(0,1) = 0 ? BALL_ANGLE_MODIFIER / 5 :  - BALL_ANGLE_MODIFIER / 5"
+							}
+						}
+					],
+					"sid": 667285581412068
+				}
+			]
+		},
+		{
+			"functionName": "matchEndTrigger",
+			"functionDescription": "Ends a match.",
+			"functionCategory": "match",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "winner",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 424776297410199
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 850757960092056,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 318898133523447,
+							"parameters": {
+								"object": "menu_text",
+								"expression": "menu_text.type = \"winner\" & menu_text.index = 0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "menu_text",
+							"sid": 843792773297643,
+							"parameters": {
+								"text": "\"Player \" & winner + 1 & \" won!\""
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "menu_text",
+							"sid": 181207642051785,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 577128891008349,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 125519273739414,
+							"parameters": {
+								"layout": "menu"
+							}
+						}
+					],
+					"sid": 805903797885582
 				}
 			]
 		}
