@@ -64,7 +64,83 @@
 					}
 				}
 			],
-			"sid": 118343111229312
+			"sid": 118343111229312,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 517563994768669,
+							"parameters": {
+								"object": "pad",
+								"expression": "pad.player = 0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-default-color",
+							"objectClass": "pad",
+							"sid": 671927531431380,
+							"parameters": {
+								"color": "rgbEx255(int(random(255)),int(random(255)),int(random(255)))"
+							}
+						}
+					],
+					"sid": 857136853109365
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 875985006771972,
+							"parameters": {
+								"object": "pad",
+								"expression": "pad.player = 1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-default-color",
+							"objectClass": "pad",
+							"sid": 838920850700822,
+							"parameters": {
+								"color": "rgbEx255(int(random(255)),int(random(255)),int(random(255)))"
+							}
+						}
+					],
+					"sid": 991105081659565
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-random-instance",
+							"objectClass": "System",
+							"sid": 305842594695838,
+							"parameters": {
+								"object": "ball"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-default-color",
+							"objectClass": "ball",
+							"sid": 410113501612774,
+							"parameters": {
+								"color": "rgbEx255(int(random(255)),int(random(255)),int(random(255)))"
+							}
+						}
+					],
+					"sid": 290325697990594
+				}
+			]
 		},
 		{
 			"eventType": "block",
