@@ -13,7 +13,7 @@
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 174100485704931
+			"sid": 427507546872631
 		},
 		{
 			"eventType": "variable",
@@ -400,6 +400,14 @@
 					"sid": 464105439359836,
 					"parameters": {
 						"angle": "team = 0 ? 90 : 270"
+					}
+				},
+				{
+					"id": "set-default-color",
+					"objectClass": "ball",
+					"sid": 164468462641014,
+					"parameters": {
+						"color": "rgbEx255(int(random(255)),int(random(255)),int(random(255)))"
 					}
 				}
 			],

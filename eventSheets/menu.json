@@ -36,6 +36,14 @@
 					"parameters": {
 						"color": "rgbEx255(int(random(255)),int(random(255)),int(random(255)))"
 					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "ball",
+					"sid": 248959432222906,
+					"parameters": {
+						"angle": "random(0,360)"
+					}
 				}
 			],
 			"sid": 751337939845106
