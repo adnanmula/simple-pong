@@ -18,31 +18,25 @@
 					"id": "on-start-of-layout",
 					"objectClass": "System",
 					"sid": 393687723152933
-				},
-				{
-					"id": "pick-random-instance",
-					"objectClass": "System",
-					"sid": 682121458246532,
-					"parameters": {
-						"object": "ball"
-					}
 				}
 			],
 			"actions": [
 				{
-					"id": "set-default-color",
-					"objectClass": "ball",
-					"sid": 244967419923917,
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 186291389863481,
 					"parameters": {
-						"color": "rgbEx255(int(random(255)),int(random(255)),int(random(255)))"
+						"variable": "input_0_type",
+						"value": "\"\""
 					}
 				},
 				{
-					"id": "set-angle",
-					"objectClass": "ball",
-					"sid": 248959432222906,
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 272250666126617,
 					"parameters": {
-						"angle": "random(0,360)"
+						"variable": "input_1_type",
+						"value": "\"\""
 					}
 				}
 			],

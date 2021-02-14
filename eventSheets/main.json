@@ -36,6 +36,10 @@
 			"sid": 816086857656353
 		},
 		{
+			"eventType": "comment",
+			"text": "Move to js"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -64,83 +68,11 @@
 					}
 				}
 			],
-			"sid": 118343111229312,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-evaluate",
-							"objectClass": "System",
-							"sid": 517563994768669,
-							"parameters": {
-								"object": "pad",
-								"expression": "pad.player = 0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-default-color",
-							"objectClass": "pad",
-							"sid": 671927531431380,
-							"parameters": {
-								"color": "rgbEx255(int(random(255)),int(random(255)),int(random(255)))"
-							}
-						}
-					],
-					"sid": 857136853109365
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-evaluate",
-							"objectClass": "System",
-							"sid": 875985006771972,
-							"parameters": {
-								"object": "pad",
-								"expression": "pad.player = 1"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-default-color",
-							"objectClass": "pad",
-							"sid": 838920850700822,
-							"parameters": {
-								"color": "rgbEx255(int(random(255)),int(random(255)),int(random(255)))"
-							}
-						}
-					],
-					"sid": 991105081659565
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-random-instance",
-							"objectClass": "System",
-							"sid": 305842594695838,
-							"parameters": {
-								"object": "ball"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-default-color",
-							"objectClass": "ball",
-							"sid": 410113501612774,
-							"parameters": {
-								"color": "rgbEx255(int(random(255)),int(random(255)),int(random(255)))"
-							}
-						}
-					],
-					"sid": 290325697990594
-				}
-			]
+			"sid": 118343111229312
+		},
+		{
+			"eventType": "comment",
+			"text": "Move to js"
 		},
 		{
 			"eventType": "block",
@@ -207,6 +139,10 @@
 			]
 		},
 		{
+			"eventType": "comment",
+			"text": "Move to js"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -255,6 +191,10 @@
 				}
 			],
 			"sid": 273775774078854
+		},
+		{
+			"eventType": "comment",
+			"text": "Move to js"
 		},
 		{
 			"eventType": "block",
@@ -365,6 +305,10 @@
 			]
 		},
 		{
+			"eventType": "comment",
+			"text": "Move to js"
+		},
+		{
 			"functionName": "matchRespawnBall",
 			"functionDescription": "",
 			"functionCategory": "match",
@@ -383,32 +327,8 @@
 			"conditions": [],
 			"actions": [
 				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 463392886497403,
-					"parameters": {
-						"object-to-create": "ball",
-						"layer": "\"main\"",
-						"x": "LayoutWidth / 2",
-						"y": "LayoutHeight / 2",
-						"create-hierarchy": false
-					}
-				},
-				{
-					"id": "set-angle",
-					"objectClass": "ball",
-					"sid": 464105439359836,
-					"parameters": {
-						"angle": "team = 0 ? 90 : 270"
-					}
-				},
-				{
-					"id": "set-default-color",
-					"objectClass": "ball",
-					"sid": 164468462641014,
-					"parameters": {
-						"color": "rgbEx255(int(random(255)),int(random(255)),int(random(255)))"
-					}
+					"type": "script",
+					"script": "Ball.create(runtime, runtime.layout.width/2, runtime.layout.height/2, localVars.team ? 270 : 90);"
 				}
 			],
 			"sid": 998481011865410
@@ -507,6 +427,10 @@
 					"sid": 667285581412068
 				}
 			]
+		},
+		{
+			"eventType": "comment",
+			"text": "Move to js"
 		},
 		{
 			"functionName": "matchEndTrigger",

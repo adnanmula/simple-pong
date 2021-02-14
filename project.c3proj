@@ -155,9 +155,48 @@
 					"script-info": {
 						"purpose": "imports-for-events"
 					}
+				},
+				{
+					"name": "main.js",
+					"type": "application/javascript",
+					"sid": 488245507374818,
+					"script-info": {
+						"purpose": "main"
+					}
+				},
+				{
+					"name": "input.js",
+					"type": "application/javascript",
+					"sid": 425309592557192,
+					"script-info": {
+						"purpose": "none"
+					}
 				}
 			],
-			"subfolders": []
+			"subfolders": [
+				{
+					"items": [
+						{
+							"name": "Ball.js",
+							"type": "application/javascript",
+							"sid": 526494486547307,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Pad.js",
+							"type": "application/javascript",
+							"sid": 448493742125336,
+							"script-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "prop"
+				}
+			]
 		},
 		"sound": {
 			"items": [],
