@@ -95,7 +95,7 @@
 			},
 			{
 				"items": [
-					"menu_text",
+					"text",
 					"input_touch_setter",
 					"input_touch_detector"
 				],
@@ -171,6 +171,22 @@
 					"script-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "TickManager.js",
+					"type": "application/javascript",
+					"sid": 659235423874861,
+					"script-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "BeforeLayoutManager.js",
+					"type": "application/javascript",
+					"sid": 139915896309681,
+					"script-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": [
@@ -188,6 +204,14 @@
 							"name": "Pad.js",
 							"type": "application/javascript",
 							"sid": 448493742125336,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Text.js",
+							"type": "application/javascript",
+							"sid": 442533668695675,
 							"script-info": {
 								"purpose": "none"
 							}

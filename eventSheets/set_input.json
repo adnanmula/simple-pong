@@ -50,44 +50,9 @@
 					}
 				}
 			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 770055308298484,
-					"parameters": {
-						"variable": "input_1_type",
-						"value": "\"BOT\""
-					}
-				}
-			],
+			"actions": [],
 			"sid": 993771718125053,
 			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-evaluate",
-							"objectClass": "System",
-							"sid": 853457480035147,
-							"parameters": {
-								"object": "menu_text",
-								"expression": "menu_text.type = \"input_label\" & menu_text.index = 1"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "menu_text",
-							"sid": 915916750818520,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						}
-					],
-					"sid": 552977009718270
-				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -622,15 +587,15 @@
 									"objectClass": "System",
 									"sid": 675471095355040,
 									"parameters": {
-										"object": "menu_text",
-										"expression": "menu_text.type = \"input_label\" & menu_text.index = 0"
+										"object": "text",
+										"expression": "text.type = \"input_label\" & text.index = 0"
 									}
 								}
 							],
 							"actions": [
 								{
 									"id": "set-text",
-									"objectClass": "menu_text",
+									"objectClass": "text",
 									"sid": 812428015160486,
 									"parameters": {
 										"text": "type & \" selected!\""
@@ -684,15 +649,15 @@
 									"objectClass": "System",
 									"sid": 214101711526444,
 									"parameters": {
-										"object": "menu_text",
-										"expression": "menu_text.type = \"input_label\" & menu_text.index = 1"
+										"object": "text",
+										"expression": "text.type = \"input_label\" & text.index = 1"
 									}
 								}
 							],
 							"actions": [
 								{
 									"id": "set-text",
-									"objectClass": "menu_text",
+									"objectClass": "text",
 									"sid": 751942016256183,
 									"parameters": {
 										"text": "type & \" selected!\""
@@ -704,50 +669,6 @@
 					]
 				}
 			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-two-values",
-					"objectClass": "System",
-					"sid": 356096501267658,
-					"parameters": {
-						"first-value": "input_0_type",
-						"comparison": 1,
-						"second-value": "\"\""
-					}
-				},
-				{
-					"id": "compare-two-values",
-					"objectClass": "System",
-					"sid": 525565528761706,
-					"parameters": {
-						"first-value": "input_1_type",
-						"comparison": 1,
-						"second-value": "\"\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 908884675172821,
-					"parameters": {
-						"seconds": "1.0"
-					}
-				},
-				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 189459073298068,
-					"parameters": {
-						"layout": "main"
-					}
-				}
-			],
-			"sid": 890536840755934
 		}
 	],
 	"sid": 662523354043252

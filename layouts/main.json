@@ -34,7 +34,7 @@
 			"overriden": 0,
 			"instances": [
 				{
-					"type": "menu_text",
+					"type": "text",
 					"properties": {
 						"text": "0",
 						"enable-bbcode": false,
@@ -75,7 +75,7 @@
 					}
 				},
 				{
-					"type": "menu_text",
+					"type": "text",
 					"properties": {
 						"text": "0",
 						"enable-bbcode": false,
@@ -116,7 +116,7 @@
 					}
 				},
 				{
-					"type": "menu_text",
+					"type": "text",
 					"properties": {
 						"text": " Player x won!",
 						"enable-bbcode": false,

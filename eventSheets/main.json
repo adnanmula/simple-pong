@@ -43,109 +43,6 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 718442640690014
-				}
-			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 617367548676038,
-					"parameters": {
-						"variable": "score_team_0",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 973509446719324,
-					"parameters": {
-						"variable": "score_team_1",
-						"value": "0"
-					}
-				}
-			],
-			"sid": 118343111229312
-		},
-		{
-			"eventType": "comment",
-			"text": "Move to js"
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 884735347566049
-				}
-			],
-			"actions": [],
-			"sid": 862691622781717,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-evaluate",
-							"objectClass": "System",
-							"sid": 786560672408658,
-							"parameters": {
-								"object": "menu_text",
-								"expression": "menu_text.type = \"scoreboard\" & menu_text.index = 0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "menu_text",
-							"sid": 454333002788158,
-							"parameters": {
-								"text": "score_team_0"
-							}
-						}
-					],
-					"sid": 512350829804735
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-evaluate",
-							"objectClass": "System",
-							"sid": 898589960146679,
-							"parameters": {
-								"object": "menu_text",
-								"expression": "menu_text.type = \"scoreboard\" & menu_text.index = 1"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "menu_text",
-							"sid": 123845193055017,
-							"parameters": {
-								"text": "score_team_1"
-							}
-						}
-					],
-					"sid": 857103122240702
-				}
-			]
-		},
-		{
-			"eventType": "comment",
-			"text": "Move to js"
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
 					"id": "compare-two-values",
 					"objectClass": "System",
 					"sid": 298173880228579,
@@ -460,15 +357,15 @@
 							"objectClass": "System",
 							"sid": 318898133523447,
 							"parameters": {
-								"object": "menu_text",
-								"expression": "menu_text.type = \"winner\" & menu_text.index = 0"
+								"object": "text",
+								"expression": "text.type = \"winner\" & text.index = 0"
 							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-text",
-							"objectClass": "menu_text",
+							"objectClass": "text",
 							"sid": 827979247780998,
 							"parameters": {
 								"text": "\"Player \" & winner + 1 & \" wins!\""
@@ -476,7 +373,7 @@
 						},
 						{
 							"id": "set-visible",
-							"objectClass": "menu_text",
+							"objectClass": "text",
 							"sid": 181207642051785,
 							"parameters": {
 								"visibility": "visible"

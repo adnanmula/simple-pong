@@ -1,4 +1,4 @@
-export default class PadInstance extends ISpriteInstance
+export default class Pad extends ISpriteInstance
 {
 	constructor()
 	{
@@ -14,13 +14,23 @@ export default class PadInstance extends ISpriteInstance
 	
 	static find(runtime, index)
 	{
-		for (const pad of runtime.objects.pad.instances())
+		for (const instance of runtime.objects.pad.instances())
 		{
-			if (pad.instVars.player == index) {
-				return pad;
+			if (instance.instVars.player == index) {
+				return instance;
 			}
 		}
 
 		return null;
+	}
+	
+	simulateLeft()
+	{
+		this.behaviors['8Direction'].simulateControl('left');
+	}
+	
+	simulateRight()
+	{
+		this.behaviors['8Direction'].simulateControl('right');
 	}
 }

@@ -34,7 +34,7 @@
 			"overriden": 0,
 			"instances": [
 				{
-					"type": "menu_text",
+					"type": "text",
 					"properties": {
 						"text": "Player 1, select input",
 						"enable-bbcode": false,
@@ -75,7 +75,7 @@
 					}
 				},
 				{
-					"type": "menu_text",
+					"type": "text",
 					"properties": {
 						"text": "Player 2, select input",
 						"enable-bbcode": false,
@@ -116,7 +116,7 @@
 					}
 				},
 				{
-					"type": "menu_text",
+					"type": "text",
 					"properties": {
 						"text": "Keyboard, gamepad and touchscreen available.",
 						"enable-bbcode": false,
@@ -157,7 +157,7 @@
 					}
 				},
 				{
-					"type": "menu_text",
+					"type": "text",
 					"properties": {
 						"text": "Keyboard, gamepad and touchscreen available.",
 						"enable-bbcode": false,
@@ -177,7 +177,7 @@
 					"uid": 33,
 					"instanceVariables": {
 						"type": "label",
-						"index": 0
+						"index": 1
 					},
 					"behaviors": {},
 					"world": {

@@ -1,4 +1,4 @@
-export default class BallInstance extends ISpriteInstance
+export default class Ball extends ISpriteInstance
 {
 	constructor()
 	{

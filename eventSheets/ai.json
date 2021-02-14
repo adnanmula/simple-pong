@@ -19,11 +19,11 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 881843692756429,
+							"sid": 886211500208522,
 							"parameters": {
 								"first-value": "input_0_type",
 								"comparison": 0,
-								"second-value": "\"BOT\""
+								"second-value": "\"Bot\""
 							}
 						}
 					],
@@ -44,11 +44,11 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 872741567957448,
+							"sid": 982053784475521,
 							"parameters": {
 								"first-value": "input_1_type",
 								"comparison": 0,
-								"second-value": "\"BOT\""
+								"second-value": "\"Bot\""
 							}
 						}
 					],
