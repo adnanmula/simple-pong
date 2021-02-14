@@ -187,6 +187,14 @@
 					"script-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "MatchManager.js",
+					"type": "application/javascript",
+					"sid": 189267997644588,
+					"script-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": [

@@ -25,8 +25,5 @@ export default class TickManager
 	static main(runtime)
 	{
 		Input.evaluate(runtime);
-		
-		Text.find(runtime, 'scoreboard', 0).update(runtime.globalVars.score_team_0);
-		Text.find(runtime, 'scoreboard', 1).update(runtime.globalVars.score_team_1);
 	}
 }

@@ -111,43 +111,23 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 189852107641789,
+							"sid": 450205299586730,
 							"parameters": {
 								"first-value": "ball.Y",
 								"comparison": 4,
 								"second-value": "LayoutHeight / 2"
 							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 529995671755980
 						}
 					],
 					"actions": [
 						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 836450717319672,
-							"parameters": {
-								"variable": "score_team_0",
-								"value": "1"
-							}
-						},
-						{
-							"id": "destroy",
-							"objectClass": "ball",
-							"sid": 242774241967144
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 524965328973902,
-							"parameters": {
-								"seconds": "1.0"
-							}
-						},
-						{
-							"callFunction": "matchRespawnBall",
-							"sid": 725595260754460,
-							"parameters": [
-								"0"
-							]
+							"type": "script",
+							"script": "MatchManager.scoreGoal(runtime, 0);\nMatchManager.respawnBall(runtime, 0);"
 						}
 					],
 					"sid": 130122759365814
@@ -158,43 +138,23 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 315550097418818,
+							"sid": 606218814627730,
 							"parameters": {
 								"first-value": "ball.Y",
 								"comparison": 2,
 								"second-value": "LayoutHeight / 2"
 							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 299754947542415
 						}
 					],
 					"actions": [
 						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 877399351870693,
-							"parameters": {
-								"variable": "score_team_1",
-								"value": "1"
-							}
-						},
-						{
-							"id": "destroy",
-							"objectClass": "ball",
-							"sid": 168727534909686
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 675308281104378,
-							"parameters": {
-								"seconds": "1.0"
-							}
-						},
-						{
-							"callFunction": "matchRespawnBall",
-							"sid": 491598231566983,
-							"parameters": [
-								"1"
-							]
+							"type": "script",
+							"script": "MatchManager.scoreGoal(runtime, 1);\nMatchManager.respawnBall(runtime, 1);"
 						}
 					],
 					"sid": 328345710889960
@@ -204,31 +164,6 @@
 		{
 			"eventType": "comment",
 			"text": "Move to js"
-		},
-		{
-			"functionName": "matchRespawnBall",
-			"functionDescription": "",
-			"functionCategory": "match",
-			"functionReturnType": "none",
-			"functionIsAsync": false,
-			"functionParameters": [
-				{
-					"name": "team",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"sid": 290140892187384
-				}
-			],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"type": "script",
-					"script": "Ball.create(runtime, runtime.layout.width/2, runtime.layout.height/2, localVars.team ? 270 : 90);"
-				}
-			],
-			"sid": 998481011865410
 		},
 		{
 			"eventType": "block",
