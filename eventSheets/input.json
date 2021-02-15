@@ -56,13 +56,8 @@
 					],
 					"actions": [
 						{
-							"id": "simulate-control",
-							"objectClass": "pad",
-							"sid": 522370905537966,
-							"behaviorType": "8Direction",
-							"parameters": {
-								"control": "left"
-							}
+							"type": "script",
+							"script": "let pad = Pad.find(runtime, localVars.player);\npad.simulateLeft();"
 						}
 					],
 					"sid": 714585375117358
@@ -91,13 +86,8 @@
 					],
 					"actions": [
 						{
-							"id": "simulate-control",
-							"objectClass": "pad",
-							"sid": 525572565817801,
-							"behaviorType": "8Direction",
-							"parameters": {
-								"control": "right"
-							}
+							"type": "script",
+							"script": "let pad = Pad.find(runtime, localVars.player);\npad.simulateRight();"
 						}
 					],
 					"sid": 307280099871168
@@ -156,13 +146,8 @@
 					],
 					"actions": [
 						{
-							"id": "simulate-control",
-							"objectClass": "pad",
-							"sid": 964644235888269,
-							"behaviorType": "8Direction",
-							"parameters": {
-								"control": "left"
-							}
+							"type": "script",
+							"script": "let pad = Pad.find(runtime, localVars.player);\npad.simulateLeft();"
 						}
 					],
 					"sid": 472532358992998
@@ -192,13 +177,8 @@
 					],
 					"actions": [
 						{
-							"id": "simulate-control",
-							"objectClass": "pad",
-							"sid": 457484484465129,
-							"behaviorType": "8Direction",
-							"parameters": {
-								"control": "right"
-							}
+							"type": "script",
+							"script": "let pad = Pad.find(runtime, localVars.player);\npad.simulateRight();"
 						}
 					],
 					"sid": 256119518691623

@@ -1,4 +1,5 @@
 import Text from "./Text.js";
+import InputManager from "./InputManager.js";
 
 export default class BeforeLayoutManager
 {
@@ -17,8 +18,8 @@ export default class BeforeLayoutManager
 	
 		if (runtime.globalVars.gamemode == 1)
 		{	
-			runtime.globalVars.input_1_type = Input.TypeBot;
-			
+			runtime.globalVars.input_1_type = InputManager.TypeBot;
+					
 			Text.find(runtime, 'input_label', 1).isVisible = false;
 			Text.find(runtime, 'label', 1).isVisible = false;
 		}

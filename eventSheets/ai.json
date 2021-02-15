@@ -86,26 +86,12 @@
 			"sid": 350221551669785,
 			"children": [
 				{
+					"eventType": "script",
+					"script": "let pad = Pad.find(runtime, localVars.player);\nlet ball = runtime.objects.ball.getFirstInstance();\n\n\nif (ball !== null && ball.y < ball.layout.height / 2 && Utils.getVectorY(ball.behaviors.Bullet.speed, ball.behaviors.Bullet.angleOfMotion) < 0) {\n\truntime.callFunction('aiFollowBall', pad.instVars.player, ball.uid);\n}\n\nif (ball !== null && ball.y > ball.layout.height / 2) {\n\truntime.callFunction('aiCenterPosition', pad.instVars.player, ball.uid);\n}\n\nif (ball !== null && Utils.getVectorY(ball.behaviors.Bullet.speed, ball.behaviors.Bullet.angleOfMotion) > 0) {\n\truntime.callFunction('aiCenterPosition', pad.instVars.player, ball.uid);\n}\n\nif (ball === null) {\n\truntime.callFunction('aiCenterPosition', pad.instVars.player, 0);\n}"
+				},
+				{
 					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-evaluate",
-							"objectClass": "System",
-							"sid": 174179262298221,
-							"parameters": {
-								"object": "pad",
-								"expression": "pad.player"
-							}
-						},
-						{
-							"id": "pick-random-instance",
-							"objectClass": "System",
-							"sid": 553957644376644,
-							"parameters": {
-								"object": "ball"
-							}
-						}
-					],
+					"conditions": [],
 					"actions": [],
 					"sid": 993125224695993,
 					"children": [
@@ -136,14 +122,15 @@
 							"actions": [
 								{
 									"callFunction": "aiFollowBall",
-									"sid": 106128101476692,
+									"sid": 629431414756063,
 									"parameters": [
-										"pad.UID",
+										"pad.player",
 										"ball.UID"
 									]
 								}
 							],
-							"sid": 466003114354139
+							"sid": 466003114354139,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -172,14 +159,15 @@
 							"actions": [
 								{
 									"callFunction": "aiCenterPosition",
-									"sid": 680855136606350,
+									"sid": 153050181913122,
 									"parameters": [
-										"pad.UID",
+										"pad.player",
 										"ball.UID"
 									]
 								}
 							],
-							"sid": 101135332689398
+							"sid": 101135332689398,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -198,14 +186,15 @@
 							"actions": [
 								{
 									"callFunction": "aiCenterPosition",
-									"sid": 168530972105519,
+									"sid": 953875763574462,
 									"parameters": [
-										"pad.UID",
+										"pad.player",
 										"ball.UID"
 									]
 								}
 							],
-							"sid": 242445575815061
+							"sid": 242445575815061,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -224,14 +213,15 @@
 							"actions": [
 								{
 									"callFunction": "aiCenterPosition",
-									"sid": 556420315567127,
+									"sid": 887372418529299,
 									"parameters": [
-										"pad.UID",
+										"pad.player",
 										"ball.UID"
 									]
 								}
 							],
-							"sid": 673248206154376
+							"sid": 673248206154376,
+							"disabled": true
 						}
 					]
 				}
@@ -245,7 +235,7 @@
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
-					"name": "padUid",
+					"name": "padIndex",
 					"type": "number",
 					"initialValue": "0",
 					"comment": "",
@@ -268,11 +258,12 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "pick-by-unique-id",
-							"objectClass": "pad",
-							"sid": 538559411163075,
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 209849464048521,
 							"parameters": {
-								"unique-id": "padUid"
+								"object": "pad",
+								"expression": "pad.player"
 							}
 						},
 						{
@@ -303,13 +294,8 @@
 							],
 							"actions": [
 								{
-									"id": "simulate-control",
-									"objectClass": "pad",
-									"sid": 852788860107002,
-									"behaviorType": "8Direction",
-									"parameters": {
-										"control": "left"
-									}
+									"type": "script",
+									"script": "let pad = Pad.find(runtime, localVars.padIndex);\npad.simulateLeft();"
 								}
 							],
 							"sid": 382976047080082
@@ -330,13 +316,8 @@
 							],
 							"actions": [
 								{
-									"id": "simulate-control",
-									"objectClass": "pad",
-									"sid": 813644900979999,
-									"behaviorType": "8Direction",
-									"parameters": {
-										"control": "right"
-									}
+									"type": "script",
+									"script": "let pad = Pad.find(runtime, localVars.padIndex);\npad.simulateRight();"
 								}
 							],
 							"sid": 600913421445000
@@ -353,7 +334,7 @@
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
-					"name": "padUid",
+					"name": "padIndex",
 					"type": "number",
 					"initialValue": "0",
 					"comment": "",
@@ -376,11 +357,12 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "pick-by-unique-id",
-							"objectClass": "pad",
-							"sid": 461521093191468,
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 672148508560387,
 							"parameters": {
-								"unique-id": "padUid"
+								"object": "pad",
+								"expression": "pad.player"
 							}
 						},
 						{
@@ -411,13 +393,8 @@
 							],
 							"actions": [
 								{
-									"id": "simulate-control",
-									"objectClass": "pad",
-									"sid": 454527013461316,
-									"behaviorType": "8Direction",
-									"parameters": {
-										"control": "left"
-									}
+									"type": "script",
+									"script": "let pad = Pad.find(runtime, localVars.padIndex);\npad.simulateLeft();"
 								}
 							],
 							"sid": 311453813830400
@@ -438,13 +415,8 @@
 							],
 							"actions": [
 								{
-									"id": "simulate-control",
-									"objectClass": "pad",
-									"sid": 106524725427387,
-									"behaviorType": "8Direction",
-									"parameters": {
-										"control": "right"
-									}
+									"type": "script",
+									"script": "let pad = Pad.find(runtime, localVars.padIndex);\npad.simulateRight();"
 								}
 							],
 							"sid": 671551227781009

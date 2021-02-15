@@ -37,74 +37,8 @@
 			"sid": 966304975000314,
 			"children": [
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "text",
-							"sid": 932540377663851,
-							"parameters": {
-								"instance-variable": "index",
-								"comparison": 0,
-								"value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 329502619466910,
-							"parameters": {
-								"variable": "gamemode",
-								"value": "0"
-							}
-						},
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 652635773636570,
-							"parameters": {
-								"layout": "input"
-							}
-						}
-					],
-					"sid": 722517827707775
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "text",
-							"sid": 731927870565999,
-							"parameters": {
-								"instance-variable": "index",
-								"comparison": 0,
-								"value": "1"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 903826297250527,
-							"parameters": {
-								"variable": "gamemode",
-								"value": "1"
-							}
-						},
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 498216858765535,
-							"parameters": {
-								"layout": "input"
-							}
-						}
-					],
-					"sid": 313701622667017
+					"eventType": "script",
+					"script": "let text = runtime.objects.text.getFirstPickedInstance();\n\nif (text.instVars.index == 0)\n{\n\truntime.globalVars.gamemode = 0;\n\truntime.goToLayout('input');\n}\n\nif (text.instVars.index == 1)\n{\n\truntime.globalVars.gamemode = 1;\n\truntime.goToLayout('input');\n}\n"
 				},
 				{
 					"eventType": "block",

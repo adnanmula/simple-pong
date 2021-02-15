@@ -19,7 +19,11 @@ function OnBeforeProjectStart(runtime)
 	runtime.globalVars.score_team_0 = 0;
 	runtime.globalVars.score_team_1 = 0;
 
-	runtime.layout.addEventListener("beforelayoutstart", () => OnBeforeLayoutStart(runtime));
+	for (const layout of runtime.getAllLayouts())
+	{
+		layout.addEventListener("beforelayoutstart", () => OnBeforeLayoutStart(runtime));
+	}
+
 	runtime.addEventListener("tick", () => Tick(runtime));
 	runtime.addEventListener("keydown", e => OnKeyDown(e, runtime));
 }

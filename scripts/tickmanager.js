@@ -34,14 +34,22 @@ export default class TickManager
 		{
 			ball.destroy();
 			MatchManager.score(runtime, 0);
-			setTimeout(function(){ MatchManager.respawnBall(runtime, 0) }, 1000);
+			
+			if (false === MatchManager.isFinished(runtime))
+			{
+				setTimeout(function(){ MatchManager.respawnBall(runtime, 0) }, 1000);
+			}
 		}
 
 		if (null != ball && Utils.isOutside(ball) && ball.y < runtime.layout.height / 2)
 		{
 			ball.destroy();
 			MatchManager.score(runtime, 1);
-			setTimeout(function(){ MatchManager.respawnBall(runtime, 1) }, 1000);
+			
+			if (false === MatchManager.isFinished(runtime))
+			{
+				setTimeout(function(){ MatchManager.respawnBall(runtime, 0) }, 1000);
+			}
 		}
 	
 		InputManager.evaluate(runtime);

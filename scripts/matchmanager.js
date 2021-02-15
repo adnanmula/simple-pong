@@ -3,6 +3,8 @@ import Text from "./Text.js";
 
 export default class MatchManager
 {
+	static get MaxScore() { return 10 }
+
 	static score(runtime, team)
 	{
 		runtime.globalVars['score_team_' + team]++;
@@ -38,5 +40,15 @@ export default class MatchManager
 		runtime.globalVars.input_1_type = '';
 
 		setTimeout(function(){ runtime.goToLayout('menu') }, 2500);
+	}
+	
+	static isFinished(runtime)
+	{
+		if (runtime.globalVars.score_team_0 >= MatchManager.MaxScore || runtime.globalVars.score_team_1 >= MatchManager.MaxScore)
+		{
+			return true;
+		}
+		
+		return false;
 	}
 }
