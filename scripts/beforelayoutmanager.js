@@ -1,12 +1,12 @@
-import Ball from "./Ball.js";
-import Pad from "./Pad.js";
 import Text from "./Text.js";
-import Input from "./input.js";
 
 export default class BeforeLayoutManager
 {
 	static menu(runtime)
 	{
+		runtime.globalVars.input_0_type = '';
+		runtime.globalVars.input_1_type = '';
+
 		for (const ballInstance of runtime.objects.ball.instances())
 		{
 			ballInstance.angleDegrees = runtime.random() * 360;
@@ -27,7 +27,5 @@ export default class BeforeLayoutManager
 	static main(runtime)
 	{
 		runtime.globalVars.layoutTransitionScheduled = false;
-		runtime.globalVars.score_team_0 = 0;
-		runtime.globalVars.score_team_1 = 0;
 	}
 }

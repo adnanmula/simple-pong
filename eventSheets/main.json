@@ -6,166 +6,6 @@
 			"includeSheet": "input"
 		},
 		{
-			"eventType": "variable",
-			"name": "score_team_0",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 427507546872631
-		},
-		{
-			"eventType": "variable",
-			"name": "score_team_1",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 838336454094952
-		},
-		{
-			"eventType": "variable",
-			"name": "BALL_ANGLE_MODIFIER",
-			"type": "number",
-			"initialValue": "30",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 816086857656353
-		},
-		{
-			"eventType": "comment",
-			"text": "Move to js"
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-two-values",
-					"objectClass": "System",
-					"sid": 298173880228579,
-					"parameters": {
-						"first-value": "score_team_0",
-						"comparison": 5,
-						"second-value": "10"
-					}
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "matchEndTrigger",
-					"sid": 832605890908497,
-					"parameters": [
-						"0"
-					]
-				}
-			],
-			"sid": 872866147326455
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-two-values",
-					"objectClass": "System",
-					"sid": 762826025186918,
-					"parameters": {
-						"first-value": "score_team_1",
-						"comparison": 5,
-						"second-value": "10"
-					}
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "matchEndTrigger",
-					"sid": 891724774917424,
-					"parameters": [
-						"1"
-					]
-				}
-			],
-			"sid": 273775774078854
-		},
-		{
-			"eventType": "comment",
-			"text": "Move to js"
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-outside-layout",
-					"objectClass": "ball",
-					"sid": 204761840947937
-				}
-			],
-			"actions": [],
-			"sid": 833386183600185,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 450205299586730,
-							"parameters": {
-								"first-value": "ball.Y",
-								"comparison": 4,
-								"second-value": "LayoutHeight / 2"
-							}
-						},
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 529995671755980
-						}
-					],
-					"actions": [
-						{
-							"type": "script",
-							"script": "MatchManager.scoreGoal(runtime, 0);\nMatchManager.respawnBall(runtime, 0);"
-						}
-					],
-					"sid": 130122759365814
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 606218814627730,
-							"parameters": {
-								"first-value": "ball.Y",
-								"comparison": 2,
-								"second-value": "LayoutHeight / 2"
-							}
-						},
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 299754947542415
-						}
-					],
-					"actions": [
-						{
-							"type": "script",
-							"script": "MatchManager.scoreGoal(runtime, 1);\nMatchManager.respawnBall(runtime, 1);"
-						}
-					],
-					"sid": 328345710889960
-				}
-			]
-		},
-		{
-			"eventType": "comment",
-			"text": "Move to js"
-		},
-		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -196,12 +36,8 @@
 					],
 					"actions": [
 						{
-							"id": "rotate-clockwise",
-							"objectClass": "ball",
-							"sid": 835204879284087,
-							"parameters": {
-								"degrees": "BALL_ANGLE_MODIFIER"
-							}
+							"type": "script",
+							"script": "runtime.objects.ball.getFirstInstance().deviate(runtime, Ball.NormalDeviation, Ball.ClockwiseDeviation);"
 						}
 					],
 					"sid": 737285614205035
@@ -222,12 +58,8 @@
 					],
 					"actions": [
 						{
-							"id": "rotate-counter-clockwise",
-							"objectClass": "ball",
-							"sid": 402864364549031,
-							"parameters": {
-								"degrees": "BALL_ANGLE_MODIFIER"
-							}
+							"type": "script",
+							"script": "runtime.objects.ball.getFirstInstance().deviate(runtime, Ball.NormalDeviation, Ball.CounterClockwiseDeviation);"
 						}
 					],
 					"sid": 247471147727535
@@ -248,90 +80,11 @@
 					],
 					"actions": [
 						{
-							"id": "rotate-counter-clockwise",
-							"objectClass": "ball",
-							"sid": 362600149375741,
-							"parameters": {
-								"degrees": "choose(0,1) = 0 ? BALL_ANGLE_MODIFIER / 5 :  - BALL_ANGLE_MODIFIER / 5"
-							}
+							"type": "script",
+							"script": "runtime.objects.ball.getFirstInstance().deviate(runtime, Ball.SmallDeviation, Math.random() < 0.5 ? Ball.ClockwiseDeviation : Ball.CounterClockwiseDeviation);"
 						}
 					],
 					"sid": 667285581412068
-				}
-			]
-		},
-		{
-			"eventType": "comment",
-			"text": "Move to js"
-		},
-		{
-			"functionName": "matchEndTrigger",
-			"functionDescription": "Ends a match.",
-			"functionCategory": "match",
-			"functionReturnType": "none",
-			"functionIsAsync": false,
-			"functionParameters": [
-				{
-					"name": "winner",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"sid": 424776297410199
-				}
-			],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 850757960092056,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-evaluate",
-							"objectClass": "System",
-							"sid": 318898133523447,
-							"parameters": {
-								"object": "text",
-								"expression": "text.type = \"winner\" & text.index = 0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "text",
-							"sid": 827979247780998,
-							"parameters": {
-								"text": "\"Player \" & winner + 1 & \" wins!\""
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "text",
-							"sid": 181207642051785,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 577128891008349,
-							"parameters": {
-								"seconds": "1.0"
-							}
-						},
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 125519273739414,
-							"parameters": {
-								"layout": "menu"
-							}
-						}
-					],
-					"sid": 805903797885582
 				}
 			]
 		}

@@ -15,37 +15,6 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 393687723152933
-				}
-			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 186291389863481,
-					"parameters": {
-						"variable": "input_0_type",
-						"value": "\"\""
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 272250666126617,
-					"parameters": {
-						"variable": "input_1_type",
-						"value": "\"\""
-					}
-				}
-			],
-			"sid": 751337939845106
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
 					"id": "on-touched-object",
 					"objectClass": "Touch",
 					"sid": 422880765429773,

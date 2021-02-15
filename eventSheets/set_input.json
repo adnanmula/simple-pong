@@ -173,9 +173,9 @@
 							"actions": [
 								{
 									"callFunction": "inputSet",
-									"sid": 951876214289793,
+									"sid": 726526085178489,
 									"parameters": [
-										"\"KEYBOARD_AD\""
+										"\"KeyboardAd\""
 									]
 								}
 							],
@@ -280,9 +280,9 @@
 							"actions": [
 								{
 									"callFunction": "inputSet",
-									"sid": 143200389208899,
+									"sid": 500146731608113,
 									"parameters": [
-										"\"KEYBOARD_ARROWS\""
+										"\"KeyboardArrows\""
 									]
 								}
 							],

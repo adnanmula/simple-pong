@@ -1,11 +1,9 @@
 import Ball from "./Ball.js";
-import Pad from "./Pad.js";
 import Text from "./Text.js";
-import Input from "./input.js";
 
 export default class MatchManager
 {
-	static scoreGoal(runtime, team)
+	static score(runtime, team)
 	{
 		runtime.globalVars['score_team_' + team]++;
 
@@ -24,5 +22,21 @@ export default class MatchManager
 	
 	static end(runtime)
 	{
+		let text = Text.find(runtime, 'winner', 0);
+		
+		let winner = 1;
+		if (runtime.globalVars.score_team_0 < runtime.globalVars.score_team_1) {
+			let winner = 2;
+		}
+		
+		text.update("Player " + winner + " wins!");
+		text.isVisible = true;
+
+		runtime.globalVars.score_team_0 = 0;
+		runtime.globalVars.score_team_1 = 0;
+		runtime.globalVars.input_0_type = '';
+		runtime.globalVars.input_1_type = '';
+
+		setTimeout(function(){ runtime.goToLayout('menu') }, 1000);
 	}
 }

@@ -1,7 +1,6 @@
 import Ball from "./Ball.js";
 import Pad from "./Pad.js";
 import Text from "./Text.js";
-import Input from "./input.js";
 import TickManager from "./TickManager.js";
 import BeforeLayoutManager from "./BeforeLayoutManager.js";
 
@@ -17,6 +16,8 @@ runOnStartup(async runtime =>
 function OnBeforeProjectStart(runtime)
 {
 	runtime.globalVars.layoutTransitionScheduled = false;
+	runtime.globalVars.score_team_0 = 0;
+	runtime.globalVars.score_team_1 = 0;
 
 	runtime.layout.addEventListener("beforelayoutstart", () => OnBeforeLayoutStart(runtime));
 	runtime.addEventListener("tick", () => Tick(runtime));

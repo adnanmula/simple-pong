@@ -131,16 +131,6 @@
 										"comparison": 2,
 										"second-value": "LayoutHeight / 2"
 									}
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 767459251944811,
-									"parameters": {
-										"first-value": "Functions.getVectorY(ball.Bullet.Speed, ball.Bullet.AngleOfMotion)",
-										"comparison": 2,
-										"second-value": "0"
-									}
 								}
 							],
 							"actions": [
@@ -200,16 +190,6 @@
 									"sid": 145343406297121,
 									"parameters": {
 										"first-value": "ball.Count",
-										"comparison": 4,
-										"second-value": "0"
-									}
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 712881975805378,
-									"parameters": {
-										"first-value": "Functions.getVectorY(ball.Bullet.Speed, ball.Bullet.AngleOfMotion)",
 										"comparison": 4,
 										"second-value": "0"
 									}
@@ -472,70 +452,6 @@
 					]
 				}
 			]
-		},
-		{
-			"functionName": "getVectorX",
-			"functionDescription": "Gets vector X of a given speed and angle.",
-			"functionCategory": "util",
-			"functionReturnType": "number",
-			"functionIsAsync": false,
-			"functionParameters": [
-				{
-					"name": "speed",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"sid": 784186432766235
-				},
-				{
-					"name": "angleOfMotion",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"sid": 751781984000817
-				}
-			],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"type": "script",
-					"script": "runtime.setReturnValue(Utils.getVectorX(localVars.speed, localVars.angleOfMotion));"
-				}
-			],
-			"sid": 906461518128934
-		},
-		{
-			"functionName": "getVectorY",
-			"functionDescription": "Gets vector Y of a given speed and angle.",
-			"functionCategory": "util",
-			"functionReturnType": "number",
-			"functionIsAsync": false,
-			"functionParameters": [
-				{
-					"name": "speed",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"sid": 439097355142872
-				},
-				{
-					"name": "angleOfMotion",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"sid": 535227167448309
-				}
-			],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"type": "script",
-					"script": "runtime.setReturnValue(Utils.getVectorY(localVars.speed, localVars.angleOfMotion));"
-				}
-			],
-			"sid": 834811704995742
 		}
 	],
 	"sid": 538112269311819

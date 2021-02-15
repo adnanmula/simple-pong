@@ -165,7 +165,7 @@
 					}
 				},
 				{
-					"name": "input.js",
+					"name": "InputManager.js",
 					"type": "application/javascript",
 					"sid": 425309592557192,
 					"script-info": {
