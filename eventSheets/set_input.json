@@ -446,15 +446,34 @@
 								"comparison": 0,
 								"second-value": "\"\""
 							}
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 505714497628967,
+							"parameters": {
+								"object": "text",
+								"expression": "text.type = \"input_label\" & text.index = 0"
+							}
 						}
 					],
 					"actions": [
 						{
-							"callFunction": "inputSet",
-							"sid": 370194469025911,
-							"parameters": [
-								"\"TOUCH_0\""
-							]
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 479011625626211,
+							"parameters": {
+								"variable": "input_0_type",
+								"value": "\"TOUCH_0\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "text",
+							"sid": 274340990041738,
+							"parameters": {
+								"text": "\"Touch (Bottom screen) selected!\""
+							}
 						}
 					],
 					"sid": 541602560764440
@@ -498,15 +517,34 @@
 								"comparison": 0,
 								"second-value": "\"\""
 							}
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 182448786841986,
+							"parameters": {
+								"object": "text",
+								"expression": "text.type = \"input_label\" & text.index = 1"
+							}
 						}
 					],
 					"actions": [
 						{
-							"callFunction": "inputSet",
-							"sid": 656858095009418,
-							"parameters": [
-								"\"TOUCH_1\""
-							]
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 339716677429364,
+							"parameters": {
+								"variable": "input_1_type",
+								"value": "\"TOUCH_1\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "text",
+							"sid": 705967782509656,
+							"parameters": {
+								"text": "\"Touch (Top screen) selected!\""
+							}
 						}
 					],
 					"sid": 787822233905814

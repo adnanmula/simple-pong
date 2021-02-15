@@ -4,9 +4,6 @@ export default class BeforeLayoutManager
 {
 	static menu(runtime)
 	{
-		runtime.globalVars.input_0_type = '';
-		runtime.globalVars.input_1_type = '';
-
 		for (const ballInstance of runtime.objects.ball.instances())
 		{
 			ballInstance.angleDegrees = runtime.random() * 360;
@@ -15,6 +12,9 @@ export default class BeforeLayoutManager
 
 	static input(runtime)
 	{
+		runtime.globalVars.input_0_type = '';
+		runtime.globalVars.input_1_type = '';
+	
 		if (runtime.globalVars.gamemode == 1)
 		{	
 			runtime.globalVars.input_1_type = Input.TypeBot;

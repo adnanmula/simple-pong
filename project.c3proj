@@ -163,38 +163,6 @@
 					"script-info": {
 						"purpose": "main"
 					}
-				},
-				{
-					"name": "InputManager.js",
-					"type": "application/javascript",
-					"sid": 425309592557192,
-					"script-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "TickManager.js",
-					"type": "application/javascript",
-					"sid": 659235423874861,
-					"script-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "BeforeLayoutManager.js",
-					"type": "application/javascript",
-					"sid": 139915896309681,
-					"script-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "MatchManager.js",
-					"type": "application/javascript",
-					"sid": 189267997644588,
-					"script-info": {
-						"purpose": "none"
-					}
 				}
 			],
 			"subfolders": [
@@ -227,6 +195,44 @@
 					],
 					"subfolders": [],
 					"name": "prop"
+				},
+				{
+					"items": [
+						{
+							"name": "BeforeLayoutManager.js",
+							"type": "application/javascript",
+							"sid": 139915896309681,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "InputManager.js",
+							"type": "application/javascript",
+							"sid": 425309592557192,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "MatchManager.js",
+							"type": "application/javascript",
+							"sid": 189267997644588,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "TickManager.js",
+							"type": "application/javascript",
+							"sid": 659235423874861,
+							"script-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "manager"
 				}
 			]
 		},

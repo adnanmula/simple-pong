@@ -37,6 +37,6 @@ export default class MatchManager
 		runtime.globalVars.input_0_type = '';
 		runtime.globalVars.input_1_type = '';
 
-		setTimeout(function(){ runtime.goToLayout('menu') }, 1000);
+		setTimeout(function(){ runtime.goToLayout('menu') }, 2500);
 	}
 }

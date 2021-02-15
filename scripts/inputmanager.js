@@ -24,16 +24,14 @@ export default class InputManager
 	
 	static evaluate(runtime)
 	{
-		if (runtime.globalVars.input_0_type != InputManager.TypeBot && runtime.globalVars.input_0_type != '')
+		if ([InputManager.TypeKeyboardAd, InputManager.TypeKeyboardArrows].includes(runtime.globalVars.input_0_type))
 		{
-			console.log('evaluate' + runtime.globalVars.input_0_type);
 			this['evaluate' + runtime.globalVars.input_0_type](runtime, 0);
 		}
-
-		if (runtime.globalVars.input_1_type != InputManager.TypeBot && runtime.globalVars.input_1_type != '')
+		
+		if ([InputManager.TypeKeyboardAd, InputManager.TypeKeyboardArrows].includes(runtime.globalVars.input_1_type))
 		{
-			console.log('evaluate' + runtime.globalVars.input_1_type);
-			this['evaluate' + runtime.globalVars.input_1_type](runtime, 1);
+			this['evaluate' + runtime.globalVars.input_1_type](runtime, 0);
 		}
 	}
 	
