@@ -19,7 +19,7 @@ export default class MatchManager
 			instance.destroy();
 		}
 	
-		Ball.create(runtime, runtime.layout.width/2, runtime.layout.height/2, team ? 270 : 90);
+		Ball.create(runtime, runtime.layout.width/2, runtime.layout.height/2, team === 0 ? 90 : 270);
 	}
 	
 	static end(runtime)
@@ -28,7 +28,7 @@ export default class MatchManager
 		
 		let winner = 1;
 		if (runtime.globalVars.score_team_0 < runtime.globalVars.score_team_1) {
-			let winner = 2;
+			winner = 2;
 		}
 		
 		text.update("Player " + winner + " wins!");

@@ -1,8 +1,10 @@
 import Ball from "./Ball.js";
 import Pad from "./Pad.js";
 import Text from "./Text.js";
-import TickManager from "./TickManager.js";
-import BeforeLayoutManager from "./BeforeLayoutManager.js";
+
+import LayoutMenuManager from "./LayoutMenuManager.js";
+import LayoutInputManager from "./LayoutInputManager.js";
+import LayoutMainManager from "./LayoutMainManager.js";
 
 runOnStartup(async runtime =>
 {
@@ -19,23 +21,31 @@ function OnBeforeProjectStart(runtime)
 	runtime.globalVars.score_team_0 = 0;
 	runtime.globalVars.score_team_1 = 0;
 
-	for (const layout of runtime.getAllLayouts())
-	{
-		layout.addEventListener("beforelayoutstart", () => OnBeforeLayoutStart(runtime));
-	}
+	runtime.getLayout('menu').addEventListener("beforelayoutstart", () => LayoutMenuManager.before(runtime));
+	runtime.getLayout('input').addEventListener("beforelayoutstart", () => LayoutInputManager.before(runtime));
+	runtime.getLayout('main').addEventListener("beforelayoutstart", () => LayoutMainManager.before(runtime));
 
 	runtime.addEventListener("tick", () => Tick(runtime));
+	
 	runtime.addEventListener("keydown", e => OnKeyDown(e, runtime));
-}
-
-function OnBeforeLayoutStart(runtime)
-{
-	BeforeLayoutManager[runtime.layout.name](runtime);
 }
 
 function Tick(runtime)
 {
-	TickManager[runtime.layout.name](runtime);
+	if (runtime.layout.name === 'menu')
+	{
+		LayoutMenuManager.tick(runtime);
+	}
+	
+	if (runtime.layout.name === 'input')
+	{
+		LayoutInputManager.tick(runtime);
+	}
+	
+	if (runtime.layout.name === 'main')
+	{
+		LayoutMainManager.tick(runtime);
+	}
 }
 
 function OnKeyDown(e, runtime)

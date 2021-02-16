@@ -38,32 +38,27 @@
 			"children": [
 				{
 					"eventType": "script",
-					"script": "let text = runtime.objects.text.getFirstPickedInstance();\n\nif (text.instVars.index == 0)\n{\n\truntime.globalVars.gamemode = 0;\n\truntime.goToLayout('input');\n}\n\nif (text.instVars.index == 1)\n{\n\truntime.globalVars.gamemode = 1;\n\truntime.goToLayout('input');\n}\n"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "text",
-							"sid": 728376508787201,
-							"parameters": {
-								"instance-variable": "index",
-								"comparison": 0,
-								"value": "2"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "close",
-							"objectClass": "Browser",
-							"sid": 779457814356825
-						}
-					],
-					"sid": 612213441722170
+					"script": "let text = runtime.objects.text.getFirstPickedInstance();\n\nif (text.instVars.index == 0)\n{\n\truntime.globalVars.gamemode = 0;\n\truntime.goToLayout('input');\n}\n\nif (text.instVars.index == 1)\n{\n\truntime.globalVars.gamemode = 1;\n\truntime.goToLayout('input');\n}\n\nif (text.instVars.index == 2)\n{\n\truntime.callFunction('browserClose');\n}\n"
 				}
 			]
+		},
+		{
+			"functionName": "browserClose",
+			"functionDescription": "",
+			"functionCategory": "Script Helper",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "close",
+					"objectClass": "Browser",
+					"sid": 572178924362377
+				}
+			],
+			"sid": 487120338255048
 		}
 	],
 	"sid": 724455765114356

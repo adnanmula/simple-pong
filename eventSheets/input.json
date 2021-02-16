@@ -2,8 +2,159 @@
 	"name": "input",
 	"events": [
 		{
-			"eventType": "include",
-			"includeSheet": "ai"
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 839272743705733
+				}
+			],
+			"actions": [],
+			"sid": 714414030311539,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 856215367824878,
+							"parameters": {
+								"first-value": "RegexMatchCount(input_0_type, \"GAMEPAD\", \"i\")",
+								"comparison": 4,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "evaluateInputGamepad",
+							"sid": 210409244906504,
+							"parameters": [
+								"0",
+								"int(mid(input_0_type, 8, 1))"
+							]
+						}
+					],
+					"sid": 344053910417709
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 227031937735367,
+							"parameters": {
+								"first-value": "RegexMatchCount(input_1_type, \"GAMEPAD\", \"i\")",
+								"comparison": 4,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "evaluateInputGamepad",
+							"sid": 416586320316537,
+							"parameters": [
+								"1",
+								"int(mid(input_1_type, 8, 1))"
+							]
+						}
+					],
+					"sid": 886277337565114
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 597456122846990,
+					"parameters": {
+						"object": "input_touch_detector"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 630347628330685,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "input_touch_detector",
+							"sid": 102616676465176,
+							"parameters": {
+								"instance-variable": "index",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 744724008172424,
+							"parameters": {
+								"first-value": "RegexMatchCount(input_0_type, \"TOUCH\", \"i\")",
+								"comparison": 4,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "evaluateInputTouch",
+							"sid": 227111457809625,
+							"parameters": [
+								"input_touch_detector.index",
+								"input_touch_detector.action"
+							]
+						}
+					],
+					"sid": 957613396601546
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "input_touch_detector",
+							"sid": 628238696301917,
+							"parameters": {
+								"instance-variable": "index",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 247733167310291,
+							"parameters": {
+								"first-value": "RegexMatchCount(input_1_type, \"TOUCH\", \"i\")",
+								"comparison": 4,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "evaluateInputTouch",
+							"sid": 963724887218016,
+							"parameters": [
+								"input_touch_detector.index",
+								"input_touch_detector.action"
+							]
+						}
+					],
+					"sid": 816792122162386
+				}
+			]
 		},
 		{
 			"functionName": "evaluateInputGamepad",
@@ -43,15 +194,6 @@
 								"gamepad": "gamepad_index",
 								"button": "d-pad-left"
 							}
-						},
-						{
-							"id": "pick-by-evaluate",
-							"objectClass": "System",
-							"sid": 665074387290303,
-							"parameters": {
-								"object": "pad",
-								"expression": "pad.player = player"
-							}
 						}
 					],
 					"actions": [
@@ -72,15 +214,6 @@
 							"parameters": {
 								"gamepad": "gamepad_index",
 								"button": "d-pad-right"
-							}
-						},
-						{
-							"id": "pick-by-evaluate",
-							"objectClass": "System",
-							"sid": 316065388837806,
-							"parameters": {
-								"object": "pad",
-								"expression": "pad.player = player"
 							}
 						}
 					],
@@ -122,221 +255,8 @@
 			"sid": 108398176104505,
 			"children": [
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 806244278649031,
-							"parameters": {
-								"first-value": "action",
-								"comparison": 0,
-								"second-value": "0"
-							}
-						},
-						{
-							"id": "pick-by-evaluate",
-							"objectClass": "System",
-							"sid": 980429929845341,
-							"parameters": {
-								"object": "pad",
-								"expression": "pad.player = player"
-							}
-						}
-					],
-					"actions": [
-						{
-							"type": "script",
-							"script": "let pad = Pad.find(runtime, localVars.player);\npad.simulateLeft();"
-						}
-					],
-					"sid": 472532358992998
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 929365750053816,
-							"parameters": {
-								"first-value": "action",
-								"comparison": 0,
-								"second-value": "1"
-							}
-						},
-						{
-							"id": "pick-by-evaluate",
-							"objectClass": "System",
-							"sid": 265926491645324,
-							"parameters": {
-								"object": "pad",
-								"expression": "pad.player = player"
-							}
-						}
-					],
-					"actions": [
-						{
-							"type": "script",
-							"script": "let pad = Pad.find(runtime, localVars.player);\npad.simulateRight();"
-						}
-					],
-					"sid": 256119518691623
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 733204718975707
-				}
-			],
-			"actions": [],
-			"sid": 810087242645857,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 920457947650988,
-							"parameters": {
-								"first-value": "RegexMatchCount(input_0_type, \"GAMEPAD\", \"i\")",
-								"comparison": 4,
-								"second-value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "evaluateInputGamepad",
-							"sid": 631287220601022,
-							"parameters": [
-								"0",
-								"int(mid(input_0_type, 8, 1))"
-							]
-						}
-					],
-					"sid": 714044030541057
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 133012890891780,
-							"parameters": {
-								"first-value": "RegexMatchCount(input_1_type, \"GAMEPAD\", \"i\")",
-								"comparison": 4,
-								"second-value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "evaluateInputGamepad",
-							"sid": 751487689060998,
-							"parameters": [
-								"1",
-								"int(mid(input_1_type, 8, 1))"
-							]
-						}
-					],
-					"sid": 607702650932783
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-touching-object",
-					"objectClass": "Touch",
-					"sid": 657344547797570,
-					"parameters": {
-						"object": "input_touch_detector"
-					}
-				}
-			],
-			"actions": [],
-			"sid": 748364191611437,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "input_touch_detector",
-							"sid": 897932989005469,
-							"parameters": {
-								"instance-variable": "index",
-								"comparison": 0,
-								"value": "0"
-							}
-						},
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 358577393927369,
-							"parameters": {
-								"first-value": "RegexMatchCount(input_0_type, \"TOUCH\", \"i\")",
-								"comparison": 4,
-								"second-value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "evaluateInputTouch",
-							"sid": 575328628595676,
-							"parameters": [
-								"input_touch_detector.index",
-								"input_touch_detector.action"
-							]
-						}
-					],
-					"sid": 924411534345539
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "input_touch_detector",
-							"sid": 119693988999334,
-							"parameters": {
-								"instance-variable": "index",
-								"comparison": 0,
-								"value": "1"
-							}
-						},
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 357042667112800,
-							"parameters": {
-								"first-value": "RegexMatchCount(input_1_type, \"TOUCH\", \"i\")",
-								"comparison": 4,
-								"second-value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "evaluateInputTouch",
-							"sid": 843001621837602,
-							"parameters": [
-								"input_touch_detector.index",
-								"input_touch_detector.action"
-							]
-						}
-					],
-					"sid": 507027319269061
+					"eventType": "script",
+					"script": "let pad = Pad.find(runtime, localVars.player);\n\nif (localVars.action === 0)\n{\n\tpad.simulateLeft();\n}\n\nif (localVars.action === 1)\n{\n\tpad.simulateRight();\n}"
 				}
 			]
 		}

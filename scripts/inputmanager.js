@@ -1,4 +1,5 @@
 import Pad from "./Pad.js";
+import AiManager from "./AiManager.js";
 
 export default class InputManager
 {
@@ -24,14 +25,14 @@ export default class InputManager
 	
 	static evaluate(runtime)
 	{
-		if ([InputManager.TypeKeyboardAd, InputManager.TypeKeyboardArrows].includes(runtime.globalVars.input_0_type))
+		if ([InputManager.TypeKeyboardAd, InputManager.TypeKeyboardArrows, InputManager.TypeBot].includes(runtime.globalVars.input_0_type))
 		{
 			this['evaluate' + runtime.globalVars.input_0_type](runtime, 0);
 		}
 		
-		if ([InputManager.TypeKeyboardAd, InputManager.TypeKeyboardArrows].includes(runtime.globalVars.input_1_type))
+		if ([InputManager.TypeKeyboardAd, InputManager.TypeKeyboardArrows, InputManager.TypeBot].includes(runtime.globalVars.input_1_type))
 		{
-			this['evaluate' + runtime.globalVars.input_1_type](runtime, 0);
+			this['evaluate' + runtime.globalVars.input_1_type](runtime, 1);
 		}
 	}
 	
@@ -63,5 +64,10 @@ export default class InputManager
 		{
 			pad.simulateRight();
 		}
+	}
+	
+	static evaluateBot(runtime, index)
+	{
+		AiManager.evaluate(runtime, index);
 	}
 }

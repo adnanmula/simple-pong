@@ -132,8 +132,7 @@
 			"main",
 			"menu",
 			"set_input",
-			"input",
-			"ai"
+			"input"
 		],
 		"subfolders": []
 	},
@@ -199,14 +198,6 @@
 				{
 					"items": [
 						{
-							"name": "BeforeLayoutManager.js",
-							"type": "application/javascript",
-							"sid": 139915896309681,
-							"script-info": {
-								"purpose": "none"
-							}
-						},
-						{
 							"name": "InputManager.js",
 							"type": "application/javascript",
 							"sid": 425309592557192,
@@ -223,9 +214,9 @@
 							}
 						},
 						{
-							"name": "TickManager.js",
+							"name": "AiManager.js",
 							"type": "application/javascript",
-							"sid": 659235423874861,
+							"sid": 418532535874368,
 							"script-info": {
 								"purpose": "none"
 							}
@@ -233,6 +224,36 @@
 					],
 					"subfolders": [],
 					"name": "manager"
+				},
+				{
+					"items": [
+						{
+							"name": "LayoutMainManager.js",
+							"type": "application/javascript",
+							"sid": 667579740926065,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "LayoutMenuManager.js",
+							"type": "application/javascript",
+							"sid": 769495747098002,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "LayoutInputManager.js",
+							"type": "application/javascript",
+							"sid": 775299850942281,
+							"script-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "layout"
 				}
 			]
 		},
