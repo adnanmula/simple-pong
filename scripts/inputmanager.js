@@ -1,4 +1,5 @@
 import Pad from "./Pad.js";
+import Text from "./Text.js";
 import AiManager from "./AiManager.js";
 
 export default class InputManager
@@ -69,5 +70,37 @@ export default class InputManager
 	static evaluateBot(runtime, index)
 	{
 		AiManager.evaluate(runtime, index);
+	}
+	
+	static setInput(runtime, type)
+	{
+		const textBottom = Text.find(runtime, 'input_label', 0);
+		const textTop = Text.find(runtime, 'input_label', 1);
+
+		if (textBottom !== null && runtime.globalVars.input_0_type === '')
+		{
+			runtime.globalVars.input_0_type = type;
+
+			let text = type + " selected!";
+			if (type === InputManager.TypeTouch0) {
+				text = 'Touch (Bottom screen) selected!';
+			}
+
+			textBottom.update(text);
+
+			return;
+		}
+
+		if (textTop !== null && runtime.globalVars.input_0_type !== '' && runtime.globalVars.input_1_type === '')
+		{
+			runtime.globalVars.input_1_type = type;
+
+			let text = type + " selected!";
+			if (type === InputManager.TypeTouch1) {
+				text = 'Touch (Top screen) selected!';
+			}
+
+			textTop.update(text);
+		}
 	}
 }

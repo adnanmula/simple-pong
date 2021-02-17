@@ -98,9 +98,9 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 744724008172424,
+							"sid": 945153606768042,
 							"parameters": {
-								"first-value": "RegexMatchCount(input_0_type, \"TOUCH\", \"i\")",
+								"first-value": "RegexMatchCount(input_0_type, \"Touch\", \"i\")",
 								"comparison": 4,
 								"second-value": "0"
 							}
@@ -134,9 +134,9 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 247733167310291,
+							"sid": 772602474390213,
 							"parameters": {
-								"first-value": "RegexMatchCount(input_1_type, \"TOUCH\", \"i\")",
+								"first-value": "RegexMatchCount(input_1_type, \"Touch\", \"i\")",
 								"comparison": 4,
 								"second-value": "0"
 							}

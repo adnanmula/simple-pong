@@ -84,220 +84,6 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 758997420247390,
-					"parameters": {
-						"key": 87
-					}
-				},
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 344388552190318,
-					"parameters": {
-						"key": 65
-					}
-				},
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 917595838239289,
-					"parameters": {
-						"key": 83
-					}
-				},
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 109515880258400,
-					"parameters": {
-						"key": 68
-					}
-				}
-			],
-			"actions": [],
-			"sid": 691686566183295,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 383772041646506,
-							"parameters": {
-								"first-value": "input_0_type",
-								"comparison": 1,
-								"second-value": "\"KEYBOARD_AD\""
-							}
-						},
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 865552981554123,
-							"parameters": {
-								"first-value": "input_1_type",
-								"comparison": 1,
-								"second-value": "\"KEYBOARD_AD\""
-							}
-						}
-					],
-					"actions": [],
-					"sid": 958736354156554,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 450597717738747,
-									"parameters": {
-										"first-value": "input_0_type",
-										"comparison": 0,
-										"second-value": "\"\""
-									}
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 162678043755101,
-									"parameters": {
-										"first-value": "input_1_type",
-										"comparison": 0,
-										"second-value": "\"\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "inputSet",
-									"sid": 726526085178489,
-									"parameters": [
-										"\"KeyboardAd\""
-									]
-								}
-							],
-							"sid": 335903121529028,
-							"isOrBlock": true
-						}
-					]
-				}
-			],
-			"isOrBlock": true
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 117583803395489,
-					"parameters": {
-						"key": 37
-					}
-				},
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 542496470606440,
-					"parameters": {
-						"key": 39
-					}
-				},
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 703437159644477,
-					"parameters": {
-						"key": 38
-					}
-				},
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 795097953813364,
-					"parameters": {
-						"key": 40
-					}
-				}
-			],
-			"actions": [],
-			"sid": 748734706165672,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 891767607082406,
-							"parameters": {
-								"first-value": "input_0_type",
-								"comparison": 1,
-								"second-value": "\"KEYBOARD_ARROWS\""
-							}
-						},
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 687399965530137,
-							"parameters": {
-								"first-value": "input_1_type",
-								"comparison": 1,
-								"second-value": "\"KEYBOARD_ARROWS\""
-							}
-						}
-					],
-					"actions": [],
-					"sid": 972286646594456,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 350216120991605,
-									"parameters": {
-										"first-value": "input_0_type",
-										"comparison": 0,
-										"second-value": "\"\""
-									}
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 902692130359339,
-									"parameters": {
-										"first-value": "input_1_type",
-										"comparison": 0,
-										"second-value": "\"\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "inputSet",
-									"sid": 500146731608113,
-									"parameters": [
-										"\"KeyboardArrows\""
-									]
-								}
-							],
-							"sid": 635443326074887,
-							"isOrBlock": true
-						}
-					]
-				}
-			],
-			"isOrBlock": true
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
 					"id": "every-tick",
 					"objectClass": "System",
 					"sid": 784920914156638
@@ -378,6 +164,16 @@
 									"sid": 634571778976101,
 									"children": [
 										{
+											"eventType": "variable",
+											"name": "gamepadIndex",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 290987264378616
+										},
+										{
 											"eventType": "block",
 											"conditions": [
 												{
@@ -391,14 +187,29 @@
 											],
 											"actions": [
 												{
-													"callFunction": "inputSet",
-													"sid": 943735129654739,
-													"parameters": [
-														"\"GAMEPAD_\" & loopindex"
-													]
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 605502919763463,
+													"parameters": {
+														"variable": "gamepadIndex",
+														"value": "loopindex"
+													}
 												}
 											],
-											"sid": 987025739463626
+											"sid": 987025739463626,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"type": "script",
+															"script": "InputManager.setInput(runtime, 'Gamepad' + localVars.gamepadIndex);"
+														}
+													],
+													"sid": 880468689352912
+												}
+											]
 										}
 									]
 								}
@@ -459,21 +270,8 @@
 					],
 					"actions": [
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 479011625626211,
-							"parameters": {
-								"variable": "input_0_type",
-								"value": "\"TOUCH_0\""
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "text",
-							"sid": 274340990041738,
-							"parameters": {
-								"text": "\"Touch (Bottom screen) selected!\""
-							}
+							"type": "script",
+							"script": "InputManager.setInput(runtime, InputManager.TypeTouch0);"
 						}
 					],
 					"sid": 541602560764440
@@ -530,181 +328,11 @@
 					],
 					"actions": [
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 339716677429364,
-							"parameters": {
-								"variable": "input_1_type",
-								"value": "\"TOUCH_1\""
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "text",
-							"sid": 705967782509656,
-							"parameters": {
-								"text": "\"Touch (Top screen) selected!\""
-							}
+							"type": "script",
+							"script": "InputManager.setInput(runtime, InputManager.TypeTouch1);"
 						}
 					],
 					"sid": 787822233905814
-				}
-			]
-		},
-		{
-			"functionName": "inputSet",
-			"functionDescription": "Assings input type to non assigned players.",
-			"functionCategory": "input",
-			"functionReturnType": "none",
-			"functionIsAsync": false,
-			"functionParameters": [
-				{
-					"name": "type",
-					"type": "string",
-					"initialValue": "",
-					"comment": "",
-					"sid": 922694542356305
-				}
-			],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 422227694985573,
-			"children": [
-				{
-					"eventType": "variable",
-					"name": "continue",
-					"type": "boolean",
-					"initialValue": "true",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 192397775419540
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 937079035934620,
-							"parameters": {
-								"first-value": "input_0_type",
-								"comparison": 0,
-								"second-value": "\"\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 825758401566122,
-							"parameters": {
-								"variable": "input_0_type",
-								"value": "type"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 581252804870166,
-							"parameters": {
-								"variable": "continue",
-								"value": "false"
-							}
-						}
-					],
-					"sid": 848231896487927,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 675471095355040,
-									"parameters": {
-										"object": "text",
-										"expression": "text.type = \"input_label\" & text.index = 0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "text",
-									"sid": 812428015160486,
-									"parameters": {
-										"text": "type & \" selected!\""
-									}
-								}
-							],
-							"sid": 404763666404592
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 659277716370113,
-							"parameters": {
-								"variable": "continue"
-							}
-						},
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 664059511020561,
-							"parameters": {
-								"first-value": "input_1_type",
-								"comparison": 0,
-								"second-value": "\"\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 733932774805405,
-							"parameters": {
-								"variable": "input_1_type",
-								"value": "type"
-							}
-						}
-					],
-					"sid": 145228050435193,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 214101711526444,
-									"parameters": {
-										"object": "text",
-										"expression": "text.type = \"input_label\" & text.index = 1"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "text",
-									"sid": 751942016256183,
-									"parameters": {
-										"text": "type & \" selected!\""
-									}
-								}
-							],
-							"sid": 391284043179153
-						}
-					]
 				}
 			]
 		}

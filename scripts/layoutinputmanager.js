@@ -2,7 +2,7 @@ import * as Utils from "./utils.js";
 import Text from "./Text.js";
 import InputManager from "./InputManager.js";
 
-export default class LayoutMainManager
+export default class LayoutInputManager
 {
 	static before(runtime)
 	{
@@ -20,13 +20,31 @@ export default class LayoutMainManager
 
 	static tick(runtime)
 	{
+		if (true == runtime.globalVars.layoutTransitionScheduled)
+		{
+			return;
+		}
+	
 		if (runtime.globalVars.input_0_type != '' && runtime.globalVars.input_1_type != '')
 		{
-			if (false == runtime.globalVars.layoutTransitionScheduled)
-			{
-				runtime.globalVars.layoutTransitionScheduled = true;
-				setTimeout(function(){ runtime.goToLayout('main') }, 1000);
-			}
+			runtime.globalVars.layoutTransitionScheduled = true;
+			setTimeout(function(){ runtime.goToLayout('main') }, 1000);
+			
+			return;
+		}
+		
+		if ((runtime.keyboard.isKeyDown(InputManager.KeyW) || runtime.keyboard.isKeyDown(InputManager.KeyA) || runtime.keyboard.isKeyDown(InputManager.KeyS) || runtime.keyboard.isKeyDown(InputManager.KeyD))
+			&& runtime.globalVars.input_0_type !== InputManager.TypeKeyboardAd && runtime.globalVars.input_1_type !== InputManager.TypeKeyboardAd
+			&& (runtime.globalVars.input_0_type === '' || runtime.globalVars.input_1_type === ''))
+		{
+			InputManager.setInput(runtime, InputManager.TypeKeyboardAd);
+		}
+		
+		if ((runtime.keyboard.isKeyDown(InputManager.ArrowUp) || runtime.keyboard.isKeyDown(InputManager.ArrowLeft) || runtime.keyboard.isKeyDown(InputManager.ArrowDown) || runtime.keyboard.isKeyDown(InputManager.ArrowRight))
+			&& runtime.globalVars.input_0_type !== InputManager.TypeKeyboardArrows && runtime.globalVars.input_1_type !== InputManager.TypeKeyboardArrows
+			&& (runtime.globalVars.input_0_type === '' || runtime.globalVars.input_1_type === ''))
+		{
+			InputManager.setInput(runtime, InputManager.TypeKeyboardArrows);
 		}
 	}
 }
