@@ -1,7 +1,9 @@
 export default class LayoutMenuManager
 {
-	static before(runtime)
+	static before()
 	{
+		const runtime = globalThis.runtime;
+	
 		runtime.globalVars.score_team_0 = 0;
 		runtime.globalVars.score_team_1 = 0;
 
@@ -11,7 +13,7 @@ export default class LayoutMenuManager
 		}
 	}
 
-	static tick(runtime)
+	static tick()
 	{
 		//
 	}

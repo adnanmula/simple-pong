@@ -83,12 +83,57 @@
 			"sid": 630347628330685,
 			"children": [
 				{
+					"eventType": "variable",
+					"name": "index",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 415125776872218
+				},
+				{
+					"eventType": "variable",
+					"name": "action",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 427546841656921
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 401213488428270,
+							"parameters": {
+								"variable": "index",
+								"value": "input_touch_detector.index"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 569221314611409,
+							"parameters": {
+								"variable": "action",
+								"value": "input_touch_detector.action"
+							}
+						}
+					],
+					"sid": 957613396601546
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "input_touch_detector",
-							"sid": 102616676465176,
+							"sid": 203685152138817,
 							"parameters": {
 								"instance-variable": "index",
 								"comparison": 0,
@@ -98,7 +143,7 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 945153606768042,
+							"sid": 102278602374718,
 							"parameters": {
 								"first-value": "RegexMatchCount(input_0_type, \"Touch\", \"i\")",
 								"comparison": 4,
@@ -108,15 +153,11 @@
 					],
 					"actions": [
 						{
-							"callFunction": "evaluateInputTouch",
-							"sid": 227111457809625,
-							"parameters": [
-								"input_touch_detector.index",
-								"input_touch_detector.action"
-							]
+							"type": "script",
+							"script": "InputManager.evaluateTouch(localVars.index, localVars.action);"
 						}
 					],
-					"sid": 957613396601546
+					"sid": 243120030657245
 				},
 				{
 					"eventType": "block",
@@ -144,12 +185,8 @@
 					],
 					"actions": [
 						{
-							"callFunction": "evaluateInputTouch",
-							"sid": 963724887218016,
-							"parameters": [
-								"input_touch_detector.index",
-								"input_touch_detector.action"
-							]
+							"type": "script",
+							"script": "InputManager.evaluateTouch(localVars.index, localVars.action);"
 						}
 					],
 					"sid": 816792122162386
@@ -199,7 +236,7 @@
 					"actions": [
 						{
 							"type": "script",
-							"script": "let pad = Pad.find(runtime, localVars.player);\npad.simulateLeft();"
+							"script": "let pad = Pad.find(localVars.player);\npad.simulateLeft();"
 						}
 					],
 					"sid": 714585375117358
@@ -220,7 +257,7 @@
 					"actions": [
 						{
 							"type": "script",
-							"script": "let pad = Pad.find(runtime, localVars.player);\npad.simulateRight();"
+							"script": "let pad = Pad.find(localVars.player);\npad.simulateRight();"
 						}
 					],
 					"sid": 307280099871168
@@ -228,37 +265,9 @@
 			]
 		},
 		{
-			"functionName": "evaluateInputTouch",
-			"functionDescription": "Evaluates touch input.",
-			"functionCategory": "input",
-			"functionReturnType": "none",
-			"functionIsAsync": false,
-			"functionParameters": [
-				{
-					"name": "player",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"sid": 562878859716155
-				},
-				{
-					"name": "action",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"sid": 519081245379426
-				}
-			],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 108398176104505,
-			"children": [
-				{
-					"eventType": "script",
-					"script": "let pad = Pad.find(runtime, localVars.player);\n\nif (localVars.action === 0)\n{\n\tpad.simulateLeft();\n}\n\nif (localVars.action === 1)\n{\n\tpad.simulateRight();\n}"
-				}
-			]
+			"eventType": "script",
+			"script": "if (DetectorManager.detectorIsInTouch(runtime, index))\n{\n\n}",
+			"disabled": true
 		}
 	],
 	"sid": 764013535584718

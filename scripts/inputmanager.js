@@ -24,58 +24,76 @@ export default class InputManager
 	static get TypeTouch0() { return 'Touch0' }
 	static get TypeTouch1() { return 'Touch1' }
 	
-	static evaluate(runtime)
+	static evaluate()
 	{
+		const runtime = globalThis.runtime;
+
 		if ([InputManager.TypeKeyboardAd, InputManager.TypeKeyboardArrows, InputManager.TypeBot].includes(runtime.globalVars.input_0_type))
 		{
-			this['evaluate' + runtime.globalVars.input_0_type](runtime, 0);
+			this['evaluate' + runtime.globalVars.input_0_type](0);
 		}
 		
 		if ([InputManager.TypeKeyboardAd, InputManager.TypeKeyboardArrows, InputManager.TypeBot].includes(runtime.globalVars.input_1_type))
 		{
-			this['evaluate' + runtime.globalVars.input_1_type](runtime, 1);
+			this['evaluate' + runtime.globalVars.input_1_type](1);
 		}
 	}
 	
-	static evaluateKeyboardAd(runtime, index)
+	static evaluateKeyboardAd(index)
 	{
-		let pad = Pad.find(runtime, index);
+		let pad = Pad.find(index);
 	
-		if (runtime.keyboard.isKeyDown(InputManager.KeyA))
+		if (globalThis.runtime.keyboard.isKeyDown(InputManager.KeyA))
 		{
 			pad.simulateLeft();
 		}
 
-		if (runtime.keyboard.isKeyDown(InputManager.KeyD))
+		if (globalThis.runtime.keyboard.isKeyDown(InputManager.KeyD))
 		{
 			pad.simulateRight();
 		}
 	}
 	
-	static evaluateKeyboardArrows(runtime, index)
+	static evaluateKeyboardArrows(index)
 	{
-		let pad = Pad.find(runtime, index);
+		let pad = Pad.find(index);
 	
-		if (runtime.keyboard.isKeyDown(InputManager.ArrowLeft))
+		if (globalThis.runtime.keyboard.isKeyDown(InputManager.ArrowLeft))
 		{
 			pad.simulateLeft();
 		}
 
-		if (runtime.keyboard.isKeyDown(InputManager.ArrowRight))
+		if (globalThis.runtime.keyboard.isKeyDown(InputManager.ArrowRight))
 		{
 			pad.simulateRight();
 		}
 	}
 	
-	static evaluateBot(runtime, index)
+	static evaluateTouch(index, action)
 	{
-		AiManager.evaluate(runtime, index);
+		const pad = Pad.find(index);
+
+		if (action === 0)
+		{
+			pad.simulateLeft();
+		}
+
+		if (action === 1)
+		{
+			pad.simulateRight();
+		}
 	}
 	
-	static setInput(runtime, type)
+	static evaluateBot(index)
 	{
-		const textBottom = Text.find(runtime, 'input_label', 0);
-		const textTop = Text.find(runtime, 'input_label', 1);
+		AiManager.evaluate(index);
+	}
+	
+	static setInput(type)
+	{
+		const runtime = globalThis.runtime;
+		const textBottom = Text.find('input_label', 0);
+		const textTop = Text.find('input_label', 1);
 
 		if (textBottom !== null && runtime.globalVars.input_0_type === '')
 		{

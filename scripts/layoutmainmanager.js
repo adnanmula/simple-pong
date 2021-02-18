@@ -4,16 +4,18 @@ import MatchManager from "./MatchManager.js";
 
 export default class LayoutMainManager
 {
-	static before(runtime)
+	static before()
 	{
-		runtime.globalVars.layoutTransitionScheduled = false;
+		globalThis.runtime.globalVars.layoutTransitionScheduled = false;
 	}
 
-	static tick(runtime)
+	static tick()
 	{
+		const runtime = globalThis.runtime;
+	
 		if (runtime.globalVars.score_team_0 >= MatchManager.MaxScore || runtime.globalVars.score_team_1 >= MatchManager.MaxScore)
 		{
-			MatchManager.end(runtime);
+			MatchManager.end();
 		}
 
 		let ball = runtime.objects.ball.getFirstInstance();
@@ -21,25 +23,25 @@ export default class LayoutMainManager
 		if (null != ball && Utils.isOutside(ball) && ball.y > runtime.layout.height / 2)
 		{
 			ball.destroy();
-			MatchManager.score(runtime, 1);
+			MatchManager.score(1);
 			
-			if (false === MatchManager.isFinished(runtime))
+			if (false === MatchManager.isFinished())
 			{
-				setTimeout(function(){ MatchManager.respawnBall(runtime, 0) }, 1000);
+				setTimeout(function(){ MatchManager.respawnBall(0) }, 1000);
 			}
 		}
 
 		if (null != ball && Utils.isOutside(ball) && ball.y < runtime.layout.height / 2)
 		{
 			ball.destroy();
-			MatchManager.score(runtime, 0);
+			MatchManager.score(0);
 			
-			if (false === MatchManager.isFinished(runtime))
+			if (false === MatchManager.isFinished())
 			{
-				setTimeout(function(){ MatchManager.respawnBall(runtime, 1) }, 1000);
+				setTimeout(function(){ MatchManager.respawnBall(1) }, 1000);
 			}
 		}
 	
-		InputManager.evaluate(runtime);
+		InputManager.evaluate();
 	}
 }

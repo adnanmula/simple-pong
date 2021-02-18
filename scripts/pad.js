@@ -7,14 +7,14 @@ export default class Pad extends ISpriteInstance
 		this.colorRgb = [Math.random(), Math.random(), Math.random()];
 	}
 
-	static create(runtime, x, y)
+	static create(x, y)
 	{
-		runtime.objects.pad.createInstance("main", x, y);
+		globalThis.runtime.objects.pad.createInstance("main", x, y);
 	}
 	
-	static find(runtime, index)
+	static find(index)
 	{
-		for (const instance of runtime.objects.pad.instances())
+		for (const instance of globalThis.runtime.objects.pad.instances())
 		{
 			if (instance.instVars.player == index) {
 				return instance;
@@ -22,6 +22,11 @@ export default class Pad extends ISpriteInstance
 		}
 
 		return null;
+	}
+	
+	vectorX()
+	{
+		return this.behaviors['8Direction'].vectorX;
 	}
 	
 	simulateLeft()

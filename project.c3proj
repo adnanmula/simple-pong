@@ -220,6 +220,14 @@
 							"script-info": {
 								"purpose": "none"
 							}
+						},
+						{
+							"name": "DetectorManager.js",
+							"type": "application/javascript",
+							"sid": 477003277241180,
+							"script-info": {
+								"purpose": "none"
+							}
 						}
 					],
 					"subfolders": [],

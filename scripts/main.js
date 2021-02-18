@@ -8,15 +8,19 @@ import LayoutMainManager from "./LayoutMainManager.js";
 
 runOnStartup(async runtime =>
 {
+	globalThis.runtime = runtime;
+	
 	runtime.objects.ball.setInstanceClass(Ball);
 	runtime.objects.pad.setInstanceClass(Pad);
 	runtime.objects.text.setInstanceClass(Text);
 	
-	runtime.addEventListener("beforeprojectstart", () => OnBeforeProjectStart(runtime));
+	runtime.addEventListener("beforeprojectstart", () => OnBeforeProjectStart());
 });
 
-function OnBeforeProjectStart(runtime)
+function OnBeforeProjectStart()
 {
+	const runtime = globalThis.runtime;
+
 	runtime.globalVars.layoutTransitionScheduled = false;
 	runtime.globalVars.score_team_0 = 0;
 	runtime.globalVars.score_team_1 = 0;
@@ -25,31 +29,35 @@ function OnBeforeProjectStart(runtime)
 	runtime.getLayout('input').addEventListener("beforelayoutstart", () => LayoutInputManager.before(runtime));
 	runtime.getLayout('main').addEventListener("beforelayoutstart", () => LayoutMainManager.before(runtime));
 
-	runtime.addEventListener("tick", () => Tick(runtime));
+	runtime.addEventListener("tick", () => Tick());
 	
-	runtime.addEventListener("keydown", e => OnKeyDown(e, runtime));
+	runtime.addEventListener("keydown", e => OnKeyDown(e));
 }
 
-function Tick(runtime)
+function Tick()
 {
-	if (runtime.layout.name === 'menu')
+	const name = globalThis.runtime.layout.name;
+	
+	if (name === 'menu')
 	{
-		LayoutMenuManager.tick(runtime);
+		LayoutMenuManager.tick();
 	}
 	
-	if (runtime.layout.name === 'input')
+	if (name === 'input')
 	{
-		LayoutInputManager.tick(runtime);
+		LayoutInputManager.tick();
 	}
 	
-	if (runtime.layout.name === 'main')
+	if (name === 'main')
 	{
-		LayoutMainManager.tick(runtime);
+		LayoutMainManager.tick();
 	}
 }
 
-function OnKeyDown(e, runtime)
+function OnKeyDown(e)
 {
+	const runtime = globalThis.runtime;
+	
 	if (e.key == 'Escape')
 	{
 		runtime.globalVars.layoutTransitionScheduled = false;

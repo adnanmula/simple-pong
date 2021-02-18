@@ -204,7 +204,7 @@
 													"actions": [
 														{
 															"type": "script",
-															"script": "InputManager.setInput(runtime, 'Gamepad' + localVars.gamepadIndex);"
+															"script": "InputManager.setInput('Gamepad' + localVars.gamepadIndex);"
 														}
 													],
 													"sid": 880468689352912
@@ -271,7 +271,7 @@
 					"actions": [
 						{
 							"type": "script",
-							"script": "InputManager.setInput(runtime, InputManager.TypeTouch0);"
+							"script": "InputManager.setInput(InputManager.TypeTouch0);"
 						}
 					],
 					"sid": 541602560764440
@@ -329,7 +329,7 @@
 					"actions": [
 						{
 							"type": "script",
-							"script": "InputManager.setInput(runtime, InputManager.TypeTouch1);"
+							"script": "InputManager.setInput(InputManager.TypeTouch1);"
 						}
 					],
 					"sid": 787822233905814

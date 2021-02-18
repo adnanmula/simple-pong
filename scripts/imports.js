@@ -4,3 +4,4 @@ import Pad from "./Pad.js";
 import Text from "./Text.js";
 import InputManager from "./InputManager.js";
 import MatchManager from "./MatchManager.js";
+import DetectorManager from "./DetectorManager.js";

@@ -5,26 +5,28 @@ export default class MatchManager
 {
 	static get MaxScore() { return 10 }
 
-	static score(runtime, team)
+	static score(team)
 	{
-		runtime.globalVars['score_team_' + team]++;
+		globalThis.runtime.globalVars['score_team_' + team]++;
 
-		Text.find(runtime, 'scoreboard', team).update(String(runtime.globalVars['score_team_' + team]));
+		Text.find('scoreboard', team).update(String(globalThis.runtime.globalVars['score_team_' + team]));
 	}
 
-	static respawnBall(runtime, team)
+	static respawnBall(team)
 	{
-		for (const instance of runtime.objects.ball.instances())
+		for (const instance of globalThis.runtime.objects.ball.instances())
 		{
 			instance.destroy();
 		}
 	
-		Ball.create(runtime, runtime.layout.width/2, runtime.layout.height/2, team === 0 ? 90 : 270);
+		Ball.create(runtime.layout.width/2, runtime.layout.height/2, team === 0 ? 90 : 270);
 	}
 	
-	static end(runtime)
+	static end()
 	{
-		let text = Text.find(runtime, 'winner', 0);
+		const runtime = globalThis.runtime;
+	
+		let text = Text.find('winner', 0);
 		
 		let winner = 1;
 		if (runtime.globalVars.score_team_0 < runtime.globalVars.score_team_1) {
@@ -42,8 +44,10 @@ export default class MatchManager
 		setTimeout(function(){ runtime.goToLayout('menu') }, 2500);
 	}
 	
-	static isFinished(runtime)
+	static isFinished()
 	{
+		const runtime = globalThis.runtime;
+
 		if (runtime.globalVars.score_team_0 >= MatchManager.MaxScore || runtime.globalVars.score_team_1 >= MatchManager.MaxScore)
 		{
 			return true;

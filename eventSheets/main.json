@@ -21,70 +21,8 @@
 			"sid": 414972094871895,
 			"children": [
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 316031218827740,
-							"parameters": {
-								"first-value": "pad.8Direction.VectorX",
-								"comparison": 4,
-								"second-value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"type": "script",
-							"script": "runtime.objects.ball.getFirstInstance().deviate(runtime, Ball.NormalDeviation, Ball.ClockwiseDeviation);"
-						}
-					],
-					"sid": 737285614205035
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 784723245998573,
-							"parameters": {
-								"first-value": "pad.8Direction.VectorX",
-								"comparison": 2,
-								"second-value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"type": "script",
-							"script": "runtime.objects.ball.getFirstInstance().deviate(runtime, Ball.NormalDeviation, Ball.CounterClockwiseDeviation);"
-						}
-					],
-					"sid": 247471147727535
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 661569446897206,
-							"parameters": {
-								"first-value": "pad.8Direction.VectorX",
-								"comparison": 0,
-								"second-value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"type": "script",
-							"script": "runtime.objects.ball.getFirstInstance().deviate(runtime, Ball.SmallDeviation, Math.random() < 0.5 ? Ball.ClockwiseDeviation : Ball.CounterClockwiseDeviation);"
-						}
-					],
-					"sid": 667285581412068
+					"eventType": "script",
+					"script": "let pad = runtime.objects.pad.getFirstPickedInstance();\n\nif (pad.vectorX() > 0)\n{\n\truntime.objects.ball.getFirstInstance().deviate(Ball.NormalDeviation, Ball.ClockwiseDeviation);\n}\n\nif (pad.vectorX() < 0)\n{\n\truntime.objects.ball.getFirstInstance().deviate(Ball.NormalDeviation, Ball.CounterClockwiseDeviation);\n}\n\nif (pad.vectorX() === 0)\n{\n\truntime.objects.ball.getFirstInstance().deviate(Ball.SmallDeviation, Math.random() < 0.5 ? Ball.ClockwiseDeviation : Ball.CounterClockwiseDeviation);\n}"
 				}
 			]
 		}

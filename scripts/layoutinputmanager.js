@@ -4,8 +4,10 @@ import InputManager from "./InputManager.js";
 
 export default class LayoutInputManager
 {
-	static before(runtime)
+	static before()
 	{
+		const runtime = globalThis.runtime;
+
 		runtime.globalVars.input_0_type = '';
 		runtime.globalVars.input_1_type = '';
 	
@@ -13,13 +15,15 @@ export default class LayoutInputManager
 		{	
 			runtime.globalVars.input_1_type = InputManager.TypeBot;
 					
-			Text.find(runtime, 'input_label', 1).isVisible = false;
-			Text.find(runtime, 'label', 1).isVisible = false;
+			Text.find('input_label', 1).isVisible = false;
+			Text.find('label', 1).isVisible = false;
 		}
 	}
 
-	static tick(runtime)
+	static tick()
 	{
+		const runtime = globalThis.runtime;
+
 		if (true == runtime.globalVars.layoutTransitionScheduled)
 		{
 			return;
@@ -37,14 +41,14 @@ export default class LayoutInputManager
 			&& runtime.globalVars.input_0_type !== InputManager.TypeKeyboardAd && runtime.globalVars.input_1_type !== InputManager.TypeKeyboardAd
 			&& (runtime.globalVars.input_0_type === '' || runtime.globalVars.input_1_type === ''))
 		{
-			InputManager.setInput(runtime, InputManager.TypeKeyboardAd);
+			InputManager.setInput(InputManager.TypeKeyboardAd);
 		}
 		
 		if ((runtime.keyboard.isKeyDown(InputManager.ArrowUp) || runtime.keyboard.isKeyDown(InputManager.ArrowLeft) || runtime.keyboard.isKeyDown(InputManager.ArrowDown) || runtime.keyboard.isKeyDown(InputManager.ArrowRight))
 			&& runtime.globalVars.input_0_type !== InputManager.TypeKeyboardArrows && runtime.globalVars.input_1_type !== InputManager.TypeKeyboardArrows
 			&& (runtime.globalVars.input_0_type === '' || runtime.globalVars.input_1_type === ''))
 		{
-			InputManager.setInput(runtime, InputManager.TypeKeyboardArrows);
+			InputManager.setInput(InputManager.TypeKeyboardArrows);
 		}
 	}
 }

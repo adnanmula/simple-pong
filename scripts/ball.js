@@ -13,19 +13,19 @@ export default class Ball extends ISpriteInstance
 		this.colorRgb = [Math.random(), Math.random(), Math.random()];
 	}
 
-	static create(runtime, x, y, angle)
+	static create(x, y, angle)
 	{
-		let instance = runtime.objects.ball.createInstance("main", x, y);
+		let instance = globalThis.runtime.objects.ball.createInstance("main", x, y);
 		
 		instance.angleDegrees = angle;
 	}
 	
-	static find(runtime, uid)
+	static find(uid)
 	{
-		return runtime.objects.ball.getInstanceByUid(uid);
+		return globalThis.runtime.objects.ball.getInstanceByUid(uid);
 	}
 	
-	deviate(runtime, deviation, direction)
+	deviate(deviation, direction)
 	{
 		if (direction == Ball.ClockwiseDeviation){
 			this.angleDegrees += deviation;
