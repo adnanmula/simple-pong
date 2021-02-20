@@ -130,9 +130,8 @@
 	"eventSheets": {
 		"items": [
 			"main",
-			"menu",
 			"set_input",
-			"input"
+			"functions"
 		],
 		"subfolders": []
 	},

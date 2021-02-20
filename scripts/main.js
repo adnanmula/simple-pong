@@ -11,9 +11,6 @@ import LayoutMainManager from "./LayoutMainManager.js";
 
 runOnStartup(async runtime =>
 {
-	globalThis.runtime = runtime;
-	globalThis.pointers = [];
-
 	runtime.objects.ball.setInstanceClass(Ball);
 	runtime.objects.pad.setInstanceClass(Pad);
 	runtime.objects.text.setInstanceClass(Text);
@@ -21,17 +18,19 @@ runOnStartup(async runtime =>
 	runtime.objects.input_touch_setter.setInstanceClass(TouchSetter);
 	runtime.objects.input_touch_detector.setInstanceClass(TouchDetector);
 	
-	runtime.addEventListener("beforeprojectstart", () => OnBeforeProjectStart());
+	runtime.addEventListener("beforeprojectstart", () => OnBeforeProjectStart(runtime));
 });
 
-function OnBeforeProjectStart()
+function OnBeforeProjectStart(runtime)
 {
-	const runtime = globalThis.runtime;
+	globalThis.runtime = runtime;
+	globalThis.pointers = [];
 
 	runtime.globalVars.layoutTransitionScheduled = false;
 	runtime.globalVars.score_team_0 = 0;
 	runtime.globalVars.score_team_1 = 0;
-
+	runtime.globalVars.gamemode = 0;
+	
 	runtime.getLayout('menu').addEventListener("beforelayoutstart", () => LayoutMenuManager.before());
 	runtime.getLayout('input').addEventListener("beforelayoutstart", () => LayoutInputManager.before());
 	runtime.getLayout('main').addEventListener("beforelayoutstart", () => LayoutMainManager.before());

@@ -64,9 +64,7 @@ export default class PointerManager
 			return;
 		}
 		
-		const [relativeX, relativeY] = globalThis.runtime.layout.getLayer("main").cssPxToLayer(absoluteX, absoluteY);
-
 		PointerManager.removePointer(id);
-		PointerManager.addPointer(id, relativeX, relativeY);
+		PointerManager.addPointer(id, absoluteX, absoluteY);
 	}
 }

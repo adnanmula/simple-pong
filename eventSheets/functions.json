@@ -1,71 +1,23 @@
 {
-	"name": "input",
+	"name": "functions",
 	"events": [
 		{
-			"eventType": "block",
-			"conditions": [
+			"functionName": "browserClose",
+			"functionDescription": "",
+			"functionCategory": "Script Helper",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
 				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 839272743705733
+					"id": "close",
+					"objectClass": "Browser",
+					"sid": 572178924362377
 				}
 			],
-			"actions": [],
-			"sid": 714414030311539,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 856215367824878,
-							"parameters": {
-								"first-value": "RegexMatchCount(input_0_type, \"GAMEPAD\", \"i\")",
-								"comparison": 4,
-								"second-value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "evaluateInputGamepad",
-							"sid": 210409244906504,
-							"parameters": [
-								"0",
-								"int(mid(input_0_type, 8, 1))"
-							]
-						}
-					],
-					"sid": 344053910417709
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 227031937735367,
-							"parameters": {
-								"first-value": "RegexMatchCount(input_1_type, \"GAMEPAD\", \"i\")",
-								"comparison": 4,
-								"second-value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "evaluateInputGamepad",
-							"sid": 416586320316537,
-							"parameters": [
-								"1",
-								"int(mid(input_1_type, 8, 1))"
-							]
-						}
-					],
-					"sid": 886277337565114
-				}
-			]
+			"sid": 487120338255048
 		},
 		{
 			"functionName": "evaluateInputGamepad",
@@ -139,5 +91,5 @@
 			]
 		}
 	],
-	"sid": 764013535584718
+	"sid": 468192175291157
 }

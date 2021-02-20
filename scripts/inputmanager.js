@@ -38,6 +38,16 @@ export default class InputManager
 		{
 			this['evaluate' + runtime.globalVars.input_1_type](1);
 		}
+		
+		if ([InputManager.TypeGamepad0, InputManager.TypeGamepad1, InputManager.TypeGamepad2, InputManager.TypeGamepad3].includes(runtime.globalVars.input_0_type))
+		{
+			InputManager.evaluateGamepad(0, runtime.globalVars.input_0_type.substring(7, 8));
+		}
+		
+		if ([InputManager.TypeGamepad0, InputManager.TypeGamepad1, InputManager.TypeGamepad2, InputManager.TypeGamepad3].includes(runtime.globalVars.input_1_type))
+		{
+			InputManager.evaluateGamepad(1, runtime.globalVars.input_0_type.substring(7, 8));
+		}
 	}
 	
 	static evaluateKeyboardAd(index)
@@ -102,6 +112,11 @@ export default class InputManager
 		{
 			pad.simulateRight();
 		}
+	}
+	
+	static evaluateGamepad(player, gamepadIndex)
+	{
+		runtime.callFunction('evaluateInputGamepad', player, gamepadIndex);
 	}
 	
 	static evaluateBot(index)

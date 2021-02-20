@@ -21,14 +21,22 @@ export default class Text extends ISpriteFontInstance
 
 		return null;
 	}
-	
-	isInTouch()
-	{
-		//TODO
-	}
-	
+
 	update(text)
 	{
 		this.text = text;
+	}
+	
+	isInTouch()
+	{
+		for (const pointer of globalThis.pointers)
+		{
+			if (this.containsPoint(pointer.x, pointer.y))
+			{
+				return true;
+			}
+		}
+		
+		return false;
 	}
 }
