@@ -16,7 +16,7 @@ export default class Pad extends ISpriteInstance
 	{
 		for (const instance of globalThis.runtime.objects.pad.instances())
 		{
-			if (instance.instVars.player == index) {
+			if (instance.instVars.player === index) {
 				return instance;
 			}
 		}

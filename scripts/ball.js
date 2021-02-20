@@ -27,7 +27,7 @@ export default class Ball extends ISpriteInstance
 	
 	deviate(deviation, direction)
 	{
-		if (direction == Ball.ClockwiseDeviation){
+		if (direction === Ball.ClockwiseDeviation){
 			this.angleDegrees += deviation;
 		} else {
 			this.angleDegrees -= deviation;

@@ -1,6 +1,7 @@
 import * as Utils from "./utils.js";
 import Text from "./Text.js";
 import InputManager from "./InputManager.js";
+import PointerManager from "./PointerManager.js";
 
 export default class LayoutInputManager
 {
@@ -11,25 +12,27 @@ export default class LayoutInputManager
 		runtime.globalVars.input_0_type = '';
 		runtime.globalVars.input_1_type = '';
 	
-		if (runtime.globalVars.gamemode == 1)
+		if (runtime.globalVars.gamemode === 1)
 		{	
 			runtime.globalVars.input_1_type = InputManager.TypeBot;
 					
 			Text.find('input_label', 1).isVisible = false;
 			Text.find('label', 1).isVisible = false;
 		}
+		
+		globalThis.pointers = [];
 	}
 
 	static tick()
 	{
 		const runtime = globalThis.runtime;
 
-		if (true == runtime.globalVars.layoutTransitionScheduled)
+		if (true === runtime.globalVars.layoutTransitionScheduled)
 		{
 			return;
 		}
 	
-		if (runtime.globalVars.input_0_type != '' && runtime.globalVars.input_1_type != '')
+		if (runtime.globalVars.input_0_type !== '' && runtime.globalVars.input_1_type !== '')
 		{
 			runtime.globalVars.layoutTransitionScheduled = true;
 			setTimeout(function(){ runtime.goToLayout('main') }, 1000);
@@ -49,6 +52,22 @@ export default class LayoutInputManager
 			&& (runtime.globalVars.input_0_type === '' || runtime.globalVars.input_1_type === ''))
 		{
 			InputManager.setInput(InputManager.TypeKeyboardArrows);
+		}
+		
+		if (PointerManager.setterIsInTouch(0))
+		{
+			if (runtime.globalVars.input_0_type === '')
+			{
+				InputManager.setInput(InputManager.TypeTouch0);
+			}
+		}
+
+		if (PointerManager.setterIsInTouch(1))
+		{
+			if (runtime.globalVars.input_1_type === '')
+			{
+				InputManager.setInput(InputManager.TypeTouch1);
+			}
 		}
 	}
 }

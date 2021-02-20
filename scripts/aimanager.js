@@ -13,15 +13,15 @@ export default class AiManager
 		}
 
 		if (ball !== null && ball.y > (ball.layout.height / 2)) {
-			AiManager.centerPosition(pad, ball);
+			AiManager.centerPosition(pad);
 		}
 
 		if (ball !== null && Utils.getVectorY(ball.behaviors.Bullet.speed, ball.behaviors.Bullet.angleOfMotion) > 0) {
-			AiManager.centerPosition(pad, ball);
+			AiManager.centerPosition(pad);
 		}
 
 		if (ball === null) {
-			AiManager.centerPosition(pad, ball);
+			AiManager.centerPosition(pad);
 		}
 	}
 	
@@ -38,7 +38,7 @@ export default class AiManager
 		}
 	}
 	
-	static centerPosition(pad, ball)
+	static centerPosition(pad)
 	{
 		if ((globalThis.runtime.layout.width / 2 - pad.width / 10) <= pad.x)
 		{

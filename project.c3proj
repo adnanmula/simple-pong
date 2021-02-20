@@ -190,6 +190,22 @@
 							"script-info": {
 								"purpose": "none"
 							}
+						},
+						{
+							"name": "TouchSetter.js",
+							"type": "application/javascript",
+							"sid": 691310631373194,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "TouchDetector.js",
+							"type": "application/javascript",
+							"sid": 369235590301173,
+							"script-info": {
+								"purpose": "none"
+							}
 						}
 					],
 					"subfolders": [],
@@ -222,7 +238,7 @@
 							}
 						},
 						{
-							"name": "DetectorManager.js",
+							"name": "PointerManager.js",
 							"type": "application/javascript",
 							"sid": 477003277241180,
 							"script-info": {

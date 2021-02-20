@@ -14,12 +14,17 @@ export default class Text extends ISpriteFontInstance
 	{
 		for (const instance of globalThis.runtime.objects.text.instances())
 		{
-			if (instance.instVars.type == type && instance.instVars.index == index) {
+			if (instance.instVars.type === type && instance.instVars.index === index) {
 				return instance;
 			}
 		}
 
 		return null;
+	}
+	
+	isInTouch()
+	{
+		//TODO
 	}
 	
 	update(text)

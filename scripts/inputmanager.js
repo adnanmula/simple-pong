@@ -1,6 +1,7 @@
 import Pad from "./Pad.js";
 import Text from "./Text.js";
 import AiManager from "./AiManager.js";
+import PointerManager from "./PointerManager.js";
 
 export default class InputManager
 {
@@ -28,12 +29,12 @@ export default class InputManager
 	{
 		const runtime = globalThis.runtime;
 
-		if ([InputManager.TypeKeyboardAd, InputManager.TypeKeyboardArrows, InputManager.TypeBot].includes(runtime.globalVars.input_0_type))
+		if ([InputManager.TypeKeyboardAd, InputManager.TypeKeyboardArrows, InputManager.TypeBot, InputManager.TypeTouch0].includes(runtime.globalVars.input_0_type))
 		{
 			this['evaluate' + runtime.globalVars.input_0_type](0);
 		}
 		
-		if ([InputManager.TypeKeyboardAd, InputManager.TypeKeyboardArrows, InputManager.TypeBot].includes(runtime.globalVars.input_1_type))
+		if ([InputManager.TypeKeyboardAd, InputManager.TypeKeyboardArrows, InputManager.TypeBot, InputManager.TypeTouch1].includes(runtime.globalVars.input_1_type))
 		{
 			this['evaluate' + runtime.globalVars.input_1_type](1);
 		}
@@ -69,15 +70,34 @@ export default class InputManager
 		}
 	}
 	
+	static evaluateTouch0()
+	{
+		InputManager.evaluateTouch(0, 0);
+		InputManager.evaluateTouch(0, 1);
+	}
+	
+	static evaluateTouch1()
+	{
+		InputManager.evaluateTouch(1, 0);
+		InputManager.evaluateTouch(1, 1);
+	}
+	
 	static evaluateTouch(index, action)
 	{
+		const result = PointerManager.detectorIsInTouch(index, action);
+		
+		if (false === result)
+		{
+			return;
+		}
+
 		const pad = Pad.find(index);
 
 		if (action === 0)
 		{
 			pad.simulateLeft();
 		}
-
+		
 		if (action === 1)
 		{
 			pad.simulateRight();

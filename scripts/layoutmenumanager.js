@@ -15,6 +15,5 @@ export default class LayoutMenuManager
 
 	static tick()
 	{
-		//
 	}
 }
