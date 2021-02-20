@@ -170,6 +170,39 @@
 					"isOrBlock": true
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 963592066809542,
+					"parameters": {
+						"key": 27
+					}
+				},
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 181074505912197,
+					"parameters": {
+						"object": "ui_back"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 326103137004700,
+					"parameters": {
+						"layout": "menu"
+					}
+				}
+			],
+			"sid": 550213641654241,
+			"isOrBlock": true
 		}
 	],
 	"sid": 662523354043252

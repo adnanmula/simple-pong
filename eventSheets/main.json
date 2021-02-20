@@ -21,6 +21,346 @@
 					"script": "let pad = runtime.objects.pad.getFirstPickedInstance();\n\nif (pad.vectorX() > 0)\n{\n\truntime.objects.ball.getFirstInstance().deviate(Ball.NormalDeviation, Ball.ClockwiseDeviation);\n}\n\nif (pad.vectorX() < 0)\n{\n\truntime.objects.ball.getFirstInstance().deviate(Ball.NormalDeviation, Ball.CounterClockwiseDeviation);\n}\n\nif (pad.vectorX() === 0)\n{\n\truntime.objects.ball.getFirstInstance().deviate(Ball.SmallDeviation, Math.random() < 0.5 ? Ball.ClockwiseDeviation : Ball.CounterClockwiseDeviation);\n}"
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 312162716608675
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 238078417383602,
+					"parameters": {
+						"layer": "\"pause\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 177547885494480,
+					"parameters": {
+						"time-scale": "1"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "ui_back",
+					"sid": 763992795514113,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 867744260263535,
+					"parameters": {
+						"seconds": "0"
+					}
+				}
+			],
+			"sid": 840674550449827
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 471321572592314,
+					"parameters": {
+						"object": "ui_back"
+					}
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 854687191238123,
+					"parameters": {
+						"layer": "\"pause\""
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 237810724792203,
+					"parameters": {
+						"layer": "\"pause\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 314748474580299,
+					"parameters": {
+						"time-scale": "0"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "ui_back",
+					"sid": 709564861875112,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 316021303783997,
+					"parameters": {
+						"seconds": "0"
+					}
+				}
+			],
+			"sid": 173184304867845
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 864434781415854,
+					"parameters": {
+						"key": 27
+					}
+				}
+			],
+			"actions": [],
+			"sid": 782599218258512,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 276866265808571,
+							"parameters": {
+								"layer": "\"pause\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 879292337776843,
+							"parameters": {
+								"layer": "\"pause\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 501656674570952,
+							"parameters": {
+								"time-scale": "1"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "ui_back",
+							"sid": 525607775410049,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 532052159846859
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 443981579518266
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 632272588934292,
+							"parameters": {
+								"layer": "\"pause\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 981488390178782,
+							"parameters": {
+								"layer": "\"pause\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 289823395744992,
+							"parameters": {
+								"time-scale": "0"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "ui_back",
+							"sid": 814639254080366,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 309946684000477
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 986933124539861,
+					"parameters": {
+						"object": "text"
+					}
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "text",
+					"sid": 411828779758482
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 512617747995829,
+					"parameters": {
+						"first-value": "text.type",
+						"comparison": 0,
+						"second-value": "\"pause_menu\""
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 211676270086241,
+					"parameters": {
+						"first-value": "text.index",
+						"comparison": 0,
+						"second-value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 438452769657260,
+					"parameters": {
+						"layout": "menu"
+					}
+				},
+				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 429427195286862,
+					"parameters": {
+						"time-scale": "1"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "ui_back",
+					"sid": 362253589662999,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 761115737690913
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 383684494306085,
+					"parameters": {
+						"object": "text"
+					}
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "text",
+					"sid": 970948504174645
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 580241990988327,
+					"parameters": {
+						"first-value": "text.type",
+						"comparison": 0,
+						"second-value": "\"pause_menu\""
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 561981976674820,
+					"parameters": {
+						"first-value": "text.index",
+						"comparison": 0,
+						"second-value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 960894385110931,
+					"parameters": {
+						"layer": "\"pause\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 122044945918559,
+					"parameters": {
+						"time-scale": "1"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "ui_back",
+					"sid": 753823905745962,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 787702689972879
 		}
 	],
 	"sid": 762210017106457

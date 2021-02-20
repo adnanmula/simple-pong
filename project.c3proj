@@ -97,7 +97,9 @@
 				"items": [
 					"text",
 					"input_touch_setter",
-					"input_touch_detector"
+					"input_touch_detector",
+					"ui_back",
+					"ui_frame"
 				],
 				"subfolders": [],
 				"name": "ui"
@@ -191,17 +193,17 @@
 							}
 						},
 						{
-							"name": "TouchSetter.js",
+							"name": "TouchDetector.js",
 							"type": "application/javascript",
-							"sid": 691310631373194,
+							"sid": 369235590301173,
 							"script-info": {
 								"purpose": "none"
 							}
 						},
 						{
-							"name": "TouchDetector.js",
+							"name": "TouchSetter.js",
 							"type": "application/javascript",
-							"sid": 369235590301173,
+							"sid": 691310631373194,
 							"script-info": {
 								"purpose": "none"
 							}

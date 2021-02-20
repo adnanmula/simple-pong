@@ -484,5 +484,5 @@
 	"width": 360,
 	"height": 640,
 	"unboundedScrolling": false,
-	"eventSheet": "menu"
+	"eventSheet": null
 }
