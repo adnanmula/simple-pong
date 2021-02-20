@@ -130,7 +130,12 @@ export default class InputManager
 		const textBottom = Text.find('input_label', 0);
 		const textTop = Text.find('input_label', 1);
 
-		if (textBottom !== null && runtime.globalVars.input_0_type === '')
+		if (null === textBottom || null === textTop)
+		{
+			return;
+		}
+
+		if (runtime.globalVars.input_0_type === '' && type !== InputManager.TypeTouch1)
 		{
 			runtime.globalVars.input_0_type = type;
 
@@ -144,7 +149,7 @@ export default class InputManager
 			return;
 		}
 
-		if (textTop !== null && runtime.globalVars.input_0_type !== '' && runtime.globalVars.input_1_type === '')
+		if ((runtime.globalVars.input_0_type !== '' || type ===  InputManager.TypeTouch1) && runtime.globalVars.input_1_type === '' && type !== InputManager.TypeTouch0)
 		{
 			runtime.globalVars.input_1_type = type;
 
