@@ -14,6 +14,13 @@ export default class MatchManager
 
 	static respawnBall(team)
 	{
+		if (globalThis.runtime.globalVars.game_is_paused)
+		{
+			setTimeout(function(){ MatchManager.respawnBall(team) }, 1000);
+			
+			return;
+		}
+		
 		for (const instance of globalThis.runtime.objects.ball.instances())
 		{
 			instance.destroy();

@@ -374,7 +374,7 @@
 		]
 	},
 	"properties": {
-		"description": "",
+		"description": "Just pong, nothing more",
 		"version": "1.0.0.0",
 		"author": "Adnan Mula",
 		"authorEmail": "",
@@ -414,7 +414,7 @@
 		"sampling": "nearest",
 		"downscaling": "medium",
 		"maxSpriteSheetSize": 2048,
-		"loaderStyle": "splash",
+		"loaderStyle": "progress",
 		"preloadSounds": true,
 		"clearBackground": true,
 		"enhancedAccelerationPrecision": true,
@@ -422,5 +422,5 @@
 	},
 	"viewportWidth": 360,
 	"viewportHeight": 640,
-	"firstLayout": null
+	"firstLayout": "menu"
 }

@@ -2,6 +2,16 @@
 	"name": "main",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "game_is_paused",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 927564931891091
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -58,11 +68,12 @@
 					}
 				},
 				{
-					"id": "wait",
+					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 867744260263535,
+					"sid": 508200922924372,
 					"parameters": {
-						"seconds": "0"
+						"variable": "game_is_paused",
+						"value": "false"
 					}
 				}
 			],
@@ -116,11 +127,12 @@
 					}
 				},
 				{
-					"id": "wait",
+					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 316021303783997,
+					"sid": 580389390743572,
 					"parameters": {
-						"seconds": "0"
+						"variable": "game_is_paused",
+						"value": "true"
 					}
 				}
 			],
@@ -178,6 +190,15 @@
 							"parameters": {
 								"visibility": "visible"
 							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 725871431261827,
+							"parameters": {
+								"variable": "game_is_paused",
+								"value": "false"
+							}
 						}
 					],
 					"sid": 532052159846859
@@ -224,6 +245,15 @@
 							"sid": 814639254080366,
 							"parameters": {
 								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 495150321665243,
+							"parameters": {
+								"variable": "game_is_paused",
+								"value": "true"
 							}
 						}
 					],
@@ -292,6 +322,15 @@
 					"parameters": {
 						"visibility": "visible"
 					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 950851998319299,
+					"parameters": {
+						"variable": "game_is_paused",
+						"value": "false"
+					}
 				}
 			],
 			"sid": 761115737690913
@@ -357,6 +396,15 @@
 					"sid": 753823905745962,
 					"parameters": {
 						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 307960306287523,
+					"parameters": {
+						"variable": "game_is_paused",
+						"value": "false"
 					}
 				}
 			],
