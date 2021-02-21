@@ -40,6 +40,14 @@
 		},
 		{
 			"type": "plugin",
+			"id": "PlatformInfo",
+			"name": "Platform info",
+			"author": "Scirra",
+			"version": "r234.4",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Spritefont2",
 			"name": "Sprite font",
 			"author": "Scirra",
@@ -88,7 +96,8 @@
 					"Gamepad",
 					"Keyboard",
 					"Touch",
-					"Browser"
+					"Browser",
+					"PlatformInfo"
 				],
 				"subfolders": [],
 				"name": "system"
@@ -374,7 +383,7 @@
 		]
 	},
 	"properties": {
-		"description": "Just pong, nothing more",
+		"description": "Just pong, nothing more.",
 		"version": "1.0.0.0",
 		"author": "Adnan Mula",
 		"authorEmail": "",

@@ -148,6 +148,42 @@
 					"parameters": {
 						"key": 27
 					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 918610770851639,
+					"parameters": {
+						"gamepad": "0",
+						"button": "start-menu"
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 947377272306084,
+					"parameters": {
+						"gamepad": "1",
+						"button": "start-menu"
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 549634033380466,
+					"parameters": {
+						"gamepad": "2",
+						"button": "start-menu"
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 872089799080200,
+					"parameters": {
+						"gamepad": "3",
+						"button": "start-menu"
+					}
 				}
 			],
 			"actions": [],
@@ -259,7 +295,8 @@
 					],
 					"sid": 309946684000477
 				}
-			]
+			],
+			"isOrBlock": true
 		},
 		{
 			"eventType": "block",

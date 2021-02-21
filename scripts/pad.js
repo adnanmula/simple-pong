@@ -38,4 +38,9 @@ export default class Pad extends ISpriteInstance
 	{
 		this.behaviors['8Direction'].simulateControl('right');
 	}
+	
+	setMaxSpeed(speed)
+	{
+		this.behaviors['8Direction'].maxSpeed = speed;
+	}
 }

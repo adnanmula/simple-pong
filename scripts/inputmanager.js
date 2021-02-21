@@ -46,7 +46,7 @@ export default class InputManager
 		
 		if ([InputManager.TypeGamepad0, InputManager.TypeGamepad1, InputManager.TypeGamepad2, InputManager.TypeGamepad3].includes(runtime.globalVars.input_1_type))
 		{
-			InputManager.evaluateGamepad(1, runtime.globalVars.input_0_type.substring(7, 8));
+			InputManager.evaluateGamepad(1, runtime.globalVars.input_1_type.substring(7, 8));
 		}
 	}
 	

@@ -35,6 +35,29 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 483976786430884
+				},
+				{
+					"id": "is-on-mobile",
+					"objectClass": "PlatformInfo",
+					"sid": 466243412369749
+				}
+			],
+			"actions": [],
+			"sid": 975343316268138,
+			"children": [
+				{
+					"eventType": "script",
+					"script": "Text.find('label', 0).update('Touchscreen and gamepad available.');\nText.find('label', 1).update('Touchscreen and gamepad available.');"
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "every-tick",
 					"objectClass": "System",
 					"sid": 784920914156638
@@ -145,22 +168,13 @@
 														"variable": "gamepadIndex",
 														"value": "loopindex"
 													}
+												},
+												{
+													"type": "script",
+													"script": "InputManager.setInput('Gamepad' + localVars.gamepadIndex);"
 												}
 											],
-											"sid": 987025739463626,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [],
-													"actions": [
-														{
-															"type": "script",
-															"script": "InputManager.setInput('Gamepad' + localVars.gamepadIndex);"
-														}
-													],
-													"sid": 880468689352912
-												}
-											]
+											"sid": 987025739463626
 										}
 									]
 								}
@@ -188,6 +202,42 @@
 					"sid": 181074505912197,
 					"parameters": {
 						"object": "ui_back"
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 827087482332261,
+					"parameters": {
+						"gamepad": "0",
+						"button": "button-b"
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 568189770111720,
+					"parameters": {
+						"gamepad": "1",
+						"button": "button-b"
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 184039066756078,
+					"parameters": {
+						"gamepad": "2",
+						"button": "button-b"
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 188297810538074,
+					"parameters": {
+						"gamepad": "3",
+						"button": "button-b"
 					}
 				}
 			],

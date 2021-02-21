@@ -15,7 +15,12 @@ export function isOutside(instance)
 	return instance.x < 0 || instance.y < 0 || instance.x > layout.width || instance.y > layout.height;
 }
 
-function toRadians(x)
+export function toRadians(x)
 {
 	return x * (Math.PI / 180);
+}
+
+export function toDegrees(x)
+{
+	return x * (180 / Math.PI);
 }

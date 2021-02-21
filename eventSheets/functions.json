@@ -57,6 +57,17 @@
 								"gamepad": "gamepad_index",
 								"button": "d-pad-left"
 							}
+						},
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 112358455496013,
+							"parameters": {
+								"gamepad": "gamepad_index",
+								"axis": "left-analog-x-axis",
+								"comparison": 3,
+								"value": "-25"
+							}
 						}
 					],
 					"actions": [
@@ -65,7 +76,8 @@
 							"script": "let pad = Pad.find(localVars.player);\npad.simulateLeft();"
 						}
 					],
-					"sid": 714585375117358
+					"sid": 714585375117358,
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
@@ -78,6 +90,17 @@
 								"gamepad": "gamepad_index",
 								"button": "d-pad-right"
 							}
+						},
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 390130042010737,
+							"parameters": {
+								"gamepad": "gamepad_index",
+								"axis": "left-analog-x-axis",
+								"comparison": 5,
+								"value": "25"
+							}
 						}
 					],
 					"actions": [
@@ -86,7 +109,8 @@
 							"script": "let pad = Pad.find(localVars.player);\npad.simulateRight();"
 						}
 					],
-					"sid": 307280099871168
+					"sid": 307280099871168,
+					"isOrBlock": true
 				}
 			]
 		}
