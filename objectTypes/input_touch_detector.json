@@ -1,35 +1,42 @@
 {
-	"name": "ball",
+	"name": "input_touch_detector",
 	"plugin-id": "Sprite",
-	"sid": 551841285735038,
+	"sid": 546199366607550,
 	"isGlobal": false,
-	"instanceVariables": [],
-	"behaviorTypes": [
+	"instanceVariables": [
 		{
-			"behaviorId": "Bullet",
-			"name": "Bullet",
-			"sid": 218588301862668
+			"name": "index",
+			"type": "number",
+			"desc": "",
+			"sid": 299135597698121
+		},
+		{
+			"name": "action",
+			"type": "number",
+			"desc": "",
+			"sid": 531537794579920
 		}
 	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 20,
-						"height": 20,
+						"width": 10,
+						"height": 10,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4800093,
+						"imageSpriteId": 7859421,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 571392872098330,
+				"sid": 146616298568407,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

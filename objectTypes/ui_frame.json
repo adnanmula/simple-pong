@@ -1,35 +1,29 @@
 {
-	"name": "ball",
+	"name": "ui_frame",
 	"plugin-id": "Sprite",
-	"sid": 551841285735038,
+	"sid": 184264447538356,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "Bullet",
-			"name": "Bullet",
-			"sid": 218588301862668
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 20,
-						"height": 20,
+						"width": 10,
+						"height": 10,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4800093,
+						"imageSpriteId": 3376937,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 571392872098330,
+				"sid": 870153414940353,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

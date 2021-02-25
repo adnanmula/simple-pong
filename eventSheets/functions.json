@@ -1,0 +1,119 @@
+{
+	"name": "functions",
+	"events": [
+		{
+			"functionName": "browserClose",
+			"functionDescription": "",
+			"functionCategory": "Script Helper",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "close",
+					"objectClass": "Browser",
+					"sid": 572178924362377
+				}
+			],
+			"sid": 487120338255048
+		},
+		{
+			"functionName": "evaluateInputGamepad",
+			"functionDescription": "Evaluates gamepad input.",
+			"functionCategory": "input",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "player",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 160767702801292
+				},
+				{
+					"name": "gamepad_index",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 681775117594525
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 925431798013971,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 847930744037963,
+							"parameters": {
+								"gamepad": "gamepad_index",
+								"button": "d-pad-left"
+							}
+						},
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 112358455496013,
+							"parameters": {
+								"gamepad": "gamepad_index",
+								"axis": "left-analog-x-axis",
+								"comparison": 3,
+								"value": "-25"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "script",
+							"script": "let pad = Pad.find(localVars.player);\npad.simulateLeft();"
+						}
+					],
+					"sid": 714585375117358,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 323856991337312,
+							"parameters": {
+								"gamepad": "gamepad_index",
+								"button": "d-pad-right"
+							}
+						},
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 390130042010737,
+							"parameters": {
+								"gamepad": "gamepad_index",
+								"axis": "left-analog-x-axis",
+								"comparison": 5,
+								"value": "25"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "script",
+							"script": "let pad = Pad.find(localVars.player);\npad.simulateRight();"
+						}
+					],
+					"sid": 307280099871168,
+					"isOrBlock": true
+				}
+			]
+		}
+	],
+	"sid": 468192175291157
+}

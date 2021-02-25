@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 21800,
+	"savedWithRelease": 23700,
 	"name": "Simple Pong",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -11,7 +11,7 @@
 			"id": "gamepad",
 			"name": "Gamepad",
 			"author": "Scirra",
-			"version": "r218",
+			"version": "r237",
 			"bundled": false
 		},
 		{
@@ -19,7 +19,7 @@
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
-			"version": "r218",
+			"version": "r237",
 			"bundled": false
 		},
 		{
@@ -27,7 +27,7 @@
 			"id": "Touch",
 			"name": "Touch",
 			"author": "Scirra",
-			"version": "r218",
+			"version": "r237",
 			"bundled": false
 		},
 		{
@@ -35,7 +35,15 @@
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
-			"version": "r218",
+			"version": "r237",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "PlatformInfo",
+			"name": "Platform info",
+			"author": "Scirra",
+			"version": "r237",
 			"bundled": false
 		},
 		{
@@ -43,7 +51,7 @@
 			"id": "Spritefont2",
 			"name": "Sprite font",
 			"author": "Scirra",
-			"version": "r218",
+			"version": "r237",
 			"bundled": false
 		},
 		{
@@ -51,7 +59,7 @@
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
-			"version": "r218",
+			"version": "r237",
 			"bundled": false
 		},
 		{
@@ -59,7 +67,7 @@
 			"id": "solid",
 			"name": "Solid",
 			"author": "Scirra",
-			"version": "r218",
+			"version": "r237",
 			"bundled": false
 		},
 		{
@@ -67,7 +75,7 @@
 			"id": "EightDir",
 			"name": "8 Direction",
 			"author": "Scirra",
-			"version": "r218",
+			"version": "r237",
 			"bundled": false
 		},
 		{
@@ -75,29 +83,32 @@
 			"id": "Bullet",
 			"name": "Bullet",
 			"author": "Scirra",
-			"version": "r218",
+			"version": "r237",
 			"bundled": false
 		}
 	],
 	"uniqueId": "9uvgtnm11rg",
 	"objectTypes": {
-		"items": [
-			"Sprite"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
 					"Gamepad",
 					"Keyboard",
 					"Touch",
-					"Browser"
+					"Browser",
+					"PlatformInfo"
 				],
 				"subfolders": [],
 				"name": "system"
 			},
 			{
 				"items": [
-					"text"
+					"text",
+					"input_touch_setter",
+					"input_touch_detector",
+					"ui_back",
+					"ui_frame"
 				],
 				"subfolders": [],
 				"name": "ui"
@@ -130,15 +141,155 @@
 	"eventSheets": {
 		"items": [
 			"main",
-			"menu",
-			"input"
+			"set_input",
+			"functions"
 		],
 		"subfolders": []
 	},
 	"rootFileFolders": {
 		"script": {
-			"items": [],
-			"subfolders": []
+			"items": [
+				{
+					"name": "utils.js",
+					"type": "application/javascript",
+					"sid": 422295690426881,
+					"script-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "imports.js",
+					"type": "application/javascript",
+					"sid": 558632326137722,
+					"script-info": {
+						"purpose": "imports-for-events"
+					}
+				},
+				{
+					"name": "main.js",
+					"type": "application/javascript",
+					"sid": 488245507374818,
+					"script-info": {
+						"purpose": "main"
+					}
+				}
+			],
+			"subfolders": [
+				{
+					"items": [
+						{
+							"name": "Ball.js",
+							"type": "application/javascript",
+							"sid": 526494486547307,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Pad.js",
+							"type": "application/javascript",
+							"sid": 448493742125336,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Text.js",
+							"type": "application/javascript",
+							"sid": 442533668695675,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "TouchDetector.js",
+							"type": "application/javascript",
+							"sid": 369235590301173,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "TouchSetter.js",
+							"type": "application/javascript",
+							"sid": 691310631373194,
+							"script-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "prop"
+				},
+				{
+					"items": [
+						{
+							"name": "InputManager.js",
+							"type": "application/javascript",
+							"sid": 425309592557192,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "MatchManager.js",
+							"type": "application/javascript",
+							"sid": 189267997644588,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "AiManager.js",
+							"type": "application/javascript",
+							"sid": 418532535874368,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "PointerManager.js",
+							"type": "application/javascript",
+							"sid": 477003277241180,
+							"script-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "manager"
+				},
+				{
+					"items": [
+						{
+							"name": "LayoutMainManager.js",
+							"type": "application/javascript",
+							"sid": 667579740926065,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "LayoutMenuManager.js",
+							"type": "application/javascript",
+							"sid": 769495747098002,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "LayoutInputManager.js",
+							"type": "application/javascript",
+							"sid": 775299850942281,
+							"script-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "layout"
+				}
+			]
 		},
 		"sound": {
 			"items": [],
@@ -232,12 +383,12 @@
 		]
 	},
 	"properties": {
-		"description": "",
-		"version": "1.0.0.0",
+		"description": "Just pong, nothing more.",
+		"version": "0.1.0.0",
 		"author": "Adnan Mula",
 		"authorEmail": "",
 		"authorWebsite": "",
-		"appId": "",
+		"appId": "com.adnanmula.pong",
 		"pixelRounding": true,
 		"useLoaderLayout": false,
 		"fullscreenMode": "letterbox-scale",
@@ -266,12 +417,13 @@
 		"orientations": "portrait",
 		"enableWebGL": true,
 		"gpuPreference": "high-performance",
+		"scriptsType": "module",
 		"framerateMode": "vsync",
 		"compositingMode": "standard",
 		"sampling": "nearest",
 		"downscaling": "medium",
 		"maxSpriteSheetSize": 2048,
-		"loaderStyle": "splash",
+		"loaderStyle": "progress",
 		"preloadSounds": true,
 		"clearBackground": true,
 		"enhancedAccelerationPrecision": true,
@@ -279,5 +431,5 @@
 	},
 	"viewportWidth": 360,
 	"viewportHeight": 640,
-	"firstLayout": null
+	"firstLayout": "menu"
 }

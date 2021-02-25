@@ -1,0 +1,259 @@
+{
+	"name": "set_input",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "input_0_type",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 824315697467877
+		},
+		{
+			"eventType": "variable",
+			"name": "input_1_type",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 208629060312738
+		},
+		{
+			"eventType": "variable",
+			"name": "MAX_GAMEPAD",
+			"type": "number",
+			"initialValue": "3",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 403365916631134
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 483976786430884
+				},
+				{
+					"id": "is-on-mobile",
+					"objectClass": "PlatformInfo",
+					"sid": 466243412369749
+				}
+			],
+			"actions": [],
+			"sid": 975343316268138,
+			"children": [
+				{
+					"eventType": "script",
+					"script": "Text.find('label', 0).update('Touchscreen or gamepad.');\nText.find('label', 1).update('Touchscreen or gamepad.');"
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 784920914156638
+				}
+			],
+			"actions": [],
+			"sid": 599727121040622,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 827396601219383,
+							"parameters": {
+								"first-value": "input_0_type",
+								"comparison": 0,
+								"second-value": "\"\""
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 812741085027608,
+							"parameters": {
+								"first-value": "input_1_type",
+								"comparison": 0,
+								"second-value": "\"\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 239806988401512,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 490253642244461,
+									"parameters": {
+										"name": "\"input_detector\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 481162236492109,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 401479416817770,
+											"parameters": {
+												"first-value": "input_0_type",
+												"comparison": 1,
+												"second-value": "\"GAMEPAD_\" & loopindex"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 566364883501251,
+											"parameters": {
+												"first-value": "input_1_type",
+												"comparison": 1,
+												"second-value": "\"GAMEPAD_\" & loopindex"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 634571778976101,
+									"children": [
+										{
+											"eventType": "variable",
+											"name": "gamepadIndex",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 290987264378616
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-any-button-pressed",
+													"objectClass": "Gamepad",
+													"sid": 376636282577755,
+													"parameters": {
+														"gamepad": "loopindex"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 605502919763463,
+													"parameters": {
+														"variable": "gamepadIndex",
+														"value": "loopindex"
+													}
+												},
+												{
+													"type": "script",
+													"script": "InputManager.setInput('Gamepad' + localVars.gamepadIndex);"
+												}
+											],
+											"sid": 987025739463626
+										}
+									]
+								}
+							]
+						}
+					],
+					"isOrBlock": true
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 963592066809542,
+					"parameters": {
+						"key": 27
+					}
+				},
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 181074505912197,
+					"parameters": {
+						"object": "ui_back"
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 827087482332261,
+					"parameters": {
+						"gamepad": "0",
+						"button": "button-b"
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 568189770111720,
+					"parameters": {
+						"gamepad": "1",
+						"button": "button-b"
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 184039066756078,
+					"parameters": {
+						"gamepad": "2",
+						"button": "button-b"
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 188297810538074,
+					"parameters": {
+						"gamepad": "3",
+						"button": "button-b"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 326103137004700,
+					"parameters": {
+						"layout": "menu"
+					}
+				}
+			],
+			"sid": 550213641654241,
+			"isOrBlock": true
+		}
+	],
+	"sid": 662523354043252
+}

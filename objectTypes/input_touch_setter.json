@@ -1,9 +1,16 @@
 {
-	"name": "Sprite",
+	"name": "input_touch_setter",
 	"plugin-id": "Sprite",
 	"sid": 515768825073635,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "player",
+			"type": "number",
+			"desc": "",
+			"sid": 494261179874524
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
@@ -11,14 +18,14 @@
 			{
 				"frames": [
 					{
-						"width": 100,
-						"height": 100,
+						"width": 10,
+						"height": 10,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3890154,
+						"imageSpriteId": 1456593,
 						"useCollisionPoly": true,
 						"duration": 1
 					}

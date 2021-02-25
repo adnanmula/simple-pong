@@ -1,2 +1,5 @@
-# simple-pong
-Simple pong game made with Construct 3
+Pong game made with Construct 3.
+
+<div>
+  <img src="./things/screenshot/4.jpg" width="110px">
+</div>

@@ -3,426 +3,13 @@
 	"events": [
 		{
 			"eventType": "variable",
-			"name": "score_team_0",
-			"type": "number",
-			"initialValue": "0",
+			"name": "game_is_paused",
+			"type": "boolean",
+			"initialValue": "false",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 174100485704931
-		},
-		{
-			"eventType": "variable",
-			"name": "score_team_1",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 838336454094952
-		},
-		{
-			"eventType": "variable",
-			"name": "BALL_ANGLE_MODIFIER",
-			"type": "number",
-			"initialValue": "30",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 816086857656353
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 718442640690014
-				}
-			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 617367548676038,
-					"parameters": {
-						"variable": "score_team_0",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 973509446719324,
-					"parameters": {
-						"variable": "score_team_1",
-						"value": "0"
-					}
-				}
-			],
-			"sid": 118343111229312
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-outside-layout",
-					"objectClass": "ball",
-					"sid": 204761840947937
-				}
-			],
-			"actions": [],
-			"sid": 833386183600185,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 189852107641789,
-							"parameters": {
-								"first-value": "ball.Y",
-								"comparison": 4,
-								"second-value": "LayoutHeight / 2"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 836450717319672,
-							"parameters": {
-								"variable": "score_team_0",
-								"value": "1"
-							}
-						},
-						{
-							"id": "destroy",
-							"objectClass": "ball",
-							"sid": 242774241967144
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 524965328973902,
-							"parameters": {
-								"seconds": "1.0"
-							}
-						},
-						{
-							"callFunction": "matchRespawnBall",
-							"sid": 725595260754460,
-							"parameters": [
-								"0"
-							]
-						}
-					],
-					"sid": 130122759365814
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 315550097418818,
-							"parameters": {
-								"first-value": "ball.Y",
-								"comparison": 2,
-								"second-value": "LayoutHeight / 2"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 877399351870693,
-							"parameters": {
-								"variable": "score_team_1",
-								"value": "1"
-							}
-						},
-						{
-							"id": "destroy",
-							"objectClass": "ball",
-							"sid": 168727534909686
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 675308281104378,
-							"parameters": {
-								"seconds": "1.0"
-							}
-						},
-						{
-							"callFunction": "matchRespawnBall",
-							"sid": 491598231566983,
-							"parameters": [
-								"1"
-							]
-						}
-					],
-					"sid": 328345710889960
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [],
-					"sid": 341403140068907
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "key-is-down",
-					"objectClass": "Keyboard",
-					"sid": 658141016788623,
-					"parameters": {
-						"key": 65
-					}
-				},
-				{
-					"id": "pick-by-evaluate",
-					"objectClass": "System",
-					"sid": 379536336617226,
-					"parameters": {
-						"object": "pad",
-						"expression": "pad.player = 0"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "simulate-control",
-					"objectClass": "pad",
-					"sid": 807797245752090,
-					"behaviorType": "8Direction",
-					"parameters": {
-						"control": "left"
-					}
-				}
-			],
-			"sid": 653384448362452
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "key-is-down",
-					"objectClass": "Keyboard",
-					"sid": 231436976530883,
-					"parameters": {
-						"key": 68
-					}
-				},
-				{
-					"id": "pick-by-evaluate",
-					"objectClass": "System",
-					"sid": 156340986940442,
-					"parameters": {
-						"object": "pad",
-						"expression": "pad.player = 0"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "simulate-control",
-					"objectClass": "pad",
-					"sid": 904606019092769,
-					"behaviorType": "8Direction",
-					"parameters": {
-						"control": "right"
-					}
-				}
-			],
-			"sid": 509101368190507
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "key-is-down",
-					"objectClass": "Keyboard",
-					"sid": 479383264199598,
-					"parameters": {
-						"key": 37
-					}
-				},
-				{
-					"id": "pick-by-evaluate",
-					"objectClass": "System",
-					"sid": 654661209416907,
-					"parameters": {
-						"object": "pad",
-						"expression": "pad.player = 1"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "simulate-control",
-					"objectClass": "pad",
-					"sid": 669253643413106,
-					"behaviorType": "8Direction",
-					"parameters": {
-						"control": "left"
-					}
-				}
-			],
-			"sid": 718507840487922
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "key-is-down",
-					"objectClass": "Keyboard",
-					"sid": 723832105338365,
-					"parameters": {
-						"key": 39
-					}
-				},
-				{
-					"id": "pick-by-evaluate",
-					"objectClass": "System",
-					"sid": 416131025980379,
-					"parameters": {
-						"object": "pad",
-						"expression": "pad.player = 1"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "simulate-control",
-					"objectClass": "pad",
-					"sid": 169150758526765,
-					"behaviorType": "8Direction",
-					"parameters": {
-						"control": "right"
-					}
-				}
-			],
-			"sid": 413562566047639
-		},
-		{
-			"functionName": "matchRespawnBall",
-			"functionDescription": "",
-			"functionCategory": "match",
-			"functionReturnType": "none",
-			"functionIsAsync": false,
-			"functionParameters": [
-				{
-					"name": "team",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"sid": 290140892187384
-				}
-			],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 998481011865410,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 886681290308958,
-							"parameters": {
-								"object-to-create": "ball",
-								"layer": "\"main\"",
-								"x": "LayoutWidth / 2",
-								"y": "LayoutHeight / 2"
-							}
-						},
-						{
-							"id": "set-angle",
-							"objectClass": "ball",
-							"sid": 749115113243523,
-							"parameters": {
-								"angle": "team = 0 ? 270 : 90"
-							}
-						}
-					],
-					"sid": 294046610920701
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 905603500274028
-				}
-			],
-			"actions": [],
-			"sid": 768209729815737,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-evaluate",
-							"objectClass": "System",
-							"sid": 552173673035483,
-							"parameters": {
-								"object": "text",
-								"expression": "text.type = \"scoreboard\" & text.index = 0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "text",
-							"sid": 170298511724780,
-							"parameters": {
-								"text": "score_team_0"
-							}
-						}
-					],
-					"sid": 663620724045760
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-evaluate",
-							"objectClass": "System",
-							"sid": 695579641631651,
-							"parameters": {
-								"object": "text",
-								"expression": "text.type = \"scoreboard\" & text.index = 1"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "text",
-							"sid": 835466950493983,
-							"parameters": {
-								"text": "score_team_1"
-							}
-						}
-					],
-					"sid": 999631181675162
-				}
-			]
+			"sid": 927564931891091
 		},
 		{
 			"eventType": "block",
@@ -434,70 +21,431 @@
 					"parameters": {
 						"object": "pad"
 					}
-				},
-				{
-					"id": "is-moving",
-					"objectClass": "pad",
-					"sid": 818604906356608,
-					"behaviorType": "8Direction"
 				}
 			],
 			"actions": [],
 			"sid": 414972094871895,
 			"children": [
 				{
+					"eventType": "script",
+					"script": "let pad = runtime.objects.pad.getFirstPickedInstance();\n\nif (pad.vectorX() > 0)\n{\n\truntime.objects.ball.getFirstInstance().deviate(Ball.NormalDeviation, Ball.ClockwiseDeviation);\n}\n\nif (pad.vectorX() < 0)\n{\n\truntime.objects.ball.getFirstInstance().deviate(Ball.NormalDeviation, Ball.CounterClockwiseDeviation);\n}\n\nif (pad.vectorX() === 0)\n{\n\truntime.objects.ball.getFirstInstance().deviate(Ball.SmallDeviation, Math.random() < 0.5 ? Ball.ClockwiseDeviation : Ball.CounterClockwiseDeviation);\n}"
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 312162716608675
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 238078417383602,
+					"parameters": {
+						"layer": "\"pause\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 177547885494480,
+					"parameters": {
+						"time-scale": "1"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "ui_back",
+					"sid": 763992795514113,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 508200922924372,
+					"parameters": {
+						"variable": "game_is_paused",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 840674550449827
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 471321572592314,
+					"parameters": {
+						"object": "ui_back"
+					}
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 854687191238123,
+					"parameters": {
+						"layer": "\"pause\""
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 237810724792203,
+					"parameters": {
+						"layer": "\"pause\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 314748474580299,
+					"parameters": {
+						"time-scale": "0"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "ui_back",
+					"sid": 709564861875112,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 580389390743572,
+					"parameters": {
+						"variable": "game_is_paused",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 173184304867845
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 864434781415854,
+					"parameters": {
+						"key": 27
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 918610770851639,
+					"parameters": {
+						"gamepad": "0",
+						"button": "start-menu"
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 947377272306084,
+					"parameters": {
+						"gamepad": "1",
+						"button": "start-menu"
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 549634033380466,
+					"parameters": {
+						"gamepad": "2",
+						"button": "start-menu"
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 872089799080200,
+					"parameters": {
+						"gamepad": "3",
+						"button": "start-menu"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 782599218258512,
+			"children": [
+				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-two-values",
+							"id": "layer-is-visible",
 							"objectClass": "System",
-							"sid": 316031218827740,
+							"sid": 276866265808571,
 							"parameters": {
-								"first-value": "pad.8Direction.VectorX",
-								"comparison": 4,
-								"second-value": "0"
+								"layer": "\"pause\""
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "rotate-clockwise",
-							"objectClass": "ball",
-							"sid": 835204879284087,
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 879292337776843,
 							"parameters": {
-								"degrees": "BALL_ANGLE_MODIFIER"
+								"layer": "\"pause\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 501656674570952,
+							"parameters": {
+								"time-scale": "1"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "ui_back",
+							"sid": 525607775410049,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 725871431261827,
+							"parameters": {
+								"variable": "game_is_paused",
+								"value": "false"
 							}
 						}
 					],
-					"sid": 737285614205035
+					"sid": 532052159846859
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-two-values",
+							"id": "else",
 							"objectClass": "System",
-							"sid": 784723245998573,
+							"sid": 443981579518266
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 632272588934292,
 							"parameters": {
-								"first-value": "pad.8Direction.VectorX",
-								"comparison": 2,
-								"second-value": "0"
-							}
+								"layer": "\"pause\""
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
 						{
-							"id": "rotate-counter-clockwise",
-							"objectClass": "ball",
-							"sid": 402864364549031,
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 981488390178782,
 							"parameters": {
-								"degrees": "BALL_ANGLE_MODIFIER"
+								"layer": "\"pause\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 289823395744992,
+							"parameters": {
+								"time-scale": "0"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "ui_back",
+							"sid": 814639254080366,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 495150321665243,
+							"parameters": {
+								"variable": "game_is_paused",
+								"value": "true"
 							}
 						}
 					],
-					"sid": 247471147727535
+					"sid": 309946684000477
 				}
-			]
+			],
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 986933124539861,
+					"parameters": {
+						"object": "text"
+					}
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "text",
+					"sid": 411828779758482
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 512617747995829,
+					"parameters": {
+						"first-value": "text.type",
+						"comparison": 0,
+						"second-value": "\"pause_menu\""
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 211676270086241,
+					"parameters": {
+						"first-value": "text.index",
+						"comparison": 0,
+						"second-value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 438452769657260,
+					"parameters": {
+						"layout": "menu"
+					}
+				},
+				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 429427195286862,
+					"parameters": {
+						"time-scale": "1"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "ui_back",
+					"sid": 362253589662999,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 950851998319299,
+					"parameters": {
+						"variable": "game_is_paused",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 761115737690913
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 383684494306085,
+					"parameters": {
+						"object": "text"
+					}
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "text",
+					"sid": 970948504174645
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 580241990988327,
+					"parameters": {
+						"first-value": "text.type",
+						"comparison": 0,
+						"second-value": "\"pause_menu\""
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 561981976674820,
+					"parameters": {
+						"first-value": "text.index",
+						"comparison": 0,
+						"second-value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 960894385110931,
+					"parameters": {
+						"layer": "\"pause\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 122044945918559,
+					"parameters": {
+						"time-scale": "1"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "ui_back",
+					"sid": 753823905745962,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 307960306287523,
+					"parameters": {
+						"variable": "game_is_paused",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 787702689972879
 		}
 	],
 	"sid": 762210017106457
