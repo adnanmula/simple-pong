@@ -50,7 +50,7 @@
 			"children": [
 				{
 					"eventType": "script",
-					"script": "Text.find('label', 0).update('Touchscreen and gamepad available.');\nText.find('label', 1).update('Touchscreen and gamepad available.');"
+					"script": "Text.find('label', 0).update('Touchscreen or gamepad.');\nText.find('label', 1).update('Touchscreen or gamepad.');"
 				}
 			]
 		},

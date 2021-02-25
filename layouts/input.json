@@ -36,47 +36,6 @@
 				{
 					"type": "text",
 					"properties": {
-						"text": "Player 1, select input",
-						"enable-bbcode": false,
-						"character-width": 38,
-						"character-height": 48,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
-						"spacing-data": "[[13,\" \"],[10,\"i.:!'|\"],[12,\"°\"],[13,\"l,;\"],[17,\"1-()[]`\"],[20,\"fjt_\\\"=<>\"],[23,\"ILkr~+\"],[26,\"ABCDEFGHJKMNOPQRSTUVXYZabcdeghmnopqsuvwxyz023456789?\\/@$£%\"],[30,\"W&*\"],[32,\"€\"],[36,\"#\"]]",
-						"scale": 0.45,
-						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "left",
-						"vertical-alignment": "top",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "center"
-					},
-					"uid": 18,
-					"instanceVariables": {
-						"type": "input_label",
-						"index": 0
-					},
-					"behaviors": {},
-					"world": {
-						"x": 180.00000000000006,
-						"y": 360.5744540301316,
-						"width": 321.213460795133,
-						"height": 26.929109145365814,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							0,
-							0,
-							0,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "text",
-					"properties": {
 						"text": "Player 2, select input",
 						"enable-bbcode": false,
 						"character-width": 38,
@@ -99,7 +58,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 180,
+						"x": 172,
 						"y": 40.67578839005466,
 						"width": 321.213460795133,
 						"height": 25.800161285258213,
@@ -118,54 +77,13 @@
 				{
 					"type": "text",
 					"properties": {
-						"text": "Keyboard, gamepad and touchscreen available.",
+						"text": "Keyboard, gamepad and or touchscreen.",
 						"enable-bbcode": false,
 						"character-width": 38,
 						"character-height": 48,
 						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
 						"spacing-data": "[[13,\" \"],[10,\"i.:!'|\"],[12,\"°\"],[13,\"l,;\"],[17,\"1-()[]`\"],[20,\"fjt_\\\"=<>\"],[23,\"ILkr~+\"],[26,\"ABCDEFGHJKMNOPQRSTUVXYZabcdeghmnopqsuvwxyz023456789?\\/@$£%\"],[30,\"W&*\"],[32,\"€\"],[36,\"#\"]]",
-						"scale": 0.31,
-						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "left",
-						"vertical-alignment": "top",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "center"
-					},
-					"uid": 32,
-					"instanceVariables": {
-						"type": "label",
-						"index": 0
-					},
-					"behaviors": {},
-					"world": {
-						"x": 181.00000000000006,
-						"y": 374.3076493438355,
-						"width": 321.213460795133,
-						"height": 11.067858218234946,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							0,
-							0,
-							0,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "text",
-					"properties": {
-						"text": "Keyboard, gamepad and touchscreen available.",
-						"enable-bbcode": false,
-						"character-width": 38,
-						"character-height": 48,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
-						"spacing-data": "[[13,\" \"],[10,\"i.:!'|\"],[12,\"°\"],[13,\"l,;\"],[17,\"1-()[]`\"],[20,\"fjt_\\\"=<>\"],[23,\"ILkr~+\"],[26,\"ABCDEFGHJKMNOPQRSTUVXYZabcdeghmnopqsuvwxyz023456789?\\/@$£%\"],[30,\"W&*\"],[32,\"€\"],[36,\"#\"]]",
-						"scale": 0.31,
+						"scale": 0.38,
 						"character-spacing": 0,
 						"line-height": 0,
 						"horizontal-alignment": "left",
@@ -181,10 +99,92 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 181.00000000000006,
-						"y": 54.104712260953434,
+						"x": 179.86841403930885,
+						"y": 58.11786798999211,
+						"width": 336.9502888737507,
+						"height": 23.694647535683018,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "text",
+					"properties": {
+						"text": "Player 1, select input",
+						"enable-bbcode": false,
+						"character-width": 38,
+						"character-height": 48,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
+						"spacing-data": "[[13,\" \"],[10,\"i.:!'|\"],[12,\"°\"],[13,\"l,;\"],[17,\"1-()[]`\"],[20,\"fjt_\\\"=<>\"],[23,\"ILkr~+\"],[26,\"ABCDEFGHJKMNOPQRSTUVXYZabcdeghmnopqsuvwxyz023456789?\\/@$£%\"],[30,\"W&*\"],[32,\"€\"],[36,\"#\"]]",
+						"scale": 0.45,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center"
+					},
+					"uid": 40,
+					"instanceVariables": {
+						"type": "input_label",
+						"index": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 172,
+						"y": 349.8331709135599,
 						"width": 321.213460795133,
-						"height": 9.668336077605673,
+						"height": 25.800161285258213,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "text",
+					"properties": {
+						"text": "Keyboard, gamepad and or touchscreen.",
+						"enable-bbcode": false,
+						"character-width": 38,
+						"character-height": 48,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
+						"spacing-data": "[[13,\" \"],[10,\"i.:!'|\"],[12,\"°\"],[13,\"l,;\"],[17,\"1-()[]`\"],[20,\"fjt_\\\"=<>\"],[23,\"ILkr~+\"],[26,\"ABCDEFGHJKMNOPQRSTUVXYZabcdeghmnopqsuvwxyz023456789?\\/@$£%\"],[30,\"W&*\"],[32,\"€\"],[36,\"#\"]]",
+						"scale": 0.38,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center"
+					},
+					"uid": 41,
+					"instanceVariables": {
+						"type": "label",
+						"index": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 179.86841403930885,
+						"y": 367.2752505134974,
+						"width": 336.9502888737507,
+						"height": 23.694647535683018,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
