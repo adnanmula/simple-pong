@@ -1,14 +1,14 @@
 {
-	"name": "ball",
+	"name": "solid",
 	"plugin-id": "Sprite",
-	"sid": 551841285735038,
+	"sid": 415794218125510,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
-			"behaviorId": "Bullet",
-			"name": "Bullet",
-			"sid": 218588301862668
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 469023986462898
 		}
 	],
 	"effectTypes": [],
@@ -17,19 +17,20 @@
 			{
 				"frames": [
 					{
-						"width": 20,
-						"height": 20,
+						"width": 10,
+						"height": 10,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
-						"exportFormat": "png",
+						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4800093,
+						"imageSpriteId": 2051883,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
-				"sid": 571392872098330,
+				"sid": 622439904676060,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

@@ -1,3 +1,5 @@
 # Construct
 *.uistate.xml
 *.uistate.json
+#idea
+.idea

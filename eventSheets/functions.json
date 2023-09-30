@@ -6,6 +6,7 @@
 			"functionDescription": "",
 			"functionCategory": "Script Helper",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -24,6 +25,7 @@
 			"functionDescription": "Evaluates gamepad input.",
 			"functionCategory": "input",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{

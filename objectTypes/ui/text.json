@@ -8,12 +8,14 @@
 			"name": "type",
 			"type": "string",
 			"desc": "",
+			"show": true,
 			"sid": 186789292627090
 		},
 		{
 			"name": "index",
 			"type": "number",
 			"desc": "",
+			"show": true,
 			"sid": 522788160808009
 		}
 	],
@@ -25,9 +27,10 @@
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
-		"exportFormat": "png",
+		"exportFormat": "lossless",
 		"exportQuality": 0.8,
 		"imageSpriteId": 7510160,
-		"useCollisionPoly": true
+		"useCollisionPoly": true,
+		"tag": ""
 	}
 }

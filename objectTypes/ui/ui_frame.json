@@ -1,22 +1,9 @@
 {
-	"name": "input_touch_detector",
+	"name": "ui_frame",
 	"plugin-id": "Sprite",
-	"sid": 546199366607550,
+	"sid": 184264447538356,
 	"isGlobal": false,
-	"instanceVariables": [
-		{
-			"name": "index",
-			"type": "number",
-			"desc": "",
-			"sid": 299135597698121
-		},
-		{
-			"name": "action",
-			"type": "number",
-			"desc": "",
-			"sid": 531537794579920
-		}
-	],
+	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
@@ -29,14 +16,15 @@
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
-						"exportFormat": "png",
+						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7859421,
+						"imageSpriteId": 3376937,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
-				"sid": 146616298568407,
+				"sid": 870153414940353,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
