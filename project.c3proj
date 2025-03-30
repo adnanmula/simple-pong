@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 36000,
+	"savedWithRelease": 43202,
 	"name": "Simple Pong",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -209,7 +209,7 @@
 						}
 					],
 					"subfolders": [],
-					"name": "prop"
+					"name": "Prop"
 				},
 				{
 					"items": [
@@ -247,7 +247,7 @@
 						}
 					],
 					"subfolders": [],
-					"name": "manager"
+					"name": "Manager"
 				},
 				{
 					"items": [
@@ -277,7 +277,7 @@
 						}
 					],
 					"subfolders": [],
-					"name": "layout"
+					"name": "Layout"
 				}
 			]
 		},
@@ -372,9 +372,14 @@
 			}
 		]
 	},
+	"flowcharts": {
+		"items": [],
+		"subfolders": []
+	},
 	"properties": {
 		"description": "Just pong, nothing more.",
 		"version": "0.1.0.0",
+		"autoIncrementVersion": false,
 		"author": "Adnan Mula",
 		"authorEmail": "",
 		"authorWebsite": "",
@@ -410,7 +415,6 @@
 		"gpuPreference": "high-performance",
 		"scriptsType": "module",
 		"framerateMode": "vsync",
-		"compositingMode": "standard",
 		"sampling": "nearest",
 		"downscaling": "medium",
 		"renderingMode": "auto",
@@ -421,9 +425,8 @@
 		"loaderStyle": "progress",
 		"preloadSounds": true,
 		"cordovaiOSScheme": "app",
-		"cordovaAndroidScheme": "file",
-		"autoReloadScriptsOnPreview": false,
-		"exportFileStructure": "flat",
+		"cordovaAndroidScheme": "https",
+		"exportFileStructure": "folders",
 		"uidAllocationMode": "increment"
 	},
 	"viewportWidth": 360,

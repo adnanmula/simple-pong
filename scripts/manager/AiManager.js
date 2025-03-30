@@ -1,10 +1,8 @@
-import * as Utils from "./utils.js";
-import Pad from "./Pad.js";
+import * as Utils from "../utils.js";
+import Pad from "../Prop/Pad.js";
 
-export default class AiManager
-{
-	static evaluate(index)
-	{
+export default class AiManager {
+	static evaluate(index) {
 		let pad = Pad.find(index);
 		let ball = globalThis.runtime.objects.ball.getFirstInstance();
 
@@ -24,29 +22,23 @@ export default class AiManager
 			AiManager.centerPosition(pad);
 		}
 	}
-	
-	static followBall(pad, ball)
-	{
-		if (ball.x < (pad.x - pad.width / 10))
-		{
+
+	static followBall(pad, ball) {
+		if (ball.x < (pad.x - pad.width / 10)) {
 			pad.simulateLeft();
 		}
 
-		if (ball.x > (pad.x + pad.width / 10))
-		{
+		if (ball.x > (pad.x + pad.width / 10)) {
 			pad.simulateRight();
 		}
 	}
-	
-	static centerPosition(pad)
-	{
-		if ((globalThis.runtime.layout.width / 2 - pad.width / 10) <= pad.x)
-		{
+
+	static centerPosition(pad) {
+		if ((globalThis.runtime.layout.width / 2 - pad.width / 10) <= pad.x) {
 			pad.simulateLeft();
 		}
 
-		if ((globalThis.runtime.layout.width / 2 + pad.width / 10) >= pad.x)
-		{
+		if ((globalThis.runtime.layout.width / 2 + pad.width / 10) >= pad.x) {
 			pad.simulateRight();
 		}
 	}

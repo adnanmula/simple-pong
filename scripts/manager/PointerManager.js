@@ -1,69 +1,56 @@
-import TouchSetter from "./TouchSetter.js";
-import TouchDetector from "./TouchDetector.js";
+import TouchSetter from "../Prop/TouchSetter.js";
+import TouchDetector from "../Prop/TouchDetector.js";
 
-export default class PointerManager
-{
-	static setterIsInTouch(index)
-	{
+export default class PointerManager {
+	static setterIsInTouch(index) {
 		const setter = TouchSetter.find(index);
 
-		if (setter === null)
-		{
+		if (setter === null) {
 			return false;
 		}
-		
-		for (const pointer of globalThis.pointers)
-		{	
-			if (setter.containsPoint(pointer.x, pointer.y))
-			{
+
+		for (const pointer of globalThis.pointers) {
+			if (setter.containsPoint(pointer.x, pointer.y)) {
 				return true;
 			}
 		}
-		
+
 		return false;
 	}
-	
-	static detectorIsInTouch(index, action)
-	{
+
+	static detectorIsInTouch(index, action) {
 		const detector = TouchDetector.find(index, action);
 
-		if (detector === null)
-		{
+		if (detector === null) {
 			return false;
 		}
-		
-		for (const pointer of globalThis.pointers)
-		{
-			if (detector.containsPoint(pointer.x, pointer.y))
-			{
+
+		for (const pointer of globalThis.pointers) {
+			if (detector.containsPoint(pointer.x, pointer.y)) {
 				return true;
 			}
 		}
-		
+
 		return false;
 	}
-	
-	static addPointer(id, absoluteX, absoluteY)
-	{
+
+	static addPointer(id, absoluteX, absoluteY) {
 		const [relativeX, relativeY] = globalThis.runtime.layout.getLayer("main").cssPxToLayer(absoluteX, absoluteY);
-		
-		globalThis.pointers.push({id: id, x: relativeX, y: relativeY});
+
+		globalThis.pointers.push({ id: id, x: relativeX, y: relativeY });
 	}
 
-	static removePointer(id)
-	{
+	static removePointer(id) {
 		globalThis.pointers = globalThis.pointers.filter(pointer => pointer.id !== id);
 	}
-	
-	static movePointer(id, absoluteX, absoluteY)
-	{
+
+	static movePointer(id, absoluteX, absoluteY) {
 		let pointer = globalThis.pointers.filter(pointer => pointer.id === id);
-		
-		if (pointer.length === 0)
-		{
+
+		if (pointer.length === 0) {
 			return;
 		}
-		
+
 		PointerManager.removePointer(id);
 		PointerManager.addPointer(id, absoluteX, absoluteY);
 	}
