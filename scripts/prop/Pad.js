@@ -2,7 +2,7 @@ export default class Pad extends ISpriteInstance {
 	constructor() {
 		super();
 
-		this.colorRgb = [Math.random(), Math.random(), Math.random()];
+		this.colorRgb = [Math.random() * 0.75, Math.random() * 0.75, Math.random() * 0.75];
 	}
 
 	static create(x, y) {

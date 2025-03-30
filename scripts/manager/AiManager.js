@@ -20,7 +20,13 @@ export default class AiManager {
 		}
 
 		if (ball.y < (ball.layout.height / 2) && Utils.getVectorY(ball.behaviors.Bullet.speed, ball.behaviors.Bullet.angleOfMotion) < 0) {
-			if (this.isWinning() && Math.random() > 0.50) {
+			let threshold = 0.1;
+
+			if (this.isWinning()) {
+				threshold += 0.25;
+			}
+
+			if (Math.random() < threshold) {
 				return;
 			}
 
