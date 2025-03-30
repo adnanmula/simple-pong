@@ -2,33 +2,57 @@ import * as Utils from "../utils.js";
 import Pad from "../Prop/Pad.js";
 
 export default class AiManager {
+	static isWinning() {
+		return runtime.globalVars.score_team_1 > runtime.globalVars.score_team_0;
+	}
+
 	static evaluate(index) {
 		let pad = Pad.find(index);
 		let ball = globalThis.runtime.objects.ball.getFirstInstance();
 
-		if (ball !== null && ball.y < (ball.layout.height / 2) && Utils.getVectorY(ball.behaviors.Bullet.speed, ball.behaviors.Bullet.angleOfMotion) < 0) {
-			AiManager.followBall(pad, ball);
-		}
-
-		if (ball !== null && ball.y > (ball.layout.height / 2)) {
-			AiManager.centerPosition(pad);
-		}
-
-		if (ball !== null && Utils.getVectorY(ball.behaviors.Bullet.speed, ball.behaviors.Bullet.angleOfMotion) > 0) {
-			AiManager.centerPosition(pad);
-		}
-
 		if (ball === null) {
+			if (this.isWinning()) {
+				return;
+			}
+
 			AiManager.centerPosition(pad);
+			return;
 		}
+
+		if (ball.y < (ball.layout.height / 2) && Utils.getVectorY(ball.behaviors.Bullet.speed, ball.behaviors.Bullet.angleOfMotion) < 0) {
+			if (this.isWinning() && Math.random() > 0.50) {
+				return;
+			}
+
+			AiManager.predicBall(pad, ball);
+			return;
+		}
+
+		if (ball.y > (ball.layout.height / 2)) {
+			AiManager.centerPosition(pad);
+			return;
+		}
+
+		if (Utils.getVectorY(ball.behaviors.Bullet.speed, ball.behaviors.Bullet.angleOfMotion) > 0) {
+			AiManager.centerPosition(pad);
+			return;
+		}
+
+		if (this.isWinning()) {
+			return;
+		}
+
+		AiManager.centerPosition(pad);
 	}
 
-	static followBall(pad, ball) {
-		if (ball.x < (pad.x - pad.width / 10)) {
+	static predicBall(pad, ball) {
+		const predictedPosition = this.predictPosition(ball);
+
+		if (predictedPosition.x < (pad.x - pad.width / 10)) {
 			pad.simulateLeft();
 		}
 
-		if (ball.x > (pad.x + pad.width / 10)) {
+		if (predictedPosition.x > (pad.x + pad.width / 10)) {
 			pad.simulateRight();
 		}
 	}
@@ -41,5 +65,36 @@ export default class AiManager {
 		if ((globalThis.runtime.layout.width / 2 + pad.width / 10) >= pad.x) {
 			pad.simulateRight();
 		}
+	}
+
+	static predictPosition(ball) {
+		const timeLimit = 10;
+		const timeStep = 0.1;
+
+		const speed = ball.behaviors.Bullet.speed;
+		const angle = ball.behaviors.Bullet.angleOfMotion;
+
+		const dx = speed * Math.cos(angle);
+		const dy = speed * Math.sin(angle);
+
+		let currentX = ball.x;
+		let currentY = ball.y;
+
+		let lastValidX = currentX;
+		let lastValidY = currentY;
+
+		for (let time = 0; time < timeLimit; time += timeStep) {
+			currentX += dx * timeStep;
+			currentY += dy * timeStep;
+
+			if (currentY < 0) {
+				return { x: lastValidX, y: lastValidY };
+			}
+
+			lastValidX = currentX;
+			lastValidY = currentY;
+		}
+
+		return { x: currentX, y: currentY };
 	}
 }
