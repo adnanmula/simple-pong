@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 43202,
+	"savedWithRelease": 44002,
 	"name": "Simple Pong",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -114,6 +114,7 @@
 			}
 		]
 	},
+	"functionsName": "Functions",
 	"autosaveData": null,
 	"containers": [],
 	"families": {
@@ -378,7 +379,7 @@
 	},
 	"properties": {
 		"description": "Just pong, nothing more.",
-		"version": "0.2.0",
+		"version": "0.2.1",
 		"autoIncrementVersion": false,
 		"author": "Adnan Mula",
 		"authorEmail": "",
